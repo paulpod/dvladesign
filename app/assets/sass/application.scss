@@ -20,3 +20,47 @@
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you,
 // either add and import new partial files, or modify those in GOV.UK elements to fit your user needs.
+
+
+
+
+/* * * * * from EVL * * * * * */
+/*Start of Tab Breadcrumb styles*/
+nav.progress-indicator {
+  padding-left: 0.5em;
+  border-top: 1px solid #dee0e2;
+  border-bottom: 3px solid #dee0e2;
+  margin: 0em -1em 0em -1em; }
+  nav.progress-indicator ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+    margin: 0;
+    padding: 0;
+    margin-bottom: -3px; }
+    @media (max-width: 640px) {
+      nav.progress-indicator ol {
+        margin: 0.5em 0; } }
+  nav.progress-indicator li {
+    float: left;
+    margin: 0 0.5em;
+    padding: 0.75em 0; }
+    @media (min-width: 641px) {
+      nav.progress-indicator li.active {
+        border-bottom: 3px solid #28a197;
+        position: relative;
+        top: 3px;
+        margin-top: -3px; } }
+    @media (max-width: 640px) {
+      nav.progress-indicator li.active {
+        border: 0;
+        font-weight: bold;
+        color: #28a197; } }
+    @media (max-width: 900px) {
+      nav.progress-indicator li {
+        font-size: 100%; } }
+    @media (max-width: 640px) {
+      nav.progress-indicator li {
+        width: 75%;
+        padding: 0.25em; } }
+
+/*End of Tab Breadcrumb styles*/
