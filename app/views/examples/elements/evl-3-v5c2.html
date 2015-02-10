@@ -1,0 +1,110 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main">
+
+
+  
+  <div>
+  <a class="back-to-previous" href="evl-3">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">
+
+  <!-- <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1> -->
+
+
+
+  <div id="steps" style="padding-bottom:2">
+
+    <nav class="progress-indicator group" role="navigation">
+          <ol id="MainContent_olTax" class="veh-breadcrumb">
+              <li id="MainContent_liReferenceNumberStep" class="active">
+                  Your vehicle
+              </li>
+              <li id="MainContent_liConfirmVehicle">
+                  Vehicle details
+              </li>
+              <li id="MainContent_liVedPicker">
+                  Renewal period
+              </li>
+              <li id="MainContent_liVEDConfirmation">
+                  Renewal period check
+              </li>
+              <li id="MainContent_liPayment">
+                  Pay
+              </li>
+              <li id="MainContent_liConfirmation">
+                  Done
+              </li>
+          </ol>
+      </nav>
+
+  </div>
+
+
+  <form action="/" method="post" class="form">
+
+
+    <legend class="form-label-bold" style="padding:1em 0">12 digit number, from your V5C/2 new keeper supplement (green slip)</legend>
+      <input class="form-control" type="text" id="ref-v5c2">
+
+
+      <div><details>
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true" style="padding-top:0.7em">
+          <span class="summary">Where to find this</span>
+        </summary>
+        <div class="" id="details-content-0" aria-hidden="false" style="display:block;border-left:none">
+        
+        <img src="/public/images/v5c2-diagram.png" width="280" height="162" style="padding:1em 0">
+
+        <p>You should have received your V5C/2 new keeper supplement (green slip) when you acquired the vehicle.</p>
+          
+        </div>
+      </details></div>
+
+
+  </div>
+
+
+
+  </fieldset>
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding-top:2em">
+    <input type="submit" class="button" value="Continue">
+    
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

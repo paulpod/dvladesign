@@ -1,0 +1,115 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main">
+
+
+  <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1>
+
+
+
+  <div id="steps" style="padding-bottom:2">
+
+    <nav class="progress-indicator group" role="navigation">
+          <ol id="MainContent_olTax" class="veh-breadcrumb">
+              <li id="MainContent_liReferenceNumberStep" class="active">
+                  Your vehicle
+              </li>
+              <li id="MainContent_liConfirmVehicle">
+                  Vehicle details
+              </li>
+              <li id="MainContent_liVedPicker">
+                  Renewal period
+              </li>
+              <li id="MainContent_liVEDConfirmation">
+                  Renewal period check
+              </li>
+              <li id="MainContent_liPayment">
+                  Pay
+              </li>
+              <li id="MainContent_liConfirmation">
+                  Done
+              </li>
+          </ol>
+      </nav>
+
+  </div>
+
+
+  <form action="evl-3-got" method="get" class="form">
+
+
+    <legend class="form-label-bold" style="padding:1em 0">First we need a reference number to identify your vehicle</legend>
+
+
+    <!-- Ref number select -->
+    <div class="form-group form-group-compound">
+
+    <label for="radio-inline-1" class="block-label">
+    <input id="radio-inline-1" type="radio"  name="reftype" value="1">
+    I have a V11 reminder letter in my name
+    </label>
+
+    
+
+
+    <label for="radio-inline-2" class="block-label">
+    <input id="radio-inline-2" type="radio"  name="reftype" value="2">
+    I have the V5C vehicle registration certificate in my name
+    </label>
+
+    
+
+
+    <label for="radio-inline-3" class="block-label">
+    <input id="radio-inline-3" type="radio"  name="reftype" value="3">
+    I am a new keeper and don't have a registration certificate in my name
+    </label>
+
+    
+
+
+  </div>
+
+
+
+  </fieldset>
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding-top:2em">
+    <input type="submit" class="button" value="Continue">
+    
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
