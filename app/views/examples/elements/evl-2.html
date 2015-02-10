@@ -1,0 +1,174 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main">
+
+
+  <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1>
+
+
+
+  <div id="steps" style="padding-bottom:2">
+
+    <nav class="progress-indicator group" role="navigation">
+          <ol id="MainContent_olTax" class="veh-breadcrumb">
+              <li id="MainContent_liReferenceNumberStep" class="active">
+                  Your vehicle
+              </li>
+              <li id="MainContent_liConfirmVehicle">
+                  Vehicle details
+              </li>
+              <li id="MainContent_liVedPicker">
+                  Renewal period
+              </li>
+              <li id="MainContent_liVEDConfirmation">
+                  Renewal period check
+              </li>
+              <li id="MainContent_liPayment">
+                  Pay
+              </li>
+              <li id="MainContent_liConfirmation">
+                  Done
+              </li>
+          </ol>
+      </nav>
+
+  </div>
+
+
+  <form action="/" method="post" class="form">
+
+
+    <legend class="form-label-bold" style="padding:1em 0">First we need a reference number to identify your vehicle</legend>
+
+
+    <!-- Ref number select -->
+    <div class="form-group form-group-compound">
+
+    <label for="radio-inline-1" class="block-label selected" data-target="example-different-v11">
+    <input id="radio-inline-1" type="radio"  name="Option" value="local" checked>
+    I have a V11 reminder letter in my name
+    </label>
+
+    <div class="panel-indent js-hidden" id="example-different-v11" style="padding-top:1em">
+
+      <label class="form-label" for="nationality-other-v11">
+      16 digit number from your V11 reminder letter</label>
+      <input class="form-control" type="text" id="nationality-other-v11">
+
+      <div><details style="" >
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true" style="padding-top:0.7em">
+          <span class="summary">Where to find this</span>
+        </summary>
+        <div class="" id="details-content-0" aria-hidden="false" style="display:block;border-left:none">
+        
+        <img src="/public/images/v11-diagram.png" width="280" height="162" style="padding:1em 0">
+
+        <p>You should receive a V11 letter a few weeks before your existing tax is due to run out. If you've moved and not let us know, or are a new keeper you'll need to use one of the other methods below.</p>
+          
+        </div>
+      </details></div>
+
+    </div>
+
+
+    <p>If you don't have a V11 reminder, you may be able to use one of the following methods:</p>
+
+
+
+
+    <label for="radio-inline-2" class="block-label" data-target="example-different-v5c">
+    <input id="radio-inline-2" type="radio"  name="Option" value="personal">
+    I have the V5C vehicle registration certificate in my name
+    </label>
+
+    <div class="panel-indent js-hidden" id="example-different-v5c" style="padding-top:1em">
+      <label class="form-label" for="nationality-other-v5c">11 digit number, from your V5C vehicle registration certificate (log book)</label>
+      <input class="form-control" type="text" id="nationality-other-v5c">
+
+
+      <div><details>
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true" style="padding-top:0.7em">
+          <span class="summary">Where to find this</span>
+        </summary>
+        <div class="" id="details-content-0" aria-hidden="false" style="display:block;border-left:none">
+        
+        <img src="/public/images/v5c-diagram.png" width="280" height="162" style="padding:1em 0">
+
+        <p>You should have received your V5C vehicle registration certificate shortly after acquiring your vehicle.</p>
+          
+        </div>
+      </details></div>
+
+    </div>
+
+
+
+    <label for="radio-inline-3" class="block-label" data-target="example-different-country">
+    <input id="radio-inline-3" type="radio"  name="Option" value="company">
+    I am a new keeper and don't have a registration certificate in my name
+    </label>
+
+    <div class="panel-indent js-hidden" id="example-different-country" style="padding-top:1em">
+      <label class="form-label" for="nationality-other-country">12 digit number, from your V5C/2 new keeper supplement (green slip)</label>
+      <input class="form-control" type="text" id="nationality-other-v5c2">
+
+
+      <div><details>
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true" style="padding-top:0.7em">
+          <span class="summary">Where to find this</span>
+        </summary>
+        <div class="" id="details-content-0" aria-hidden="false" style="display:block;border-left:none">
+        
+        <img src="/public/images/v5c2-diagram.png" width="280" height="162" style="padding:1em 0">
+
+        <p>You should have received your V5C/2 new keeper supplement (green slip) when you acquired the vehicle.</p>
+          
+        </div>
+      </details></div>
+
+
+  </div>
+
+
+
+  </fieldset>
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding-top:2em">
+    <input type="submit" class="button" value="Continue">
+    
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
