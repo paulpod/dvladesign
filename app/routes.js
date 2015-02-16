@@ -18,8 +18,6 @@ module.exports = {
 
     var x = req.query.reftype;
 
-    
-
     if (x == 1) {
     	console.log(x);
     	res.render('examples/elements/evl-3-v11');
@@ -30,10 +28,12 @@ module.exports = {
     	console.log(x);
     	res.render('examples/elements/evl-3-v5c2');
     }
-
-
  
 	});
+
+
+	
+	
 
 
     

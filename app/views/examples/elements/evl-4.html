@@ -1,0 +1,120 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main">
+
+
+  <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1>
+
+
+
+  <div id="steps" style="padding-bottom:2">
+
+    <nav class="progress-indicator group" role="navigation">
+          <ol id="MainContent_olTax" class="veh-breadcrumb">
+              <li id="MainContent_liReferenceNumberStep" class="active">
+                  Your vehicle
+              </li>
+              <li id="MainContent_liConfirmVehicle">
+                  Vehicle details
+              </li>
+              <li id="MainContent_liVedPicker">
+                  Renewal period
+              </li>
+              <li id="MainContent_liVEDConfirmation">
+                  Renewal period check
+              </li>
+              <li id="MainContent_liPayment">
+                  Pay
+              </li>
+              <li id="MainContent_liConfirmation">
+                  Done
+              </li>
+          </ol>
+      </nav>
+
+  </div>
+
+
+  
+
+    <p class="form-label-bold" style="padding:1em 0">First we need a reference number to identify your vehicle</p>
+
+
+    <div class="grid-row">
+      <div class="column-third" style="border-right:1px solid black">
+      <p>I have a V11 reminder letter in my name</p>
+      <img src="/public/images/v11-diagram.png" width="280" height="162">
+
+      </div>
+      <div class="column-third" style="border-right:1px solid black">
+      <p>I have the V5C vehicle registration certificate (log book) in my name</p>
+      <img src="/public/images/v5c-diagram.png" width="280" height="162">
+
+      </div>
+      <div class="column-third">
+      <p>I am a new keeper and don't have a registration certificate in my name</p>
+      <img src="/public/images/v5c2-diagram.png" width="280" height="162">
+
+      </div>
+    </div>
+
+    <div class="grid-row">
+      <div class="column-third" style="border-right:1px solid black">
+        <!-- Primary button -->
+        <div class="" style="padding-top:2em">
+
+          <a href="evl-4-v11"><button class="button" value="Continue">Continue</button></a>
+        </div>
+
+      </div>
+      <div class="column-third" style="border-right:1px solid black">
+        <!-- Secondary links -->
+        <div style="padding:2.5em 0">
+          <a href="evl-4-v5c">Continue using this</a>
+        </div>
+      </div>
+      <div class="column-third">
+        <!-- Secondary links -->
+        <div style="padding:2.5em 0">
+          <a href="evl-4-v5c2">Continue using this</a>
+        </div>
+      </div>
+    </div>
+
+
+</form>
+
+
+
+
+    
+
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
