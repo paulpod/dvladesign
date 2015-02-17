@@ -55,74 +55,76 @@
   </div>
 
 
-  
-
-    <p class="form-label-bold" style="padding:1em 0">First we need a reference number to identify your vehicle</p>
-
-
-    <div class="grid-row" style="overflow:hidden;">
-      <div class="column-third" style="border-right:1px solid black;padding-bottom:100%; margin-bottom:-100%">
-      <p>I have a V11 reminder letter in my name.</p>
-
-      </div>
-      <div class="column-third" style="border-right:1px solid black;padding-bottom:100%; margin-bottom:-100%">
-      <p>I have the V5C vehicle registration certificate (log book) in my name.</p>
-
-      </div>
-      <div class="column-third" style="padding-bottom:100%; margin-bottom:-100%">
-      <p>I am a new keeper and don't have a registration certificate in my name.</p>
-      <p>I have the V5C/2 new keeper supplement (green slip).</p>
-
-      </div>
-
-    </div>
 
 
 
-   <div class="grid-row">
-      <div class="column-third" style="border-right:1px solid black">
-      <img src="/public/images/v11-diagram.png" width="280" height="162">
+  <form action="evl-3-got" method="get" class="form">
 
-      </div>
-      <div class="column-third" style="border-right:1px solid black">
-      <img src="/public/images/v5c-diagram.png" width="280" height="162">
 
-      </div>
-      <div class="column-third">
-      <img src="/public/images/v5c2-diagram.png" width="280" height="162">
+    <legend class="form-label-bold" style="padding:1em 0">First we need a reference number to identify your vehicle</legend>
 
-      </div>
-    </div>
 
+    <!-- Ref number select -->
 
 
     <div class="grid-row">
-      <div class="column-third" style="border-right:1px solid black">
-        <!-- Primary button -->
-        <div class="" style="padding:2em 0 1.5em 0">
 
-          <a href="evl-4-v11"><button class="button" value="Continue">Continue</button></a>
-        </div>
+    <div class="column-third">
 
-      </div>
-      <div class="column-third" style="border-right:1px solid black">
-        <!-- Secondary links -->
-        <div style="padding:2.5em 0">
-          <a href="evl-4-v5c">Continue using this</a>
-        </div>
-      </div>
-      <div class="column-third">
-        <!-- Secondary links -->
-        <div style="padding:2.5em 0">
-          <a href="evl-4-v5c2">Continue using this</a>
-        </div>
-      </div>
+      <img src="/public/images/v11-diagram.png" width="280" height="162">
+   
+      <img src="/public/images/v5c-diagram.png" width="280" height="162">
+   
+      <img src="/public/images/v5c2-diagram.png" width="280" height="162">
+
     </div>
 
 
+
+
+    <div class="column-two-thirds ">
+
+    <label for="radio-inline-1" class="block-label" style="margin:2.8em 0 2.8em 0">
+    <input id="radio-inline-1" type="radio"  name="reftype" value="1">
+    I have a V11 reminder letter in my name
+    </label>
+
+    
+
+
+    <label for="radio-inline-2" class="block-label" style="margin:2.8em 0 2.8em 0">
+    <input id="radio-inline-2" type="radio"  name="reftype" value="2">
+    I have the V5C vehicle registration certificate in my name
+    </label>
+
+    
+
+
+    <label for="radio-inline-3" class="block-label" style="margin:2.8em 0 2.3em 0">
+    <input id="radio-inline-3" type="radio"  name="reftype" value="3">
+    I am a new keeper and don't have a registration certificate in my name
+    </label>
+
+    </div>
+
+    </div>
+
+
+
+  </fieldset>
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding-top:2em">
+    <input type="submit" class="button" value="Continue">
+  </div>
+
 </form>
+    
 
-
+      
+      
 
 
     
