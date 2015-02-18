@@ -218,8 +218,9 @@ nav.progress-indicator {
 
 
 
-
+/* * * * * * * * * * * * * */
 /* for fake EVL start page */
+
 .top-tasks {
 font-size:0.85em;
 margin-top:2em;
@@ -382,4 +383,32 @@ background-repeat: no-repeat;
     }
 }
 
+span.beta {
+display: inline-block;
+background: #f47738;
+color: #fff;
+font-family: "nta",Arial,sans-serif;
+font-size: 16px;
+line-height: 1.25;
+font-weight: 300;
+text-transform: none;
+font-weight: 700;
+line-height: 1;
+text-transform: uppercase;
+padding: 5px 5px 2px 6px;
+vertical-align: middle;
+margin-right: 10px;
+margin-left: 10px;
+}
+
+.help-notice {
+margin:1em 0 0 0;
+padding-bottom:0.5em;
+background: url("/public/images/icon-important.png") no-repeat scroll 0 0.3em;
+}
+.help-notice p {
+  padding: 0.7em 0 0.1em 3em;
+  font-weight:700;
+  line-height:1.1;
+}
 
