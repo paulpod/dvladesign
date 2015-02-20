@@ -32,6 +32,20 @@ module.exports = {
 	});
 
 
+
+    /* - - - - - - - - - - - - - - - - - - - -  */
+    /* Pass EVL ref number variations into flow */
+
+    app.get('/examples/elements/evl-3-flow', function (req, res) {
+
+    var next = req.query.nextlink;
+
+    res.render('examples/elements/' + next);
+    
+ 
+    });
+
+
 	
 	
 
