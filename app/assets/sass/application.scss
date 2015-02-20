@@ -404,11 +404,118 @@ margin-left: 10px;
 .help-notice {
 margin:1em 0 0 0;
 padding-bottom:0.5em;
-background: url("/public/images/icon-important.png") no-repeat scroll 0 0.3em;
+background: url("/public/images/icon-important.png") no-repeat scroll 0 0.5em;
 }
 .help-notice p {
-  padding: 0.7em 0 0.1em 3em;
+  padding: 0.6em 0 0.1em 3em;
   font-weight:700;
-  line-height:1.1;
+  line-height:1.3;
 }
+
+
+
+
+
+
+.reg-mark {
+background-color: #ffd307;
+border: 2px solid #333;
+padding: 0.2em 0.5em 0.1em 0.5em;
+font-weight: 700;
+font-size: 120%;
+border-radius: 5px;
+}
+
+
+
+/* Table/List for basic data */
+/* - - - - - - - - - - - - - */
+
+ul.ul-data {
+  list-style-type: none;
+  list-style-image: none;
+  padding-left: 0;
+  padding-top: 0.5em;
+  margin-bottom: 0; }
+
+@media (max-width: 640px) {
+  ul.ul-data {
+    margin-left: 0.3em;
+    margin-right: 0; } }
+
+ul.ul-data li {
+  border-bottom: 1px solid #c6ccd1;
+  display: -moz-inline-stack;
+  display: inline-block;
+  margin: 0;
+  padding-bottom: 5px;
+  width: 100%; }
+
+ul.ul-data li:first-child {
+  border-top: 1px solid #c6ccd1;
+  padding-top: 5px; }
+
+ul.ul-data li span:first-child {
+  width: 38%;
+  float: left;
+  /*display: inline;*/
+  display: -moz-inline-stack;
+  display: inline-block; }
+
+ul.ul-data li span:first-child:after {
+  content: ":"; }
+
+@media (max-width: 475px) {
+  ul.ul-data li span {
+    width: 100% !important; } }
+
+ul.ul-data li strong {
+  width: 60%;
+  float: left;
+  font-weight: 700;
+  /*display: inline;*/
+  display: -moz-inline-stack;
+  display: inline-block; }
+
+@media (max-width: 475px) {
+  ul.ul-data li strong {
+    width: 100% !important; } }
+
+ul.ul-data li.mot-pass {
+  border-left: solid green 3px;
+  color: green;
+  border-bottom: none;
+  border-top: none;
+  padding: 0.12em 0 0 1em;
+  margin-bottom: 8px; }
+
+ul.ul-data li.mot-fail {
+  border-left: solid red 3px;
+  color: red;
+  border-bottom: none;
+  border-top: none;
+  padding: 0.12em 0 0 1em;
+  margin-bottom: 8px; }
+
+ul.ul-data li a {
+  float: right;
+  font-weight: 300;
+  /*display: inline;*/
+  display: -moz-inline-stack;
+  display: inline-block; }
+
+@media (max-width: 475px) {
+  ul.ul-data li strong {
+    width: 100% !important; } }
+
+#evl-form strong {
+  font-weight:700;
+}
+
+.input-large {
+  font-size:1.4em;
+  padding:0.2em;
+}
+
+
 

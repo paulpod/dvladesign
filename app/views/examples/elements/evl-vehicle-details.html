@@ -1,0 +1,134 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+  <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1>
+
+
+
+  <div id="steps" style="padding-bottom:2">
+
+    <nav class="progress-indicator group" role="navigation">
+          <ol id="MainContent_olTax" class="veh-breadcrumb">
+              <li id="MainContent_liReferenceNumberStep">
+                  Your vehicle
+              </li>
+              <li id="MainContent_liConfirmVehicle" class="active">
+                  Vehicle details
+              </li>
+              <li id="MainContent_liVedPicker">
+                  Renewal period
+              </li>
+              <li id="MainContent_liVEDConfirmation">
+                  Renewal period check
+              </li>
+              <li id="MainContent_liPayment">
+                  Pay
+              </li>
+              <li id="MainContent_liConfirmation">
+                  Done
+              </li>
+          </ol>
+      </nav>
+
+  </div>
+
+
+  <form action="/" method="post" class="form">
+
+
+    <!-- hiding this redundant small page title, seems pointless here
+    <h2 class="heading-medium" style="padding:1em 0">Vehicle details</h2> -->
+
+
+    <div class="grid-row" style="margin-top:2.5em">
+      <div class="column-third" style="width:28%">
+
+        <div class="vehicle-reg" style="margin-bottom:1.5em">
+        <h3 class="heading-medium" style="margin:0.2em 0 1em 0">Registration number</h3>
+        <span class="reg-mark">C111 CCC</span>
+        </div>
+
+
+        <div><details>
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true" style="padding-top:0.7em">
+          <span class="summary">Incorrect details?</span>
+        </summary>
+
+        <div class="panel-indent" id="details-content-0" aria-hidden="false" style="display:block;">
+        
+        <p>If any of the above are incorrect you may have put in the wrong details, press the cancel button below to start again.</p>
+        <p>If the details are still incorrect please phone DVLA on 0300 123 4321 for advice</p>
+      
+        </div>
+      </details></div>
+
+      </div>
+      <div class="column-two-thirds" style="width:72%">
+
+        <div class="vehicle-details">
+        <ul class="ul-data">
+          <li><span>Vehicle make</span><strong>NO MAKE</strong></li>
+          <li><span>Tax class</span><strong>PLG (Private/Light Goods)</strong></li>
+          <li><span>Tax/SORN status</span><strong>Your vehicle will be taxed from 01 November 2014</strong></li>
+        </ul>
+        </div>
+
+      </div>
+    </div><!-- end grid row -->
+
+
+    
+
+
+  <br clear="all">
+
+  
+
+
+  <!-- pretty useless info about how we check electronic MOT certificates here 
+  from policy I assume <a href="#" rel="external" target="_new">Find out how we do this</a> -->
+
+
+  <p style="padding-top:1em;width:58%">By clicking 'Continue' you agree to the DVLA checking that your vehicle has an electronic MOT/GVT certificate (if relevant).</p>
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding:1em 0">
+    <input type="submit" class="button" value="Continue">
+
+    <p style="padding:1em 0"><a href="start">Cancel application</a>
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

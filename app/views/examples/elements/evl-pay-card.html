@@ -1,0 +1,139 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+  <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1>
+
+
+
+  <div id="steps" style="padding-bottom:2">
+
+    <nav class="progress-indicator group" role="navigation">
+          <ol id="MainContent_olTax" class="veh-breadcrumb">
+              <li id="MainContent_liReferenceNumberStep">
+                  Your vehicle
+              </li>
+              <li id="MainContent_liConfirmVehicle">
+                  Vehicle details
+              </li>
+              <li id="MainContent_liVedPicker">
+                  Renewal period
+              </li>
+              <li id="MainContent_liVEDConfirmation">
+                  Renewal period check
+              </li>
+              <li id="MainContent_liPayment" class="active">
+                  Pay
+              </li>
+              <li id="MainContent_liConfirmation">
+                  Done
+              </li>
+          </ol>
+      </nav>
+
+  </div>
+
+
+  <form action="/" method="get" class="form">
+
+
+    <h2 class="heading-medium" style="padding:0;margin:1em 0">Pay by debit or credit card</h2>
+
+    <div class="body-container group">
+
+    <p width="75%">Only UK Maestro, VISA Debit, MasterCard Debit, Electron debit cards, VISA and MasterCard credit cards are accepted.</p>
+
+    <p>The amount payable for vehicle <strong>C111 CCC</strong> is <strong>£110.00</strong> for <strong>12 months</strong>.
+
+
+    <div class="help-notice">
+      <p style="padding-top:0.2em">There's an additional £2.50 fee for paying by credit card (including prepaid cards).<br>
+      There is no fee for paying by debit cards.</p>
+    </div>
+
+
+<input type="hidden" value="CreditCardChargeNotice" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+
+<hr>
+
+                    <div style="margin-top:1.5em">
+                        <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Email address (optional).</label>
+
+                        <span id="MainContent_revtxtEmailConfirmation" class="Validator" style="display:none;">Please enter a valid email address</span>
+                        <p>
+                            <input name="ctl00$MainContent$txtEmailConfirmation" maxlength="150" id="MainContent_txtEmailConfirmation" class="form-control input-large" type="email" autocomplete="off">
+
+                        </p>
+                        <p class="hint" style="margin:-0.5em 0 1.8em 0">An email will be sent to confirm your transaction</p>
+                    </div>
+
+
+                    <div>
+                        <label class="heading-small" for="MainContent_txtMobileConfirmation" id="MainContent_lblMobileConfirmationText">Mobile number (optional)</label>
+
+                        <span id="MainContent_revtxtMobileConfirmation" class="Validator" style="display:none;">Please enter a valid mobile number</span>
+                        <p>
+                            <input name="ctl00$MainContent$txtMobileConfirmation" maxlength="11" id="MainContent_txtMobileConfirmation" class="form-control input-large" type="tel" autocomplete="off" pattern="[0-9]*" onkeypress="return isNumber(event)">
+                        </p>
+                        <p style="width:75%">
+                            The email address and/or mobile number supplied by you may also be used to ask about your experience using this service, or around other motoring services. The DVLA does not share mobile phone numbers or email addresses with anyone.
+                        </p>
+                        <p>
+                            <label for="MainContent_chkEmailOptOut" class="block-label">
+                            <input id="MainContent_chkEmailOptOut" type="checkbox" name="ctl00$MainContent$chkEmailOptOut">Please tick if you wish to be sent information.</label>
+                        </p>
+                    </div>
+                
+
+            
+        
+    </div>
+
+
+
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding:1em 0">
+    <input type="submit" class="button" value="Continue">
+
+    <p style="padding:1em 0"><a href="start">Cancel application</a>
+
+
+
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
