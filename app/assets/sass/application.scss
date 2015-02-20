@@ -517,5 +517,25 @@ ul.ul-data li a {
   padding:0.2em;
 }
 
+select {
+font-family: "nta",Arial,sans-serif;
+line-height: 1.8;
+padding: 2px;
+min-width: 150px;
+max-width: 293px;
+position: relative;
+font-size: 1em;
+padding-top: 2px;
+background: #fafafa;
+border: 2px solid #333;
+}
 
+.input-short {
+font-size:1.4em;
+padding:0.2em;
+width:6em;
+}
 
+.input-small {
+width:3em;
+}

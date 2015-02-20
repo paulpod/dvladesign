@@ -79,31 +79,76 @@
 <hr>
 
                     <div style="margin-top:1.5em">
-                        <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Email address (optional).</label>
+                        <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Card number</label>
 
-                        <span id="MainContent_revtxtEmailConfirmation" class="Validator" style="display:none;">Please enter a valid email address</span>
+                        
                         <p>
-                            <input name="ctl00$MainContent$txtEmailConfirmation" maxlength="150" id="MainContent_txtEmailConfirmation" class="form-control input-large" type="email" autocomplete="off">
+                            <div style="float:left;padding-right:1em">
+                            <input name="ctl00$MainContent$txtEmailConfirmation" maxlength="19" id="MainContent_txtEmailConfirmation" class="form-control input-large" type="email" autocomplete="off" style="width:13em">
+                            </div>
+
+                            <div style="padding:0.5em 0 0 2em"><img src="/public/images/cards-visa-vdebit-master-maestro.png" width="216"height="32"></div>
 
                         </p>
-                        <p class="hint" style="margin:-0.5em 0 1.8em 0">An email will be sent to confirm your transaction</p>
+                        
                     </div>
 
 
-                    <div>
-                        <label class="heading-small" for="MainContent_txtMobileConfirmation" id="MainContent_lblMobileConfirmationText">Mobile number (optional)</label>
+                    <div style="margin-top:1.5em">
+                        <label class="heading-small" for="MainContent_txtMobileConfirmation" id="MainContent_lblMobileConfirmationText">Card expiry date</label>
 
-                        <span id="MainContent_revtxtMobileConfirmation" class="Validator" style="display:none;">Please enter a valid mobile number</span>
                         <p>
-                            <input name="ctl00$MainContent$txtMobileConfirmation" maxlength="11" id="MainContent_txtMobileConfirmation" class="form-control input-large" type="tel" autocomplete="off" pattern="[0-9]*" onkeypress="return isNumber(event)">
-                        </p>
-                        <p style="width:75%">
-                            The email address and/or mobile number supplied by you may also be used to ask about your experience using this service, or around other motoring services. The DVLA does not share mobile phone numbers or email addresses with anyone.
-                        </p>
+                            <select name="ctl00$MainContent$ExpiryMonthDropDown" id="MainContent_ExpiryMonthDropDown">
+                            <option selected="selected" value="-">Month</option>
+                            <option value="01">01</option>
+                            <option value="02">02</option>
+                            <option value="03">03</option>
+                            <option value="04">04</option>
+                            <option value="05">05</option>
+                            <option value="06">06</option>
+                            <option value="07">07</option>
+                            <option value="08">08</option>
+                            <option value="09">09</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+
+                            </select>
+
+                            <select name="ctl00$MainContent$ExpiryYearDropDown" id="MainContent_ExpiryYearDropDown" class="input-small">
+                            <option value="-">Year</option>
+                            <option value="2015">2015</option>
+                            <option value="2016">2016</option>
+                            <option value="2017">2017</option>
+                            <option value="2018">2018</option>
+                            <option value="2019">2019</option>
+                            <option value="2020">2020</option>
+
+                            </select>
+                          </p>
+                        
+                    </div>
+
+
+
+                    <div style="margin-top:1.8em">
+                        <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Last 3 digits of card security code</label>
+
+                        
                         <p>
-                            <label for="MainContent_chkEmailOptOut" class="block-label">
-                            <input id="MainContent_chkEmailOptOut" type="checkbox" name="ctl00$MainContent$chkEmailOptOut">Please tick if you wish to be sent information.</label>
+                            <div style="float:left">
+                            <input name="ctl00$MainContent$txtEmailConfirmation" maxlength="19" id="MainContent_txtEmailConfirmation" class="form-control input-short" type="ccv" autocomplete="off">
+                            </div>
+
+                            <div style="padding:0.5em 1em 0 1.5em;float:left"><img src="/public/images/cards-ccv.png" width="80"height="32">
+                            </div>
+
+                            <div style="padding:0.5em 0 0 1.5em">
+                            <p>The last three digits on the signature strip</p>
+                            </div>
+
                         </p>
+                        
                     </div>
                 
 
@@ -118,7 +163,7 @@
 
   <!-- Primary buttons, secondary links -->
   <div class="form-group" style="padding:1em 0">
-    <input type="submit" class="button" value="Continue">
+    <input type="submit" class="button" value="Pay now">
 
     <p style="padding:1em 0"><a href="start">Cancel application</a>
 
