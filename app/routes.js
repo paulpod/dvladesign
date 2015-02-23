@@ -17,16 +17,18 @@ module.exports = {
     app.get('/examples/elements/evl-3-got', function (req, res) {
 
     var x = req.query.reftype;
+    var back = req.query.nextbacklink;
+
 
     if (x == 1) {
     	console.log(x);
-    	res.render('examples/elements/evl-3-v11');
+    	res.render('examples/elements/evl-3-v11', {'back' : back});
     } else if (x == 2) {
     	console.log(x);
-    	res.render('examples/elements/evl-3-v5c');
+    	res.render('examples/elements/evl-3-v5c', {'back' : back});
     } else if (x == 3) {
     	console.log(x);
-    	res.render('examples/elements/evl-3-v5c2');
+    	res.render('examples/elements/evl-3-v5c2', {'back' : back});
     }
  
 	});
@@ -39,8 +41,9 @@ module.exports = {
     app.get('/examples/elements/evl-3-flow', function (req, res) {
 
     var next = req.query.nextlink;
+    var back = req.query.nextbacklink;
 
-    res.render('examples/elements/' + next);
+    res.render('examples/elements/' + next, {'back' : back});
     
  
     });
