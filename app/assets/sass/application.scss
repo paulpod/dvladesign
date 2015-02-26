@@ -539,3 +539,42 @@ width:6em;
 .input-small {
 width:3em;
 }
+
+
+.clearblock {
+  border: none;
+  background: none;
+padding-top:0;
+padding-left:30px;
+padding-bottom:0;
+}
+
+.clearblock input {
+  left:0;
+top:0;
+}
+
+
+
+/** hover styles **/
+
+.details-pane {
+  display:none;
+  z-index:5;
+  position: absolute;
+  top: 21em;
+  left: 52%;
+  background: #f6f6f6;
+  border: 1px solid #333;
+  width: 30%;
+  padding: 0.75em
+}
+.hvrlink {
+font-size:0.8em;
+margin-left:1em;
+}
+.hvrlink:hover + .details-pane {
+  display: block;
+}
+
+
