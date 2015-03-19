@@ -50,6 +50,31 @@ module.exports = {
 
 
 	
+
+     /* - - - - - - - - - - - - - - - - - - - */
+    /* Pages for EVL revision to entrypoint */
+
+    app.get('/examples/elements/evl-7-flow', function (req, res) {
+
+    var x = req.query.reftype;
+    var back = req.query.nextbacklink;
+
+
+    if (x == "v11") {
+        console.log(x);
+        res.render('examples/elements/evl-7-v11', {'back' : back});
+    } else if (x == "v5c") {
+        console.log(x);
+        res.render('examples/elements/evl-7-v5c', {'back' : back});
+    } else if (x == "v5c2") {
+        console.log(x);
+        res.render('examples/elements/evl-7-v5c2', {'back' : back});
+    } else {
+        console.log(x);
+        res.render('examples/elements/evl-7-other', {'back' : back});
+    }
+ 
+    });
 	
 
 
