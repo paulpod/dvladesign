@@ -1,0 +1,196 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main">
+
+
+  <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1>
+
+
+
+  <div id="steps" style="padding-bottom:2">
+
+    <nav class="progress-indicator group" role="navigation">
+          <ol id="MainContent_olTax" class="veh-breadcrumb">
+              <li id="MainContent_liReferenceNumberStep" class="active">
+                  Your vehicle
+              </li>
+              <li id="MainContent_liConfirmVehicle">
+                  Vehicle details
+              </li>
+              <li id="MainContent_liVedPicker">
+                  Renewal period
+              </li>
+              <li id="MainContent_liVEDConfirmation">
+                  Renewal period check
+              </li>
+              <li id="MainContent_liPayment">
+                  Pay
+              </li>
+              <li id="MainContent_liConfirmation">
+                  Done
+              </li>
+          </ol>
+      </nav>
+
+  </div>
+
+
+  <form action="evl-7-flow" method="get" class="form">
+  <input type="hidden" name="nextlink" value="evl-vehicle-details">
+  <input type="hidden" name="nextbacklink" value="evl-0">
+
+
+    <!-- <legend class="form-label-bold" style="padding:1em 0">First we need a reference number to identify your vehicle</legend> -->
+
+
+    <!-- Ref number select -->
+    <div class="form-group form-group-compound" style="padding-top:2em">
+
+    <label for="radio-inline-1" class="block-label" data-target="renew">
+    <input id="radio-inline-1" type="radio"  name="Option" value="local">
+    I have taxed this vehicle before
+    </label>
+
+    <div class="panel-indent js-hidden" id="renew" style="padding-top:1em">
+
+
+        <!-- I have taxed this vehicle before -->
+        <div class="form-group form-group-compound">
+
+        <label for="radio-inline-1a" class="block-label">
+
+        <img src="/public/images/v11-diagram.png" width="168" height="97" align="middle" style="padding-top:0.5em;padding-right:1em">
+
+        <input id="radio-inline-1a" type="radio"  name="reftype" value="v11">
+
+        I have a V11 reminder letter in my name
+
+        </label>
+
+
+
+        <label for="radio-inline-1b" class="block-label">
+
+        <img src="/public/images/v5c-diagram.png" width="168" height="97" align="middle" style="padding-top:0.5em;padding-right:1em">
+
+        <input id="radio-inline-1b" type="radio"  name="reftype" value="v5c">
+
+        I have the V5C registration certificate in my name (red logbook)
+
+        </label>
+
+        
+
+        <label for="radio-inline-1c" class="block-label">
+        <input id="radio-inline-1c" type="radio"  name="reftype" value="other">
+        I don’t have any of these
+        </label>
+
+        </div>
+
+      
+    </div>
+
+
+
+
+    <label for="radio-inline-2" class="block-label" data-target="acquire">
+    <input id="radio-inline-2" type="radio"  name="Option" value="personal">
+    I have recently acquired this vehicle
+    </label>
+
+    <div class="panel-indent js-hidden" id="acquire" style="padding-top:1em">
+      
+        <!-- I have just acquired this vehicle -->
+        <div class="form-group form-group-compound">
+
+        <label for="radio-inline-2a" class="block-label">
+
+        <img src="/public/images/v5c-diagram.png" width="168" height="97" align="middle" style="padding-top:0.5em;padding-right:1em">
+
+        <input id="radio-inline-2a" type="radio"  name="reftype" value="v5c">
+
+        I have the V5C registration certificate in my name (red logbook)
+
+
+        </label>
+
+
+
+        <label for="radio-inline-2b" class="block-label">
+
+        <img src="/public/images/v5c2-diagram.png" width="168" height="97" align="middle" style="padding-top:0.5em;padding-right:1em">
+
+        <input id="radio-inline-2b" type="radio"  name="reftype" value="v5c2">
+
+        I only have the V5C/2 new keeper supplement (green slip)
+
+        </label>
+
+        
+
+        <label for="radio-inline-2c" class="block-label">
+        <input id="radio-inline-2c" type="radio"  name="reftype" value="other">
+        I don’t have any of these
+        </label>
+
+        </div>
+
+    </div>
+
+
+
+   
+
+
+
+  </fieldset>
+
+
+
+
+  
+  <br clear="all">
+
+  
+
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding-top:2em">
+    <input type="submit" class="button" value="Continue">
+    
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

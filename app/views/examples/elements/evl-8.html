@@ -27,7 +27,7 @@
 
 
 
-  <div id="steps" style="padding-bottom:2">
+  <div id="steps" style="display:none">
 
     <nav class="progress-indicator group" role="navigation">
           <ol id="MainContent_olTax" class="veh-breadcrumb">
@@ -60,129 +60,71 @@
   <input type="hidden" name="nextbacklink" value="evl-0">
 
 
-    <!-- <legend class="form-label-bold" style="padding:1em 0">First we need a reference number to identify your vehicle</legend> -->
 
 
-    <!-- Ref number select -->
-    <div class="form-group form-group-compound" style="padding-top:2em">
+  <!-- Ref number select -->
+  <div class="form-group form-group-compound" style="padding-top:2em">
 
-    <label for="radio-inline-1" class="block-label" data-target="renew">
-    <input id="radio-inline-1" type="radio"  name="Option" value="local">
-    I have taxed this vehicle before
-    </label>
+  <label for="radio-inline-1" class="block-label" data-target="renew" style="padding-left:30px;margin-bottom:2em;width:50%">
+  <input id="radio-inline-1" type="radio"  name="reftype" value="v11" style="display:none;">
+  <h2 class="heading-medium" style="margin:0 0 0 0">Renew tax on a vehicle</h2>
+  
 
-    <div class="panel-indent js-hidden" id="renew" style="padding-top:1em">
+  <br clear="all">
 
+  <img src="/public/images/v11-diagram.png" width="168" height="97" align="middle" style="padding-top:0.5em;padding-right:1em">
 
-        <!-- I have taxed this vehicle before -->
-        <div class="form-group form-group-compound">
+  <p style="padding:1em 0 0 0;margin:0">
+  Using the 16 digit number from your V11 reminder letter
+  </p>
 
-        <label for="radio-inline-1a" class="block-label">
-
-        <img src="/public/images/v11-diagram.png" width="168" height="97" align="middle" style="padding-top:0.5em;padding-right:1em">
-
-        <input id="radio-inline-1a" type="radio"  name="reftype" value="v11">
-
-        I have a V11 reminder letter in my name
-
-        </label>
-
-
-
-        <label for="radio-inline-1b" class="block-label">
-
-        <img src="/public/images/v5c-diagram.png" width="168" height="97" align="middle" style="padding-top:0.5em;padding-right:1em">
-
-        <input id="radio-inline-1b" type="radio"  name="reftype" value="v5c">
-
-        I have the V5C registration certificate in my name (red logbook)
-
-        </label>
-
-        
-
-        <label for="radio-inline-1c" class="block-label">
-        <input id="radio-inline-1c" type="radio"  name="reftype" value="other">
-        I don’t have any of these
-        </label>
-
-        </div>
-
-      
-    </div>
+  
+  </label>
 
 
 
 
-    <label for="radio-inline-2" class="block-label" data-target="acquire">
-    <input id="radio-inline-2" type="radio"  name="Option" value="personal">
-    I have recently acquired this vehicle
-    </label>
-
-    <div class="panel-indent js-hidden" id="acquire" style="padding-top:1em">
-      
-        <!-- I have just acquired this vehicle -->
-        <div class="form-group form-group-compound">
-
-        <label for="radio-inline-2a" class="block-label">
-
-        <img src="/public/images/v5c-diagram.png" width="168" height="97" align="middle" style="padding-top:0.5em;padding-right:1em">
-
-        <input id="radio-inline-2a" type="radio"  name="reftype" value="v5c">
-
-        I have the V5C registration certificate in my name (red logbook)
-
-
-        </label>
+  <!-- p style="color:grey;width:60%;padding-bottom:2em">Use this option if you have taxed this vehicle before, and have either a V11 reminder letter in your name, or the V5C registration certificate (red log book) in your name.</p -->
 
 
 
-        <label for="radio-inline-2b" class="block-label">
-
-        <img src="/public/images/v5c2-diagram.png" width="168" height="97" align="middle" style="padding-top:0.5em;padding-right:1em">
-
-        <input id="radio-inline-2b" type="radio"  name="reftype" value="v5c2">
-
-        I only have the V5C/2 new keeper supplement (green slip)
-
-        </label>
-
-        
-
-        <label for="radio-inline-2c" class="block-label">
-        <input id="radio-inline-2c" type="radio"  name="reftype" value="other">
-        I don’t have any of these
-        </label>
-
-        </div>
-
-    </div>
+  <br clear="all">
 
 
 
-   
+  <label for="radio-inline-2" class="block-label" style="padding-left:30px;width:50%">
+  <input id="radio-inline-2" type="radio" name="reftype" value="v5c2" style="display:none;">
+  <h2 class="heading-medium" style="margin:0 0 0 0">Tax a vehicle for the first time</h2>
 
+ 
+  <p style="padding:1em 0 0 0;margin:0">
+  Only use this option if you have very recently bought your vehicle, and have no documents with your name on.</p>
+
+  </label>
+
+
+  <br clear="all">
+
+
+    
+  </div>
+
+  
 
 
   </fieldset>
 
 
 
-
-  
-  <br clear="all">
-
-  
-
-
-
-
   <!-- Primary buttons, secondary links -->
-  <div class="form-group" style="padding-top:2em">
+  <div class="form-group" style="padding-top:1em">
     <input type="submit" class="button" value="Continue">
     
 
   </div>
+
+
+  <p><a href="evl-7-other">I am renewing vehicle tax but don't have any documents in my name</a>
 
 </form>
 
