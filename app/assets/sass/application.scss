@@ -23,6 +23,11 @@
 
 
 
+strong {
+  font-weight:700;
+}
+
+
 
 /* Back from Register to Vote */
 /* - - - - - - - - - - - - - - - - - -  */
@@ -418,12 +423,12 @@ background: url("/public/images/icon-important.png") no-repeat scroll 0 0.5em;
 
 
 .reg-mark {
+font:28px uknumberplateregular;
 background-color: #ffd307;
-border: 2px solid #333;
-padding: 0.2em 0.5em 0.1em 0.5em;
-font-weight: 700;
-font-size: 120%;
-border-radius: 5px;
+border: 0.13em solid #333;
+padding: 0.33em 0.28em 0.33em 0.5em;
+font-size: 140%;
+border-radius: 0.25em;
 }
 
 
@@ -626,3 +631,28 @@ label.selectable:hover {
 .selectable.selected .fake-input-radio .fake-input-inner {
   background: #0b0c0c; }
 
+
+.vehicle-pic {
+  width:3.5em;
+  height:3.5em;
+  border:2px black solid;
+  padding:0.25em;
+  margin:0.25em;
+  float:left;
+
+}
+.vehicle-pic img {
+  max-width:100%;
+  height:auto;
+
+  position: relative;
+  top: 56%;
+  transform: translateY(-44%);
+
+}
+.vehicle-pic sup {
+font-weight: 700;
+font-size:75%;
+color:#a98;
+  position: absolute;
+}
