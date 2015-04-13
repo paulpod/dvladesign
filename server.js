@@ -2,7 +2,7 @@ var path = require('path'),
     express = require('express'),
     routes = require(__dirname + '/app/routes.js'),
     app = express(),
-    port = (process.env.PORT || 3000),
+    port = (process.env.PORT || 3001),
 
 // Grab environment variables specified in Procfile or as Heroku config vars
     username = process.env.USERNAME,
@@ -65,5 +65,5 @@ app.get(/^\/([^.]+)$/, function (req, res) {
 
 app.listen(port);
 console.log('');
-console.log('Listening on port ' + port);
+console.log('EVL - Listening on port ' + port);
 console.log('');

@@ -9,49 +9,28 @@
 <main id="content" role="main">
 
 
-<h1 class="heading-xlarge">DVLA Design kit</h1>
+	<h2 class="heading-large">EVL reference number variations</h2>
 
+	<p><strong>What:</strong> Trying to reduce the error rate, and subsequent case work to fix, of users confused by and entering the incorrect reference number when trying to tax their vehicle.</p>
 
-	<div class="grid-row">
-    <div class="column-two-thirds">
+	<p><strong>How:</strong> Looking at alternative methods to direct the user to find and enter a correct reference number, with only genuinely *new* new keepers using the V2C/2 supplement.</p>
 
-    <p><strong>What's this?</strong> The DVLA where possible follows the guidance for GOV.UK services, and uses the current best practice and most appropriate elements as discussed on the Design Elements hackpad.</p>
+	<h3 class="heading-medium">New ones</h3>
 
-	<p>Where specialist needs have presented themselves, this document aims to provide consistent guidance for use on DVLA services.</p>
+	<ol class="list-number">
+		
 
-	</div>
-	</div>
+		<li><a href="/examples/elements/evl-11">Guide pictures, each step</a><br />
+		Changed question to specific actions (taxed before or just bought) and each step has document pictogram. More risky actions escalate warning strength to avert misuse.
+		</li>
 
-
-	<h2 class="heading-large">Use these first</h2>
-
-	
-	<ol class="list-number" style="font-size:200%">
-
-	<li class="list-number">GOV.UK design elements</li>
-	<li class="list-number">Design elements Hackpad &amp; discussion</li>
-	<li class="list-number">Digital designers discussion group</li>
-
-<<<<<<< HEAD
-	<li>
-		<a href="/examples/elements/evl-7">Ask about previous/new tax usage</a><br />
-		Wording, first question: Has the user paid for this vehicle before, or is it a 'recent acqusition'
-	</li>
-
-	<li>
-		<a href="/examples/elements/evl-8">Ask about previous/new tax usage</a><br />
-		Same, using pictures
-	</li>
-
-	<li>
-		<a href="/examples/elements/evl-11">Big pics</a><br />
-		Big pictures for each type of form, and warnings for incorrect usage
-	</li>
+	</ol>
 
 
 
+	<h3 class="heading-medium">Older ones</h3>
 
-	<h2 class="heading-medium">First round</h2>
+
 
 
 	<ul class="list-bullet">
@@ -60,6 +39,7 @@
 			Minor copy changes, aligning naming of possible forms user may have with naming elsewhere, added "!" warning about using documents with your name on.
 		</li>
 	</ul>
+
 
 	<ol class="list-number">
 		
@@ -109,189 +89,82 @@
 			<a href="/examples/elements/evl-6">Form images: includes the image inside the large radio button area.</a><br />
 			Big and chunky buttons to hit
 		</li>
-=======
->>>>>>> 3673dce4e2d5c9c375c39034ae4310b91eede332
 	</ol>
 
-	
 
+	<h2 class="heading-medium" style="padding-top:2em">Rest of EVL flow...</h2>
 
-	
-	<div class="grid-row">
-    <div class="column-two-thirds">
+	<ol class="list-number">
+		<li>
+			<a href="/examples/elements/evl-vehicle-details">Vehicle details</a><br />
+			Show regmark, vehicle make, class, status page 
+		</li>
 
-    <h2 class="heading-large">DVLA design elements</h2>
+		<li>
+			<a href="/examples/elements/evl-renewal-period">Renewal period</a><br />
+			User chooses between 6/12 month and Direct Debit annual, 6 or monthly
+		</li>
 
-	<h3 class="heading-medium">Vehicle registration marks</h3>
+		<li>
+			<a href="/examples/elements/evl-renewal-period-check">Renewal period check</a><br />
+			Confirm vehicle, payment, period + add email or mobile for receipt 
+		</li>
 
-	<p><strong>Usage:</strong> Where the mark is presented to the user, outside of longer copy, consider presenting the mark styled like a physical number plate.</p>
+		<li>
+			<a href="/examples/elements/evl-pay-card">Pay (cards)</a><br />
+			Payment form for cards 
+		</li>
 
-	<p><strong>Benefits:</strong> User recognition is high, the distinctive style allows it to be presented without a label telling the user it is a vehicle registration mark.</p>
 
-	<p><strong>Implementation:</strong> The mark looks best when presented at medium to large headline sizes:</p>
 
-	
-	<div id="example-marks">
-		<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+	</ol>
 
-		<p style="margin:2.5em 0">
-		<span class="reg-mark" style="font-size:300%;margin-right:0.4em">
-		CU57 ABD
-		</span>
-		 300%
-		 </p>
 
 
-		<p style="margin:3.5em 0 2.75em 0">
-		<span class="reg-mark" style="font-size:200%;margin-right:0.6em">
-		CU57 ABC
-		</span>
-		 200%
-		</p>
 
-		<p style="margin:1.5em 0 2em 0">
-		 <span class="reg-mark" style="font-size:150%;margin-right:0.85em">
-		CU57 ABC
-		</span>
-		 150%
 
+	<h2 class="heading-medium" style="padding-top:2em">To do</h2>
 
-		 <span class="reg-mark" style="font-size:120%;margin-left:2em;margin-right:1.1em">
-		CU57 ABC
-		</span>
-		 120%
-		</p>
-	</div>
+	<ul class="list-bullet">
+		<li>
+			Mocking up additional pages in flow: vehicle details, 6/12 months picker, pay...
+		</li>
+		<li>
+			Automatically putting the field revealed by the radio button into focus (gold border, user can type immediately)
+		</li>
+		<li>
+			<s>Trying a three column (vertical split) to the three options to display the diagram as standard rather than hidden</s>
+		</li>
+	</ul>
 
-	<p>A class <code>.reg-mark</code> is available for inclusion in markup. The border width and rounded corner are measured using em units, so they scale with the font size. </p>
 
-	<p>The UK number plate font is available as a base64 encoded webfont and can be added to pages that need it using:</p>
 
-	<p><a href="/public/stylesheets/numberplate.css">Numberplate Font encoded as base64 in a CSS file</a></p>
 
-	<p>And where it's needed in your HTML use:<br>
 
-	<code>&lt;link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" /&gt;</code> or just include in your main CSS styles.</p>
+	<h2 class="heading-medium">Resources</h2>
 
-	<p>Fallback to New Transport or sans is acceptable.</p>
-
-	</div>
-	</div>
-
-
-
-	<!-- next content section -->
-
-
-
-	<div class="grid-row">
-    <div class="column-two-thirds">
-
-
-	<h3 class="heading-medium">User information playback</h3>
-
-	<p><strong>Usage:</strong> DVLA services have a strong preference for playing back details confirmed by a user during certain processes.</p>
-
-	<p>These information playback areas often have the opportunity to go back, or correct details that are wrong.</p>
-
-	<p>Some services use a block of playback information at the top of a page, other services use a block of playback information on the right hand side of the page.</p>
-
-	</div>
-	</div>
-
-
-
-	<!-- next content section -->
-
-
-
-	<div class="grid-row">
-    <div class="column-two-thirds">
-
-
-    <h3 class="heading-medium">Vehicle pictograms</h3>
-
-	<p><strong>Usage:</strong> primarily where users are informed about which types of vehicle they are licensed to drive.</p>
-
-	<p><strong>Benefits:</strong> the codes are a single letter, as used on the driving licence and elsewhere – these are quite opaque unless you know them. Pictures help identify the type of vehicle (where possible - some codes are still very broad and obscure).</p>
-
-	<div class="vehicle-pic"><sup>A1</sup><img src="/public/images/vehicle-icons/A-1.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>A</sup><img src="/public/images/vehicle-icons/A.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>AM</sup><img src="/public/images/vehicle-icons/AM.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>B</sup><img src="/public/images/vehicle-icons/B.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>B1</sup><img src="/public/images/vehicle-icons/B1.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>BE</sup><img src="/public/images/vehicle-icons/BE.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>C1</sup><img src="/public/images/vehicle-icons/C1.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>C1E</sup><img src="/public/images/vehicle-icons/C1E.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>D1</sup><img src="/public/images/vehicle-icons/D1.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>D1E</sup><img src="/public/images/vehicle-icons/D1E.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>F</sup><img src="/public/images/vehicle-icons/F.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>G</sup><img src="/public/images/vehicle-icons/G.png" alt="" width="192" height="192" align="top"  /></div>
-	<div class="vehicle-pic"><sup>H</sup><img src="/public/images/vehicle-icons/H.png" alt="" width="192" height="192" align="top"  /></div>
-	<div class="vehicle-pic"><sup>K</sup><img src="/public/images/vehicle-icons/K.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>L</sup><img src="/public/images/vehicle-icons/L.png" alt="" width="192" height="192" align="top"  /></div>
-	<div class="vehicle-pic"><sup>N</sup><img src="/public/images/vehicle-icons/N.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>P</sup><img src="/public/images/vehicle-icons/P.png" alt="" width="96" height="58" align="top"  /></div>
-	<div class="vehicle-pic"><sup>Q</sup><img src="/public/images/vehicle-icons/Q.png" alt="" width="96" height="58" align="top"  /></div>
-
-
-
-
-    </div>
-    </div>
-
-
-
-    <!-- next content section -->
-
-
-
-	<div class="grid-row">
-    <div class="column-two-thirds">
-
-
-    <h3 class="heading-medium">Form &amp; document pictograms</h3>
-
-    <p><strong>Usage:</strong> show a stylised illustration of a document where a service refers to one the user may need to complete a transaction.</p>
-
-	<p><strong>Benefits:</strong> user research has consistently found that these are very useful for people who need to reference a paper document. The forms usually have a number code, but a quick visual check can be quicker in locating it, and a specific bit of information (eg. reference number) on it. </p>
-
-
-
-
-    </div>
-    </div>
-
-
-
-
-    <!-- next content section -->
-
-
-
-	<div class="grid-row">
-    <div class="column-two-thirds">
-
-
-    <h3 class="heading-medium">Vehicle pictograms</h3>
-
-	<p><strong>Usage:</strong> primarily where users are informed about which types of vehicle they are licensed to drive – it helps to have a relevant picture.</p>
-
-
-
-
-    </div>
-    </div>
-
-
-
-
-
-
-
-
-
-	
+	<ul class="list-bullet">
+		<li>
+			<a href="https://github.com/alphagov/govuk_prototype_kit/wiki">
+				GOV.UK kit documentation
+			</a>
+		</li>
+		<li>
+			<a href="http://govuk-elements.herokuapp.com/snippets/">
+				Guide to GOV.UK elements HTML
+			</a>
+		</li>
+		<li>
+			<a href="https://www.gov.uk/service-manual">
+				Service design manual
+			</a>
+		</li>
+		<li>
+			<a href="https://www.gov.uk/design-principles">
+				Government Digital Service Design Principles
+			</a>
+		</li>
+	</ul>
 
 </main>
 
