@@ -38,7 +38,7 @@
 
 
 
-  <div id="steps" style="padding-bottom:2">
+  <!-- <div id="steps" style="padding-bottom:2">
 
     <nav class="progress-indicator group" role="navigation">
           <ol id="MainContent_olTax" class="veh-breadcrumb">
@@ -63,7 +63,7 @@
           </ol>
       </nav>
 
-  </div>
+  </div> -->
 
 
   <form action="evl-3-flow" method="get" class="form">
@@ -72,17 +72,20 @@
 
 
 
-    <!-- hiding this redundant small page title, seems pointless here
-    <h2 class="heading-medium" style="padding:1em 0">Vehicle details</h2> -->
+
+    <h2 class="heading-large" style="padding:0;margin:0 0 0.7em 0">Vehicle details</h2>
 
 
-    <div class="grid-row" style="margin-top:2.5em">
-      <div class="column-third" style="width:28%">
+    <ul class="ul-data">
 
-        <div class="vehicle-reg" style="margin-bottom:1.5em">
-        <h3 class="heading-medium" style="margin:0.2em 0 1em 0">Registration number</h3>
-        <span class="reg-mark">C111 CCC</span>
-        </div>
+        <li style="margin-bottom:8px"><span>Registration number</span>
+        <i class="reg-mark" style="font-size:120%">CU57&nbsp;ABC</i>
+        </li>
+
+          <li><span>Vehicle make</span><strong>NO MAKE</strong></li>
+          <li><span>Tax class</span><strong>PLG (Private/Light Goods)</strong></li>
+          <li><span>Tax/SORN status</span><strong>Your vehicle will be taxed from 01 November 2014</strong></li>
+        </ul>
 
 
         <div><details>
@@ -102,11 +105,7 @@
       <div class="column-two-thirds" style="width:72%">
 
         <div class="vehicle-details">
-        <ul class="ul-data">
-          <li><span>Vehicle make</span><strong>NO MAKE</strong></li>
-          <li><span>Tax class</span><strong>PLG (Private/Light Goods)</strong></li>
-          <li><span>Tax/SORN status</span><strong>Your vehicle will be taxed from 01 November 2014</strong></li>
-        </ul>
+        
         </div>
 
       </div>
@@ -125,7 +124,13 @@
   from policy I assume <a href="#" rel="external" target="_new">Find out how we do this</a> -->
 
 
-  <p style="padding-top:1em;width:58%">By clicking 'Continue' you agree to the DVLA checking that your vehicle has an electronic MOT/GVT certificate (if relevant).</p>
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <p style="padding-top:1em;">By clicking 'Continue' you agree to the DVLA checking that your vehicle has an electronic MOT/GVT certificate (if relevant).</p>
+
+    </div>
+  </div>
 
 
   <!-- Primary buttons, secondary links -->

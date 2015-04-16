@@ -1,0 +1,126 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+
+	<script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
+
+
+ {{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+	<div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+		
+	
+	<h2 class="heading-large">
+	EVL - Pay by DD - Confirm full address
+	</h2>
+
+
+
+
+
+
+	<form method="get" action="evl-select-postcode" class="form">
+
+
+		
+		
+
+		<div class="form-group">
+
+
+			
+			{{#address}}
+
+			
+			<label>Address</label>
+			<div class="address-form-line">
+			<input id="line_1" name="line_1" class="form-control form-control-1-4" type="text" value="{{line_1}}">
+			</div>
+
+
+			<div class="address-form-line">
+			<input id="line_2" name="line_2" class="form-control form-control-1-4" type="text" value="{{line_2}}">
+			</div>
+
+			<div class="address-form-line">
+			<input id="line_3" name="line_3" class="form-control form-control-1-4" type="text" value="{{line_3}}">
+			</div>
+
+
+			<label>Town or city</label>
+			<div class="address-form-line">
+			<input id="post_town" name="post_town" class="form-control form-control-1-4" type="text" value="{{post_town}}">
+			</div>
+			
+
+
+
+			<!-- need county? Ideally, not
+			<label>County or region</label>
+			<input id="district" name="disctrict" class="form-control form-control-1-4" type="text" value="{{district}}">
+				<br clear="all">
+				-->
+
+
+
+			<label>Postcode</label>
+			<div class="address-form-line">
+			<input id="postcode" name="postcode" class="form-control form-control-1-8" type="text" value="{{postcode}}">
+			</div>
+			
+
+
+			{{/address}}
+			
+
+
+		</div>
+
+
+		<!-- <a href="new-keeper-address-manual">Enter the address manually</a> -->
+
+
+
+		<div class="form-group" style="margin-top:1em">
+			<input type="submit" class="button" value="Select address">
+        </div>
+
+
+
+
+
+
+                
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

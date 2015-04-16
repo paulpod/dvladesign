@@ -1,0 +1,92 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+
+	<script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
+
+
+ {{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+	<div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+		
+	
+	<h2 class="heading-large">
+	EVL - Pay by DD - Enter postcode
+	</h2>
+
+
+
+
+
+	
+
+
+
+
+	<form method="get" action="evl-find-postcode" class="form">
+
+
+		<label>Postcode</label>
+
+		<input id="postcode" name="postcode" class="form-control form-control-1-4" type="text">
+
+
+
+
+
+		<div class="form-group" style="margin-top:4em">
+			<input type="submit" class="button" value="Find address">
+        </div>
+
+    </form>
+
+		
+
+
+
+
+
+	
+	
+	
+
+	
+
+
+
+
+
+                
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

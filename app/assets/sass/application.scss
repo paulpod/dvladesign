@@ -421,13 +421,11 @@ background: url("/public/images/icon-important.png") no-repeat scroll 0 0.5em;
 
 
 
-
-
 .reg-mark {
 font:28px uknumberplateregular;
 background-color: #ffd307;
 border: 0.13em solid #333;
-padding: 0.33em 0.28em 0.33em 0.5em;
+padding: 0.33em 0.4em 0.33em 0.5em;
 font-size: 140%;
 border-radius: 0.25em;
 }
@@ -450,21 +448,21 @@ ul.ul-data {
     margin-right: 0; } }
 
 ul.ul-data li {
-  border-bottom: 1px solid #c6ccd1;
+  /* border-bottom: 1px solid #c6ccd1;*/
   display: -moz-inline-stack;
   display: inline-block;
   margin: 0;
-  padding-bottom: 5px;
+  padding-bottom: 1em;
   width: 100%; }
 
 ul.ul-data li:first-child {
-  border-top: 1px solid #c6ccd1;
+  /*border-top: 1px solid #c6ccd1;*/
   padding-top: 5px; }
 
 ul.ul-data li span:first-child {
-  width: 38%;
+  width: 27%;
   float: left;
-  /*display: inline;*/
+  display: inline;
   display: -moz-inline-stack;
   display: inline-block; }
 
@@ -523,7 +521,9 @@ ul.ul-data li a {
   padding:0.2em;
 }
 
-select {
+select, .input-select {
+display: block;
+width: auto;
 font-family: "nta",Arial,sans-serif;
 line-height: 1.8;
 padding: 2px;
@@ -533,7 +533,7 @@ position: relative;
 font-size: 1em;
 padding-top: 2px;
 background: #fafafa;
-border: 2px solid #333;
+border: 0;
 }
 
 .input-short {
@@ -683,4 +683,11 @@ position: absolute;
 .big-number {
   color: #005ea5;
 
+}
+
+.address-form-line {
+  padding: 0.2em 0 0.8em 0;
+}
+.address-form-line input[type='text'] {
+padding: 0.5em 0.2em 0.3em 0.5em;
 }

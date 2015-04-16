@@ -34,7 +34,7 @@
 
 
 
-  <div id="steps" style="padding-bottom:2">
+  <!-- <div id="steps" style="padding-bottom:2">
 
     <nav class="progress-indicator group" role="navigation">
           <ol id="MainContent_olTax" class="veh-breadcrumb">
@@ -59,35 +59,37 @@
           </ol>
       </nav>
 
-  </div>
+  </div> -->
 
 
-  <form action="evl-3-flow" method="get" class="form">
-  <input type="hidden" name="nextlink" value="evl-renewal-period-check">
+  <form action="evl-11-renewals" method="get" class="form">
+
   <input type="hidden" name="nextbacklink" value="evl-renewal-period">
 
 
 
-    <h2 class="heading-medium" style="padding:0;margin:1em 0">How would you prefer to pay?</h2>
+    <h2 class="heading-large" style="padding:0;margin:0 0 0.7em 0">How to pay</h2>
 
 
 
     <div class="form-group form-group-compound">
 
     <label for="pradio-inline-1" class="block-label" data-target="example-different-v11">
-    <input id="pradio-inline-1" type="radio"  name="Option" value="card">
-    Pay using a debit or credit card
+    <input id="pradio-inline-1" type="radio"  name="paymethod" value="card">
+    Pay once using a debit or credit card
     </label>
 
-    <div class="panel-indent js-hidden" id="example-different-v11" style="padding-top:1em">
+    <br clear="all">
+
+    <div class="panel-indent js-hidden" id="example-different-v11" style="margin-top:1em">
 
       <label for="radio-inline-1" class="block-label">
-      <input id="radio-inline-1" type="radio"  name="paycard" value="1">
+      <input id="radio-inline-1" type="radio"  name="paynum" value="1">
       6 Months at <strong>£60.50</strong>
       </label>
 
       <label for="radio-inline-2" class="block-label">
-      <input id="radio-inline-2" type="radio"  name="paycard" value="2">
+      <input id="radio-inline-2" type="radio"  name="paynum" value="2">
       12 Months at <strong>£110.00</strong>
       </label>
 
@@ -100,25 +102,35 @@
 
 
     <label for="pradio-inline-2" class="block-label" data-target="example-different-v5c">
-    <input id="pradio-inline-2" type="radio"  name="Option" value="dd">
-    Or, pay by Direct Debit (DD)
+    <input id="pradio-inline-2" type="radio"  name="paymethod" value="dd">
+    Or, pay continuously by Direct Debit (DD)
     </label>
 
-    <div class="panel-indent js-hidden" id="example-different-v5c" style="padding-top:1em">
+
+
+    <br clear="all">
+
+    <div class="panel-indent js-hidden" id="example-different-v5c" style="margin-top:1em">
+
+    <p style="max-width:620px">Direct Debit payments will be taken from your bank account automatically at one of these intervals until you tell your bank to stop.</p>
       
       <label for="radio-inline-3" class="block-label">
-      <input id="radio-inline-3" type="radio"  name="paycard" value="3">
-      Monthly (approximately <strong>£9.67</strong> per month) totalling  <strong>£116.00</strong>
+      <input id="radio-inline-3" type="radio"  name="paynum" value="3">
+      Monthly payments (approximately <strong>£9.67</strong> each) totalling <strong>£116.00</strong> per year
       </label>
 
       <label for="radio-inline-4" class="block-label">
-      <input id="radio-inline-4" type="radio"  name="paycard" value="4">
-      6 months (one off payment) at  <strong>£57.50</strong>
+      <input id="radio-inline-4" type="radio"  name="paynum" value="4">
+      Two payments, at 6 month intervals of <strong>£57.50</strong> (that's £115 per year)
       </label>
 
+
+      <br clear="all">
+      <p style="padding:0.5em 0;margin:0">Or</p>
+
       <label for="radio-inline-5" class="block-label">
-      <input id="radio-inline-5" type="radio"  name="paycard" value="5">
-      12 months (one off payment) at  <strong>£110.00</strong>
+      <input id="radio-inline-5" type="radio"  name="paynum" value="5">
+      One payment of <strong>£110.00</strong>, every 12 months 
       </label>
 
       

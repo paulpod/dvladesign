@@ -79,6 +79,24 @@ module.exports = {
 
 
 
+    /* - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+    /* Multiple routes from How to pay, renewal period page */
+
+    app.get('/examples/elements/evl-11-renewals', function (req, res) {
+
+
+    var paymethod = req.query.paynum;
+    var paynum = req.query.paynum;
+    var back = req.query.nextbacklink;
+
+    res.render('examples/elements/evl-period-check' + paynum, {'back' : back});
+    
+
+    });
+
+
+
+
 
     /* - - - - - - - - - - - - - - - - - - - */
     /* Pages for EVL revision to entrypoint */
@@ -99,15 +117,68 @@ module.exports = {
         console.log(x);
         res.render('examples/elements/evl-vehicle-details', {'back' : back});
     }
- 
+
     });
+
+
+
+
 	
+    /* - - - - - - - - - - - - - - */
+    /* Using idealpostcode to get  */
+    /* addresses for a postcode    */
+
+    app.get('/examples/elements/evl-find-postcode', function (req, res) {
+
+      var Handlebars = require('Handlebars');
+
+      var postcode = req.query.postcode;
+
+      var idealPostcodes = require("ideal-postcodes")("ak_i0ze7k03RQwMtjncypybi4nQOE97T")
+
+      idealPostcodes.lookupPostcode(postcode, function (error, results) {
+        if (error) {
+        // Implement some error handling
+        }
+
+        console.log(results); 
+        res.render('examples/elements/evl-paydd-address.html', {'postcode' : postcode, 'result' : results})
+
+      });
+
+    });
 
 
-    
 
-    
-    
+
+
+    /* - - - - - - - - - - - - - - - - */
+    /* Using idealpostcode to playback */
+    /* full address into a form from   */
+    /* the user chosen udprn           */
+
+    app.get('/examples/elements/evl-chosen-address', function (req, res) {
+
+      var Handlebars = require('Handlebars');
+
+      var selectedudp = req.query.udprn;
+
+      var idealPostcodes = require("ideal-postcodes")("ak_i0ze7k03RQwMtjncypybi4nQOE97T")
+
+      idealPostcodes.lookupUdprn(selectedudp, function (error, address) {
+        if (error) {
+        // Implement some error handling
+        }
+
+        console.log(address); 
+        res.render('examples/elements/evl-paydd-address-playback.html', {'address' : address})
+
+      });
+
+    });
+
+
+
 
 
   }
