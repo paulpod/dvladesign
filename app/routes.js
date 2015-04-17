@@ -89,6 +89,8 @@ module.exports = {
     var paynum = req.query.paynum;
     var back = req.query.nextbacklink;
 
+    console.log(paynum);
+
     res.render('examples/elements/evl-period-check' + paynum, {'back' : back});
     
 

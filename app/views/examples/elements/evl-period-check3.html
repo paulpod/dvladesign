@@ -17,6 +17,9 @@
 
 <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
 
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
 
 <main id="content" role="main" style="padding-bottom:0">
 
@@ -44,10 +47,10 @@
               <li id="MainContent_liConfirmVehicle">
                   Vehicle details
               </li>
-              <li id="MainContent_liVedPicker" class="active">
+              <li id="MainContent_liVedPicker">
                   Renewal period
               </li>
-              <li id="MainContent_liVEDConfirmation">
+              <li id="MainContent_liVEDConfirmation" class="active">
                   Renewal period check
               </li>
               <li id="MainContent_liPayment">
@@ -62,93 +65,74 @@
   </div> -->
 
 
-  <form action="evl-11-renewals" method="get" class="form">
-
-  <input type="hidden" name="nextbacklink" value="evl-renewal-period">
-
-
-
-    <h2 class="heading-large" style="padding:0;margin:0 0 0.7em 0">How to pay</h2>
+  <form action="evl-3-flow" method="get" class="form">
+  <input type="hidden" name="nextlink" value="evl-pay-card">
+  <input type="hidden" name="nextbacklink" value="evl-renewal-period-check">
 
 
+    <h2 class="heading-large" style="padding:0;margin:0 0 1em 0">Renewal period check &amp; optional receipt</h2>
 
-    <div class="form-group form-group-compound">
-
-    <label for="pradio-inline-1" class="block-label" data-target="example-different-v11">
-    <input id="pradio-inline-1" type="radio"  name="paymethod" value="card">
-    Pay once using a debit or credit card
-    </label>
-
-    <br clear="all">
-
-    <div class="panel-indent js-hidden" id="example-different-v11" style="margin-top:1em">
-
-      <label for="radio-inline-1" class="block-label">
-      <input id="radio-inline-1" type="radio"  name="paynum" value="1">
-      6 Months at <strong>£60.50</strong>
-      </label>
-
-      <label for="radio-inline-2" class="block-label">
-      <input id="radio-inline-2" type="radio"  name="paynum" value="2">
-      12 Months at <strong>£110.00</strong>
-      </label>
+    <div class="body-container group">
 
 
-      
-
-    </div>
+<ul class="ul-data">
+  <li><span>Start date </span><strong>01 November 2014</strong></li>
+  <li><span>Duration </span><strong>Paying each month</strong></li>
+  <li style="margin-bottom:8px"><span>Registration number </span><i class="reg-mark" style="font-size:120%">CU57&nbsp;ABC</i></li>
+  <li><span>Vehicle make </span><strong>NO MAKE</strong></li>
+  <li><span>Monthly debit </span><strong>£9.67 (approximately)</strong></li>
+  <li><span>Total over 12 months </span><strong>£116.00</strong></li>
+  <li><span>Payment method </span><strong>Direct Debit from bank account</strong></li>
+</ul>
+<input type="Hidden" value="ConfirmLicenseIssue" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 
 
-
-    <label for="pradio-inline-2" class="block-label" data-target="example-different-v5c">
-    <input id="pradio-inline-2" type="radio"  name="paymethod" value="dd">
-    Or, pay continuously by Direct Debit (DD)
-    </label>
-
+<div class="help-notice">
+  <p style="padding-top:0.2em">Direct debits will continue monthly until you tell us or your bank to stop. Amounts will change automatically as needed when governement budget is announced.</p>
+</div>
+<input type="hidden" value="CreditCardChargeNotice" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 
-    <br clear="all">
 
-    <div class="panel-indent js-hidden" id="example-different-v5c" style="margin-top:1em">
+<h2 class="heading-medium" style="margin-top:0.33em">Get a receipt by email or text</h2>
 
-    <p style="max-width:620px">Direct Debit payments will be taken from your bank account automatically at one of these intervals until you tell your bank to stop.</p>
-      
-      <label for="radio-inline-3" class="block-label">
-      <input id="radio-inline-3" type="radio"  name="paynum" value="3">
-      Monthly payments (approximately <strong>£9.67</strong> each) totalling <strong>£116.00</strong> per year
-      </label>
+    <div style="margin-top:1.5em">
+        <label for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Email address (optional)</label>
 
-      <label for="radio-inline-4" class="block-label">
-      <input id="radio-inline-4" type="radio"  name="paynum" value="4">
-      Two payments, at 6 month intervals of <strong>£57.50</strong> (that's £115 per year)
-      </label>
+        <span id="MainContent_revtxtEmailConfirmation" class="Validator" style="display:none;">Please enter a valid email address</span>
+        <p>
+            <input name="ctl00$MainContent$txtEmailConfirmation" maxlength="150" id="MainContent_txtEmailConfirmation" class="form-control input-large" type="email" autocomplete="off">
 
-
-      <br clear="all">
-      <p style="padding:0.5em 0;margin:0">Or</p>
-
-      <label for="radio-inline-5" class="block-label">
-      <input id="radio-inline-5" type="radio"  name="paynum" value="5">
-      One payment of <strong>£110.00</strong>, every 12 months 
-      </label>
-
-      
+        </p>
 
     </div>
 
-  </div>
+
+    <div>
+        <label for="MainContent_txtMobileConfirmation" id="MainContent_lblMobileConfirmationText">Mobile number (optional)</label>
+
+        <span id="MainContent_revtxtMobileConfirmation" class="Validator" style="display:none;">Please enter a valid mobile number</span>
+        <p>
+            <input name="ctl00$MainContent$txtMobileConfirmation" maxlength="11" id="MainContent_txtMobileConfirmation" class="form-control input-large" type="tel" autocomplete="off" pattern="[0-9]*" onkeypress="return isNumber(event)">
+        </p>
 
 
+        <p>The DVLA does not share mobile phone numbers or email addresses with anyone.</p>
+        
 
-  </fieldset>
+        <!-- <p>
+            <label for="MainContent_chkEmailOptOut" class="block-label">
+            <input id="MainContent_chkEmailOptOut" type="checkbox" name="ctl00$MainContent$chkEmailOptOut">Please tick if you wish to be sent information.</label>
+        </p> -->
+    </div>
+                
+
+            
+        
+    </div>
 
 
-    
-    
-
-
-    <br clear="all">
 
 
 
@@ -160,9 +144,6 @@
     <p style="padding:1em 0"><a href="start">Cancel application</a>
 
 
-    
-    <p style="margin-top:1em"><a rel="external" href="https://www.gov.uk/government/publications/rates-of-vehicle-tax-v149" target="_blank">Rates of vehicle tax (V149)</a>
-    </p>
 
 
   </div>
