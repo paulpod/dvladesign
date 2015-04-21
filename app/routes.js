@@ -151,7 +151,7 @@ module.exports = {
 
     app.get('/examples/elements/evl-find-postcode', function (req, res) {
 
-      var Handlebars = require('Handlebars');
+      /*var Handlebars = require('Handlebars');*/
 
       var postcode = req.query.postcode;
 
