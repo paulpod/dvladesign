@@ -33,8 +33,8 @@
 	<br clear="all">
 		
 	
-	<h2 class="heading-large">
-	EVL - Pay by DD - Confirm full address
+	<h2 class="heading-medium">
+	Pay by Direct Debit: Confirm full address
 	</h2>
 
 
@@ -42,7 +42,11 @@
 
 
 
-	<form method="get" action="evl-select-postcode" class="form">
+	<form action="evl-3-flow" method="get" class="form">
+	  <input type="hidden" name="nextlink" value="evl-paydd-bank">
+	  <input type="hidden" name="nextbacklink" value="evl-paydd-address">
+
+	  <!-- <form method="get" action="evl-select-postcode" class="form"> -->
 
 
 		
@@ -100,7 +104,26 @@
 		</div>
 
 
-		<!-- <a href="new-keeper-address-manual">Enter the address manually</a> -->
+		<!-- <a href="new-keeper-address-manual">Enter the address manually</a> 
+
+
+
+		<div id="further-information">
+
+			<h2 class="heading-medium">
+			Pay by Direct Debit: Confirm full address
+
+			</h2>
+
+			<label>Email address</label>
+			<div class="address-form-line">
+			<input id="postcode" name="postcode" class="form-control form-control-1-8" type="text" value="{{postcode}}">
+			</div>
+			
+
+
+
+		</div>-->
 
 
 
@@ -112,7 +135,7 @@
 
 
 
-
+	</form>
                 
 
    

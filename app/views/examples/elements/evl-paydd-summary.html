@@ -26,6 +26,8 @@
 <main id="content" role="main" style="padding-bottom:0">
 
 
+
+
 	<div>
 	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
 	</div>
@@ -33,61 +35,41 @@
 	<br clear="all">
 		
 	
-	<h2 class="heading-medium">
-	Pay by Direct Debit: Choose address
+	<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">
+	Pay by Direct Debit: Summary
 	</h2>
 
-
-
-
-	<form method="get" action="evl-chosen-address" class="form">
-	  <input type="hidden" name="paynum" value="{{paynum}}">
+	<form action="evl-3-flow" method="get" class="form">
+	  <input type="hidden" name="nextlink" value="evl-paydd-complete">
+	  <input type="hidden" name="nextbacklink" value="evl-paydd-summary">
 
 
 
 
+<!--A summary of what your payments will be-->
+
+
+<ul class="ul-data">
+	<li><span style="width:32%">Total £116.00 payable for vehicle </span><i class="reg-mark" style="font-size:120%">{{defaultreg}}</i></li>
+	<li><span style="width:32%">First payment of £9.74 </span><strong>17 April 2017</strong></li>
+	<li><span style="width:32%">11 monthly payments of £9.66 </span><strong>1st of each subsequent month</strong></li>
+
+</ul>
+	
 		
-		<p>Postcode</p>
-		
-		<p><span style="text-transform:uppercase;font-weight:700;padding-right:2em">{{postcode}}</span>  <span><a href="evl-paydd-postcode">Change</a></p>
-
-		<p></p>
-
-		<p>Select your address from the list</p>
-
-		<div class="form-group">
-
-
-			<select class="input-select" name="udprn">
-			<option>{{result.length}} addresses were found</option>
-			{{#result}}
-
-				
-					<option value="{{udprn}}">{{line_1}}, {{line_2}}</option>
-				
-
-			{{/result}}
-			</select>
-
-
-		</div>
-
-
-		<a href="new-keeper-address-manual">Enter the address manually</a>
 
 
 
-		<div class="form-group" style="margin-top:4em">
-			<input type="submit" class="button" value="Select address">
+		<div class="form-group" style="margin-top:0">
+			<input type="submit" class="button" value="Confirm payments">
         </div>
 
 
 
 
+	</form>
 
-
-
-
+                
 
    
  </main><!-- / #page-container -->

@@ -3,9 +3,13 @@ module.exports = {
 
     app.get('/', function (req, res) {
       res.render('index');
+
+    var defaultreg = 'CU57&nbsp;ABC';
+
     });
 
     
+
 
 
 
@@ -42,8 +46,9 @@ module.exports = {
 
     var next = req.query.nextlink;
     var back = req.query.nextbacklink;
+    var defaultreg = 'CU57\xA0ABC';
 
-    res.render('examples/elements/' + next, {'back' : back});
+    res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg});
     
  
     });
@@ -85,16 +90,26 @@ module.exports = {
     app.get('/examples/elements/evl-11-renewals', function (req, res) {
 
 
-    var paymethod = req.query.paynum;
+    var paymethod = req.query.paymethod;
     var paynum = req.query.paynum;
     var back = req.query.nextbacklink;
 
-    console.log(paynum);
 
-    res.render('examples/elements/evl-period-check' + paynum, {'back' : back});
+    if (paynum == undefined) {
+        /* catch if the user has pressed first set of radios only - card vs dd  */
+        res.render('examples/elements/evl-renewal-period-' + paymethod, {'back' : back});
+    } else {
+        /* render correct summary page for payment vs duration type 1, 2, 3, 4 or 5  */
+        res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum});
+    };
+
     
 
     });
+
+
+
+
 
 
 

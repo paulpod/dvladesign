@@ -1,0 +1,156 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+
+	<script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
+
+
+ {{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+
+
+	<div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+		
+	
+	<h2 class="heading-medium">
+	Pay by Direct Debit: Enter bank details
+	</h2>
+
+	<form action="evl-3-flow" method="get" class="form">
+	  <input type="hidden" name="nextlink" value="evl-paydd-summary">
+	  <input type="hidden" name="nextbacklink" value="evl-paydd-address-playback">
+
+
+
+
+
+
+	<!-- <form method="get" action="evl-select-postcode" class="form"> -->
+
+
+		
+		
+
+		<div class="form-group">
+
+
+			<label>Name of account holder</label>
+			<div class="address-form-line" style="margin-bottom:1em">
+			<input id="ddbankname" name="ddbankname" class="form-control form-control-1-4" type="text">
+			</div>
+
+
+
+			<label>Sort code</label>
+			<div class="address-form-line" style="margin-bottom:1em">
+			<input id="ddbanksort-1" name="ddbanksortcode-1" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em">
+
+			<input id="ddbanksort-2" name="ddbanksortcode-2" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em">
+
+			<input id="ddbanksort-3" name="ddbanksortcode-3" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px">
+			</div>
+
+			
+
+			<label>Account number</label>
+			<div class="address-form-line">
+			<input id="ddbankac" name="ddbankac" class="num form-control form-control-1-4" type="text" maxlength="10" >
+			</div>
+
+
+			<script>
+				$(document).ready(function() {
+			    $("input.num").keydown(function (e) {
+			        // Allow: backspace, delete, tab, escape, enter and .
+			        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+			             // Allow: Ctrl+A
+			            (e.keyCode == 65 && e.ctrlKey === true) ||
+			             // Allow: Ctrl+C
+			            (e.keyCode == 67 && e.ctrlKey === true) ||
+			             // Allow: Ctrl+X
+			            (e.keyCode == 88 && e.ctrlKey === true) ||
+			             // Allow: home, end, left, right
+			            (e.keyCode >= 35 && e.keyCode <= 39)) {
+			                 // let it happen, don't do anything
+			                 return;
+			        }
+			        // Ensure that it is a number and stop the keypress
+			        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+			            e.preventDefault();
+			        }
+			    });
+			});			
+			</script>
+
+
+
+
+			<div>
+				<p style="margin: 1.5em 0 0.2em 0">Please confirm:</p>
+
+				<label for="radio-inline-1" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1em">
+	            <input id="radio-inline-1" type="checkbox" name="confirm" value="tick">
+	            I have the authority to set up a Direct Debit against this account
+	            </label>
+
+	            <label for="radio-inline-2" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1.5em">
+	            <input id="radio-inline-2" type="checkbox" name="confirm" value="tick">
+	            This account does not require dual signatories
+	            </label>
+
+	            <br clear="all" />
+	            
+	            <p>A Direct Debit can be set up on a joint account where only one signature is required to transact.</p>
+            </div>
+
+
+		</div>
+
+
+		
+
+
+
+		<div class="form-group" style="margin-top:0">
+			<input type="submit" class="button" value="Continue">
+        </div>
+
+
+
+
+
+
+                
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

@@ -1,0 +1,179 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+  <!-- <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1> -->
+
+
+  <div>
+  <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">
+
+
+
+  <!-- <div id="steps" style="padding-bottom:2">
+
+    <nav class="progress-indicator group" role="navigation">
+          <ol id="MainContent_olTax" class="veh-breadcrumb">
+              <li id="MainContent_liReferenceNumberStep">
+                  Your vehicle
+              </li>
+              <li id="MainContent_liConfirmVehicle">
+                  Vehicle details
+              </li>
+              <li id="MainContent_liVedPicker" class="active">
+                  Renewal period
+              </li>
+              <li id="MainContent_liVEDConfirmation">
+                  Renewal period check
+              </li>
+              <li id="MainContent_liPayment">
+                  Pay
+              </li>
+              <li id="MainContent_liConfirmation">
+                  Done
+              </li>
+          </ol>
+      </nav>
+
+  </div> -->
+
+
+  <form action="evl-11-renewals" method="get" class="form">
+
+  <input type="hidden" name="nextbacklink" value="evl-renewal-period">
+
+
+
+    <h2 class="heading-large" style="padding:0;margin:0 0 0.7em 0">How to pay</h2>
+
+
+
+    <div class="form-group form-group-compound">
+
+    <label for="pradio-inline-1" class="block-label" data-target="example-different-v11">
+    <input id="pradio-inline-1" type="radio"  name="paymethod" value="card">
+    Pay once using a debit or credit card
+    </label>
+
+    <br clear="all">
+
+    <div class="panel-indent js-hidden" id="example-different-v11" style="margin-top:1em">
+
+      <label for="radio-inline-1" class="block-label">
+      <input id="radio-inline-1" type="radio"  name="paynum" value="1">
+      6 Months at <strong>£60.50</strong>
+      </label>
+
+      <label for="radio-inline-2" class="block-label">
+      <input id="radio-inline-2" type="radio"  name="paynum" value="2">
+      12 Months at <strong>£110.00</strong>
+      </label>
+
+
+      
+
+    </div>
+
+
+
+
+    <label for="pradio-inline-2" class="block-label" data-target="example-different-v5c">
+    <input id="pradio-inline-2" type="radio"  name="paymethod" value="dd">
+    Or, pay continuously by Direct Debit (DD)
+    </label>
+
+
+
+    <br clear="all">
+
+    <div class="panel-indent js-hidden" id="example-different-v5c" style="margin-top:1em">
+
+    <p style="max-width:620px">Direct Debit payments will be taken from your bank account automatically at one of these intervals until you tell your bank to stop.</p>
+      
+      <label for="radio-inline-3" class="block-label">
+      <input id="radio-inline-3" type="radio"  name="paynum" value="3">
+      Monthly payments (approximately <strong>£9.67</strong> each) totalling <strong>£116.00</strong> per year
+      </label>
+
+      <label for="radio-inline-4" class="block-label">
+      <input id="radio-inline-4" type="radio"  name="paynum" value="4">
+      Two payments, at 6 month intervals of <strong>£57.50</strong> (that's £115 per year)
+      </label>
+
+
+      <br clear="all">
+      <p style="padding:0.5em 0;margin:0">Or</p>
+
+      <label for="radio-inline-5" class="block-label">
+      <input id="radio-inline-5" type="radio"  name="paynum" value="5">
+      One payment of <strong>£110.00</strong>, every 12 months 
+      </label>
+
+      
+
+    </div>
+
+  </div>
+
+
+
+  </fieldset>
+
+
+    
+    
+
+
+    <br clear="all">
+
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding:1em 0">
+    <input type="submit" class="button" value="Continue">
+
+    <p style="padding:1em 0"><a href="start">Cancel application</a>
+
+
+    
+    <p style="margin-top:1em"><a rel="external" href="https://www.gov.uk/government/publications/rates-of-vehicle-tax-v149" target="_blank">Rates of vehicle tax (V149)</a>
+    </p>
+
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

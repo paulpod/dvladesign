@@ -66,11 +66,13 @@
 
 
   <form action="evl-3-flow" method="get" class="form">
-  <input type="hidden" name="nextlink" value="evl-pay-card">
+
+  <input type="hidden" name="paynum" value="{{paynum}}">
+  <input type="hidden" name="nextlink" value="evl-receipt-paycard">
   <input type="hidden" name="nextbacklink" value="evl-renewal-period-check">
 
 
-    <h2 class="heading-large" style="padding:0;margin:0 0 1em 0">Renewal period check &amp; optional receipt</h2>
+    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Renewal period check<!-- &amp; optional receipt--></h2>
 
     <div class="body-container group">
 
@@ -95,7 +97,7 @@
 
 
 
-<h2 class="heading-medium" style="margin-top:0.33em">Get a receipt by email or text</h2>
+<!--<h2 class="heading-medium" style="margin-top:0.33em">Get a receipt by email or text</h2>
 
     <div style="margin-top:1.5em">
         <label for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Email address (optional)</label>
@@ -121,16 +123,16 @@
         <p>The DVLA does not share mobile phone numbers or email addresses with anyone.</p>
         
 
-        <!-- <p>
+        <p>
             <label for="MainContent_chkEmailOptOut" class="block-label">
             <input id="MainContent_chkEmailOptOut" type="checkbox" name="ctl00$MainContent$chkEmailOptOut">Please tick if you wish to be sent information.</label>
-        </p> -->
-    </div>
+        </p> 
+    </div> 
                 
 
             
         
-    </div>
+    </div>-->
 
 
 

@@ -525,15 +525,17 @@ select, .input-select {
 display: block;
 width: auto;
 font-family: "nta",Arial,sans-serif;
-line-height: 1.8;
-padding: 2px;
+line-height: 2;
+padding: 3px;
+margin:5px 0;
 min-width: 150px;
-max-width: 293px;
+max-width: 360px;
 position: relative;
-font-size: 1em;
+font-size: 1.1em;
 padding-top: 2px;
-background: #fafafa;
-border: 0;
+background: #f0f0f0;
+border: 2px #aaa solid;
+float:left;
 }
 
 .input-short {
@@ -691,3 +693,38 @@ position: absolute;
 .address-form-line input[type='text'] {
 padding: 0.5em 0.2em 0.3em 0.5em;
 }
+
+
+
+
+.application-confirmation {
+  text-align: center;
+  padding: 1.5em 0 1.5em 0em;
+  background: #28A297;
+  color: White;
+  margin: 0 0 1.5em 0; }
+  @media (max-width: 640px) {
+    .application-confirmation {
+      margin: 1em 0 1.5em 0; } 
+  }
+
+
+.application-confirmation h1 {
+  font-size:300%;
+  padding: 0;
+  margin: 0;
+  font-weight: bold; }
+  @media (max-width: 640px) {
+    .application-confirmation h1 {
+      font-size:150%; } 
+  }
+
+.application-confirmation h2 {
+  font-size:130%;
+  padding: 0;
+  margin: 0;
+  margin-top: 1em; }
+  @media (max-width: 640px) {
+    .application-confirmation h2 {
+      font-size:100%; } 
+  }

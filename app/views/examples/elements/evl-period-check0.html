@@ -24,10 +24,6 @@
 <main id="content" role="main" style="padding-bottom:0">
 
 
-  <!-- <h1 class="form-title heading-xlarge">
-    Taxing a vehicle
-  </h1> -->
-
 
   <div>
   <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
@@ -37,64 +33,37 @@
 
 
 
-  <!-- <div id="steps" style="padding-bottom:2">
-
-    <nav class="progress-indicator group" role="navigation">
-          <ol id="MainContent_olTax" class="veh-breadcrumb">
-              <li id="MainContent_liReferenceNumberStep">
-                  Your vehicle
-              </li>
-              <li id="MainContent_liConfirmVehicle">
-                  Vehicle details
-              </li>
-              <li id="MainContent_liVedPicker">
-                  Renewal period
-              </li>
-              <li id="MainContent_liVEDConfirmation" class="active">
-                  Renewal period check
-              </li>
-              <li id="MainContent_liPayment">
-                  Pay
-              </li>
-              <li id="MainContent_liConfirmation">
-                  Done
-              </li>
-          </ol>
-      </nav>
-
-  </div> -->
-
 
   <form action="evl-3-flow" method="get" class="form">
-  <input type="hidden" name="nextlink" value="evl-pay-card">
+  <input type="hidden" name="nextlink" value="evl-paydd-postcode">
   <input type="hidden" name="nextbacklink" value="evl-renewal-period-check">
 
 
-    <h2 class="heading-large" style="padding:0;margin:0 0 1em 0">Renewal period check &amp; optional receipt</h2>
+    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Renewal period check<!--&amp; optional receipt--></h2>
 
     <div class="body-container group">
 
 
 <ul class="ul-data">
   <li><span>Start date </span><strong>01 November 2014</strong></li>
-  <li><span>Duration </span><strong>12 Months</strong></li>
-  <li style="margin-bottom:8px"><span>Registration number </span><i class="reg-mark" style="font-size:120%">{{defaultreg}}</i></li>
+  <li><span>Duration </span><strong>Paying every six months</strong></li>
+  <li style="margin-bottom:8px"><span>Registration number </span><i class="reg-mark" style="font-size:120%">CU57&nbsp;ABC</i></li>
   <li><span>Vehicle make </span><strong>NO MAKE</strong></li>
-  <li><span>Price </span><strong>£110.00</strong></li>
-  <li><span>Payment method </span><strong>Card payment</strong></li>
+  <li><span>One debit every 12 months </span><strong>£110.00</strong></li>
+  <li><span>Total over 12 months</span><strong>£110.00</strong></li>
+  <li><span>Payment method </span><strong>Direct Debit from bank account</strong></li>
 </ul>
 <input type="Hidden" value="ConfirmLicenseIssue" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 
 
 <div class="help-notice">
-  <p style="padding-top:0.2em">There's an additional £2.50 fee for paying by credit card (including prepaid cards).<br>
-  There is no fee for paying by debit cards.</p>
+  <p style="padding-top:0.2em">Direct debits will continue monthly until you tell us or your bank to stop. Amounts will change automatically as needed when governement budget is announced.</p>
 </div>
 <input type="hidden" value="CreditCardChargeNotice" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 
-
+<!--
 <h2 class="heading-medium" style="margin-top:0.33em">Get a receipt by email or text</h2>
 
     <div style="margin-top:1.5em">
@@ -121,16 +90,16 @@
         <p>The DVLA does not share mobile phone numbers or email addresses with anyone.</p>
         
 
-        <!-- <p>
+        <p>
             <label for="MainContent_chkEmailOptOut" class="block-label">
             <input id="MainContent_chkEmailOptOut" type="checkbox" name="ctl00$MainContent$chkEmailOptOut">Please tick if you wish to be sent information.</label>
-        </p> -->
+        </p>
     </div>
                 
 
             
         
-    </div>
+    </div> -->
 
 
 
