@@ -95,13 +95,17 @@ module.exports = {
     var back = req.query.nextbacklink;
 
 
-    if (paynum == undefined) {
-        /* catch if the user has pressed first set of radios only - card vs dd  */
-        res.render('examples/elements/evl-renewal-period-' + paymethod, {'back' : back});
+    if (paymethod != undefined) {
+        if (paynum == undefined) {
+            /* catch if the user has pressed first set of radios only - card vs dd  */
+            res.render('examples/elements/evl-renewal-period-' + paymethod, {'back' : back});
+        } else {
+            /* render correct summary page for payment vs duration type 1, 2, 3, 4 or 5  */
+            res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum});
+        };
     } else {
-        /* render correct summary page for payment vs duration type 1, 2, 3, 4 or 5  */
-        res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum});
-    };
+        res.render('examples/elements/evl-renewal-period', {'back' : back})
+    }
 
     
 
