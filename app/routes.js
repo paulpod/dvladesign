@@ -180,7 +180,7 @@ module.exports = {
 
     app.get('/examples/elements/evl-chosen-address', function (req, res) {
 
-      var Handlebars = require('Handlebars');
+      /*var Handlebars = require('Handlebars');*/
 
       var selectedudp = req.query.udprn;
 
