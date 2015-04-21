@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "express": "3.4.7",
+    "handlebars": "^3.0.0",
     "express-writer": "0.0.4",
     "consolidate": "0.x",
     "readdir": "0.0.6",
