@@ -75,9 +75,28 @@
 			
 
 			<label>Account number</label>
-			<div class="address-form-line">
+			<div class="address-form-line" style="margin-bottom:1em">
 			<input id="ddbankac" name="ddbankac" class="num form-control form-control-1-4" type="text" maxlength="10" >
 			</div>
+
+
+
+			<label>Date of birth</label>
+			
+			<div class="address-form-line" style="margin-bottom:1em">
+			<input id="ddbanksort-1" name="ddbanksortcode-1" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em">
+
+			<input id="ddbanksort-2" name="ddbanksortcode-2" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em">
+
+			<input id="ddbanksort-3" name="ddbanksortcode-3" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px">
+			<p style="margin-top:0.75em">Example: 03 11 1976<br>
+			We need this to confirm who you are if you ever need to call our Contact Centre</p>
+			</div>
+
+
+
+
+
 
 
 			<script>
@@ -107,8 +126,7 @@
 
 
 
-			<div>
-				<p style="margin: 1.5em 0 0.2em 0">Please confirm both:</p>
+				<p style="margin: 0.5em 0 0.2em 0">Please confirm both:</p>
 
 				<label for="radio-inline-1" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1em">
 	            <input id="radio-inline-1" type="checkbox" name="confirm" value="tick">
@@ -117,12 +135,12 @@
 
 	            <label for="radio-inline-2" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1.5em">
 	            <input id="radio-inline-2" type="checkbox" name="confirm" value="tick">
-	            This account does not require dual signatories
+	            This account does not require multiple signatories
 	            </label>
 
 	            <br clear="all" />
 	            
-	            <p>A Direct Debit can be set up on a joint account where only one signature is required to transact.</p>
+	            <!--<p>A Direct Debit can be set up on a joint account where only one signature is required to transact.</p>-->
             </div>
 
 
@@ -133,7 +151,7 @@
 
 
 
-		<div class="form-group" style="margin-top:0">
+		<div class="form-group" style="margin:0 0 2em 0">
 			<input type="submit" class="button" value="Continue">
         </div>
 
