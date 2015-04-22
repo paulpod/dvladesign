@@ -728,3 +728,21 @@ padding: 0.5em 0.2em 0.3em 0.5em;
     .application-confirmation h2 {
       font-size:100%; } 
   }
+
+  .for-desktop {
+  margin:2em 0;
+  display:block; }
+  @media (max-width:640px) {
+  .for-desktop {
+  margin:1em 0;
+  display:none; }
+  }
+
+  .for-mobile {
+  margin:2em 0;
+  display:none; }
+  @media (max-width:640px) {
+  .for-mobile {
+  margin:1em 0;
+  display:block; }
+  }

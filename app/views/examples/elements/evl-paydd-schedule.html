@@ -27,75 +27,17 @@
 
 
 
-
-	<div style="visibility:hidden">
-	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
-	</div>
-
-	<br clear="all">
 		
 	
-	<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">
-	Your Direct Debit has been set up
+	<h2 class="heading-medium" style="padding:0;margin:2em 0 1em 0">
+	Your Direct Debit payment schedule
 	</h2>
 
-	<form action="evl-3-flow" method="get" class="form">
-	  <input type="hidden" name="nextlink" value="evl-end-dd">
-	  <input type="hidden" name="nextbacklink" value="evl-paydd-address-playback">
-
-
-
-
-<!--A summary of what your payments will be-->
-
-
-
-<div>
-
-<p>Reference: <span style="color:#999">000000000000000</span>834001</p>
-
-
-<div class="grid-row">
-  <div class="column-two-thirds">
-	<p>
-	The full payment schedule will be sent to your email address. Please check your junk or spam folders if you have not received it.
-	</p>
-
 	
 
-	<p>The collections will appear on your bank statement with these references: <strong>DVLA 295402</strong> and <strong>{{defaultreg}}</strong></p>
-
-	<p>A confirmation email will be sent within 3 working days confirming set up of this direct debit.</p>
-
-	</div>
-</div>
-	
-		
 
 
-
-	<div class="form-group" style="margin:1.5em 0 1.5em 0">
-		<input type="submit" class="button" value="Complete vehicle tax">
-	</div>
-
-
-<!-- Contextual content dispaly menthod :: display a schedule in a new tab/window for desktops, but this is more confusing on mobile, so use an expander for those users -->
-
-	<div class="for-desktop">
-		<p><a rel="external" href="evl-paydd-schedule" target="_blank">View, save or print your entire Direct Debit schedule now</a><br />(opens in a new window)
-		</p>
-	</div>
-
-	<div class="for-mobile">
-		<details>
-        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true" style="padding-top:0.7em">
-          <span class="summary">View your entire Direct Debit schedule now</span>
-        </summary>
-        <div class="panel-indent js-hidden" id="details-content-0" aria-hidden="false" >
-        
-        
-				<div id="schedule-content">
-				<!--A summary of what your payments will be-->
+	<!--A summary of what your payments will be-->
 
 	<table class="payments" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:2em">
 		<tbody><tr>
@@ -108,7 +50,11 @@
 		</tr>
 		<tr>
 			<td><strong>Payment frequency</strong>&nbsp;</td>
-			<td>Monthly&nbsp;
+			<td>
+				
+					Monthly
+				 
+				 &nbsp;
 			</td>
 			<td><strong>Sort code</strong>&nbsp;</td>
 			<td>102030</td>
@@ -186,29 +132,42 @@
 
 
 
-	<img src="/public/images/dvla-logo.png" alt="Driver and Vehicle Licensing Agency" style="margin:1em 0">
+	<table class="payments" id="page" width="100%" cellpadding="0" cellspacing="0" style="margin:2em 0">
+		<tbody><tr>
+			<td valign="top">
 			
-	<p>
-	DVLA<br>
-	Swansea<br>
-	SA99 1AR<br>
-	</p>
-	<p>
-	Telephone:
-	0300 123 4321
-	</p>
-	<p>
-	Email Address:
-
-	<a href="https://emaildvla.direct.gov.uk/emaildvla/cegemail/dvla/en/index.html" target="_blank"> https://emaildvla.direct.gov.uk/emaildvla/cegemail/dvla/en/index.html </a>
-	</p>
-	<p>
-	Website:	<a href="https://www.gov.uk/browse/driving" target="_blank"> https://www.gov.uk/browse/driving </a></p>
 			
-
-	<h2 class="heading-medium"><strong>Please do not send this form to your bank</strong></h2>
-			
-
+				<img src="/public/images/dvla-logo.png" alt="Driver and Vehicle Licensing Agency">
+			</td>
+			<td>
+				<p>
+					DVLA<br>
+					Swansea<br>
+					SA99 1AR<br>
+				</p>
+				<p>
+					Telephone:
+					0300 123 4321
+				</p>
+				<p>
+					Email Address:
+					
+					<a href="https://emaildvla.direct.gov.uk/emaildvla/cegemail/dvla/en/index.html" target="_blank"> https://emaildvla.direct.gov.uk/emaildvla/cegemail/dvla/en/index.html </a>
+				</p>
+				<p>
+					Website:
+					
+					<a href="https://www.gov.uk/browse/driving" target="_blank"> https://www.gov.uk/browse/driving </a>
+					
+				</p>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<h2 class="heading-medium"><strong>Please do not send this form to your bank</strong></h2>
+			</td>
+		</tr>
+	</tbody></table>
 
 
 
@@ -216,30 +175,48 @@
 
 	<table class="payments" width="100%" cellpadding="2" cellspacing="2">
 		<tbody><tr>
-			<td >
-				<p>DVLA</p>
-				<p>Swansea</p>
-				<p>SA99 1AR</p>
-				<p>T: 0300 123 4321</p>
+			<td width="50%">
+				<p>
+					DVLA
+				</p>
+				<p>
+					Swansea
+				</p>
+				<p>
+					SA99 1AR
+				</p>
+				<p>
+					T:
+					0300 123 4321
+				</p>
 			</td>
-			<td >
-				Instruction to your bank or building society to pay by Direct Debit
-
-				<img src="/public/images/dd-logo.png" alt="Direct Debit logo" height="35" width="90">
+			<td width="25%">
+				Instruction to your bank or building society to pay by Direct Debit</td>
+			<td width="25%">
+				<img src="/public/images/dd-logo.png" alt="Direct Debit logo" height="69" width="180">
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<strong>Name of account holder</strong>
 			</td>
-			<td>
+			<td colspan="2">
 				<strong>Service user number</strong>
 			</td>
 		</tr>
 		<tr>
-			<td><label>Mr Jones</label></td>
-			<td>
-				2  9  5  4  0  2
+			<td><label>mr jones</label></td>
+			<td colspan="2">
+				<table width="75%" border="1" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						<td>2</td>
+						<td>9</td>
+						<td>5</td>
+						<td>4</td>
+						<td>0</td>
+						<td>2</td>
+					</tr>
+				</tbody></table>
 		</td></tr>
 		<tr>
 			<td>
@@ -251,8 +228,27 @@
 		</tr>
 		<tr>
 			<td>
-				*  *  *  *  *  6  7  8
-
+				<table width="100%" border="1" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						
+							<td>*</td>
+						
+							<td>*</td>
+						
+							<td>*</td>
+						
+							<td>*</td>
+						
+							<td>*</td>
+						
+							<td>6</td>
+						
+							<td>7</td>
+						
+							<td>8</td>
+						
+					</tr>
+				</tbody></table>
 			</td>
 			<td colspan="2" rowspan="4">&nbsp;</td>
 		</tr>
@@ -263,7 +259,23 @@
 		</tr>
 		<tr>
 			<td>
-				1  0  2  0  3  0
+				<table width="50%" border="1" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						
+							<td>1</td>
+						
+							<td>0</td>
+						
+							<td>2</td>
+						
+							<td>0</td>
+						
+							<td>3</td>
+						
+							<td>0</td>
+						
+					</tr>
+				</tbody></table>
 			</td>
 		</tr>
 		<tr>
@@ -314,7 +326,47 @@
 		</tr>
 		<tr>
 			<td>
-				0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  8  3  4
+				<table width="75%" border="1" cellpadding="0" cellspacing="0">
+					<tbody><tr>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>0</td>
+						
+							<td>8</td>
+						
+							<td>3</td>
+						
+							<td>4</td>
+						
+					</tr>
+				</tbody></table>
 			</td>
 		</tr>
 		<tr>
@@ -348,18 +400,23 @@
 			</td>
 		</tr>
 	</tbody></table>
-				</div>
-          
+
+
+
+
+	
+		
+
+
+
+		<div class="form-group" style="margin:1.5em 0 3em 0">
+			<input type="submit" class="button" value="Complete vehicle tax">
         </div>
-      </details>
 
 
 
-	</div>
 
-
-
-</form>
+	</form>
 
                 
 
