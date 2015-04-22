@@ -40,36 +40,64 @@
     Taxing a vehicle as a new keeper
   </h1>
 
-
-  <h2 class="heading-medium" style="font-weight:normal;padding:0;margin:1em 0 1em 0">Using a V5C/2 new keeper supplement (green slip)</h2>
-
-  <img src="/public/images/v5c2-diagram.png" width="280" height="162" align="middle" style="padding:0 0 1em 0">
+  <h2 class="heading-medium" style="font-weight:normal;padding:0;margin:1em 0 1em 0">I've received a new V5C (red logbook) with my name on</h2>
 
 
-  <div class="form-group form-group-compound">
-  <div class="grid-row">
-      <div class="column-two-thirds">
+  <img src="/public/images/v5c-diagram.png" width="280" height="162" align="middle" style="padding:0 0 1em 0">
 
 
-    <div class="help-notice" style="font-weight:700;padding-left:3em;margin-bottom:1em;width:93%;padding-top:0.2em">Do not use this number if you have received a V11 reminder letter, or if you have a V5C in your name. It is intended for new keepers only.</div>
+  <label class="form-label" for="nationality-other-v11" style="font-size:120%;padding-top:0.75em">
+    11 digit reference number</label>
 
 
-    <label class="form-label" for="nationality-other-v11" style="font-size:120%;padding-top:0.75em">
-    12 digit reference number</label>
+  <input class="form-control" type="text" id="ref-v5c2" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;margin-bottom:1em" size="16">
 
 
-    <input class="form-control" type="text" id="ref-v5c2" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;margin-bottom:1em" size="16">
+  <!-- and then there is the option of using the green slip instead -->
+
+
+  <details>
+    <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true" style="padding:0.7em 0">
+      <span class="summary" style="font-weight:normal;font-size:120%">Using a V5C/2 new keeper supplement (green slip)</span>
+    </summary>
+    <div class="panel-indent js-hidden" id="details-content-0" aria-hidden="false" >
+
+
+    <img src="/public/images/v5c2-diagram.png" width="280" height="162" align="middle" style="padding:0 0 1em 0">
+
+
+    <div class="form-group form-group-compound">
+      <div class="grid-row">
+        <div class="column-two-thirds">
+
+        <div class="help-notice" style="font-weight:700;padding-left:3em;margin-bottom:1em;width:93%;padding-top:0.2em">Do not use this number if you have received a V11 reminder letter, or if you have a V5C in your name. It is intended for new keepers only.</div>
+
+
+        <label class="form-label" for="nationality-other-v11" style="font-size:120%;padding-top:0.75em">
+        12 digit reference number</label>
+
+
+        <input class="form-control" type="text" id="ref-v5c2" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;margin-bottom:1em" size="16">
 
 
 
-    <label class="form-label" for="vehicle-reg" style="font-size:120%;padding-top:0.75em">
-    Vehicle registration</label>
+        <label class="form-label" for="vehicle-reg" style="font-size:120%;padding-top:0.75em">
+        Vehicle registration</label>
 
-    <input class="form-control" type="text" id="regmark" name="regmark" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;text-transform:uppercase" size="8">
+        <input class="form-control" type="text" id="regmark" name="regmark" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;text-transform:uppercase" size="8">
 
 
 
-    <p>You should have received your V5C/2 new keeper supplement (green slip) when you acquired the vehicle.</p>
+        <p>You should have received your V5C/2 new keeper supplement (green slip) when you acquired the vehicle.</p>
+
+        </div>
+
+      </div>
+    </div>
+  </details>
+
+
+    <p style="font-weight:normal;font-size:120%"><a href="#">I don't have any of these documents</a></p>
 
     </div>
   </div>
