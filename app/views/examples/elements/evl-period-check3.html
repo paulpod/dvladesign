@@ -38,6 +38,7 @@
   <form action="evl-3-flow" method="get" class="form">
   <input type="hidden" name="nextlink" value="evl-receipt-paydd">
   <input type="hidden" name="nextbacklink" value="evl-renewal-period-check">
+  <input type="hidden" name="regmark" value="{{defaultreg}}">
 
 
     <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Renewal period check <!--&amp; optional receipt--></h2>
@@ -48,7 +49,7 @@
 <ul class="ul-data">
   <li><span>Start date </span><strong>01 November 2014</strong></li>
   <li><span>Duration </span><strong>Paying each month</strong></li>
-  <li style="margin-bottom:8px"><span>Registration number </span><i class="reg-mark" style="font-size:120%">CU57&nbsp;ABC</i></li>
+  <li style="margin-bottom:8px"><span>Registration number </span><i class="reg-mark" style="font-size:120%">{{defaultreg}}</i></li>
   <li><span>Vehicle make </span><strong>NO MAKE</strong></li>
   <li><span>Monthly debit </span><strong>£9.67 (approximately)</strong></li>
   <li><span>Total over 12 months </span><strong>£116.00</strong></li>

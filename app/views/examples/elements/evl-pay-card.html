@@ -39,6 +39,7 @@
   <form action="evl-3-flow" method="get" class="form">
   <input type="hidden" name="nextlink" value="evl-end-card">
   <input type="hidden" name="nextbacklink" value="evl-pay-card">
+  <input type="hidden" name="regmark" value="{{defaultreg}}">
 
 
     <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Pay by debit or credit card</h2>
@@ -47,9 +48,12 @@
 
     <div class="grid-row">
       <div class="column-two-thirds">
+
+      <div style="padding:0.5em 0 0.5em 0"><img src="/public/images/cards-visa-vdebit-master-maestro.png" width="216"height="32"></div>
+
         <p>Only UK Maestro, VISA Debit, MasterCard Debit, Electron debit cards, VISA and MasterCard credit cards are accepted.</p>
 
-        <p>The amount payable for vehicle <strong>CU57&nbsp;ABC</strong> is <strong>£110.00</strong> for <strong>12 months</strong>.
+        <p>The amount payable for vehicle <strong>{{defaultreg}}</strong> is <strong>£110.00</strong> for <strong>12 months</strong>.
         </p>
       </div>
     </div>
@@ -74,7 +78,7 @@
         <input name="ctl00$MainContent$txtEmailConfirmation" maxlength="19" id="MainContent_txtEmailConfirmation" class="num form-control input-large" autocomplete="off" style="width:13em">
         </div>
 
-        <div style="padding:0.5em 0 0 2em"><img src="/public/images/cards-visa-vdebit-master-maestro.png" width="216"height="32"></div>
+        
 
        
         

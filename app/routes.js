@@ -46,7 +46,13 @@ module.exports = {
 
     var next = req.query.nextlink;
     var back = req.query.nextbacklink;
-    var defaultreg = 'CU57\xA0ABC';
+    var regmark = req.query.regmark;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
 
     res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg});
     
@@ -93,18 +99,25 @@ module.exports = {
     var paymethod = req.query.paymethod;
     var paynum = req.query.paynum;
     var back = req.query.nextbacklink;
+    var regmark = req.query.regmark;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
 
 
     if (paymethod != undefined) {
         if (paynum == undefined) {
             /* catch if the user has pressed first set of radios only - card vs dd  */
-            res.render('examples/elements/evl-renewal-period-' + paymethod, {'back' : back});
+            res.render('examples/elements/evl-renewal-period-' + paymethod, {'back' : back, 'defaultreg' : defaultreg});
         } else {
             /* render correct summary page for payment vs duration type 1, 2, 3, 4 or 5  */
-            res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum});
+            res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg});
         };
     } else {
-        res.render('examples/elements/evl-renewal-period', {'back' : back})
+        res.render('examples/elements/evl-renewal-period', {'back' : back, 'defaultreg' : defaultreg})
     }
 
     
@@ -126,17 +139,24 @@ module.exports = {
 
     var x = req.query.reftype;
     var back = req.query.nextbacklink;
+    var regmark = req.query.regmark;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
 
 
     if (x == "v5c") {
         console.log(x);
-        res.render('examples/elements/evl-11-v5c', {'back' : back});
+        res.render('examples/elements/evl-11-v5c', {'back' : back, 'defaultreg' : defaultreg});
     } else if (x == "v5c2") {
         console.log(x);
-        res.render('examples/elements/evl-11-v5c2', {'back' : back});
+        res.render('examples/elements/evl-11-v5c2', {'back' : back, 'defaultreg' : defaultreg});
     } else {
         console.log(x);
-        res.render('examples/elements/evl-vehicle-details', {'back' : back});
+        res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
     }
 
     });
@@ -152,6 +172,13 @@ module.exports = {
     app.get('/examples/elements/evl-find-postcode', function (req, res) {
 
       /*var Handlebars = require('Handlebars');*/
+      var regmark = req.query.regmark;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
 
       var postcode = req.query.postcode;
 
@@ -163,7 +190,7 @@ module.exports = {
         }
 
         console.log(results); 
-        res.render('examples/elements/evl-paydd-address.html', {'postcode' : postcode, 'result' : results})
+        res.render('examples/elements/evl-paydd-address.html', {'postcode' : postcode, 'result' : results, 'defaultreg' : defaultreg})
 
       });
 
@@ -181,6 +208,13 @@ module.exports = {
     app.get('/examples/elements/evl-chosen-address', function (req, res) {
 
       /*var Handlebars = require('Handlebars');*/
+      var regmark = req.query.regmark;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
 
       var selectedudp = req.query.udprn;
 
@@ -192,7 +226,7 @@ module.exports = {
         }
 
         console.log(address); 
-        res.render('examples/elements/evl-paydd-address-playback.html', {'address' : address})
+        res.render('examples/elements/evl-paydd-address-playback.html', {'address' : address, 'defaultreg' : defaultreg})
 
       });
 

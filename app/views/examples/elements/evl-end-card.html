@@ -39,6 +39,8 @@
   <form action="evl-3-flow" method="get" class="form">
   <input type="hidden" name="nextlink" value="evl-end-card">
   <input type="hidden" name="nextbacklink" value="evl-pay-card">
+  <input type="hidden" name="regmark" value="{{defaultreg}}">
+
 
 
     <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Payment complete, vehicle taxed</h2>
@@ -72,7 +74,7 @@
           </thead>
           <tbody>
             <tr>
-              <td><b>12</b> month vehicle tax for vehicle registration <b>RA05 MJC</b>
+              <td><b>12</b> month vehicle tax for vehicle registration <b>{{defaultreg}}</b>
               <div>Valid from <b>21 April 2015</b></div>
               <div>Last 4 digits of payment card: <b>2222</b></div>
               </td>

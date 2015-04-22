@@ -37,32 +37,6 @@
 
 
 
-  <!-- <div id="steps" style="padding-bottom:2">
-
-    <nav class="progress-indicator group" role="navigation">
-          <ol id="MainContent_olTax" class="veh-breadcrumb">
-              <li id="MainContent_liReferenceNumberStep">
-                  Your vehicle
-              </li>
-              <li id="MainContent_liConfirmVehicle">
-                  Vehicle details
-              </li>
-              <li id="MainContent_liVedPicker">
-                  Renewal period
-              </li>
-              <li id="MainContent_liVEDConfirmation" class="active">
-                  Renewal period check
-              </li>
-              <li id="MainContent_liPayment">
-                  Pay
-              </li>
-              <li id="MainContent_liConfirmation">
-                  Done
-              </li>
-          </ol>
-      </nav>
-
-  </div> -->
 
 
   <form action="evl-3-flow" method="get" class="form">
@@ -70,6 +44,7 @@
   <input type="hidden" name="paynum" value="{{paynum}}">
   <input type="hidden" name="nextlink" value="evl-receipt-paycard">
   <input type="hidden" name="nextbacklink" value="evl-renewal-period-check">
+  <input type="hidden" name="regmark" value="{{defaultreg}}">
 
 
     <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Renewal period check<!-- &amp; optional receipt--></h2>
@@ -80,7 +55,7 @@
 <ul class="ul-data">
   <li><span>Start date </span><strong>01 November 2014</strong></li>
   <li><span>Duration </span><strong>6 Months</strong></li>
-  <li style="margin-bottom:8px"><span>Registration number </span><i class="reg-mark" style="font-size:120%">CU57&nbsp;ABC</i></li>
+  <li style="margin-bottom:8px"><span>Registration number </span><i class="reg-mark" style="font-size:120%">{{defaultreg}}</i></li>
   <li><span>Vehicle make </span><strong>NO MAKE</strong></li>
   <li><span>Price </span><strong>£60.50</strong></li>
   <li><span>Payment method </span><strong>Card payment</strong></li>

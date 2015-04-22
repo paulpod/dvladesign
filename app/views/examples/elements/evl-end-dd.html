@@ -39,6 +39,8 @@
   <form action="evl-3-flow" method="get" class="form">
   <input type="hidden" name="nextlink" value="evl-end-card">
   <input type="hidden" name="nextbacklink" value="evl-pay-card">
+  <input type="hidden" name="regmark" value="{{defaultreg}}">
+
 
 
     <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Payment complete, vehicle taxed</h2>
@@ -63,6 +65,11 @@
     <div class="grid-row">
       <div class="column-two-thirds">
 
+
+      <p style="margin-top:1em">
+      You may now drive your vehicle, you don't need to wait for the first payment to be taken.
+      </p>
+
         <table>
           <thead>
             <tr>
@@ -72,9 +79,9 @@
           </thead>
           <tbody>
             <tr>
-              <td><b>12</b> month vehicle tax for vehicle registration <b>RA05 MJC</b>
+              <td><b>12</b> month vehicle tax for vehicle registration <b>{{defaultreg}}</b>
               <div>Valid from <b>21 April 2015</b></div>
-              <div>Last 4 digits of payment card: <b>2222</b></div>
+              <div>Last 4 digits of account number: <b>2222</b></div>
               </td>
 
               <td>£125.00</td>
@@ -89,18 +96,18 @@
           </tbody>
         </table>
         
+      
+    <p style="margin-top:1em">
+    The full payment schedule will be sent to your email address. Please check your junk or spam folders if you have not received it.
+    </p>
+
+
       </div>
     </div>
 
 
 
-    <p style="margin-top:1em">
-    You may now drive your vehicle, you don't need to wait for the first payment to be taken.
-    </p>
 
-    <p style="margin-top:1em">
-    The full payment schedule will be sent to your email address. Please check your junk or spam folders if you have not received it.
-    </p>
 
 
 
