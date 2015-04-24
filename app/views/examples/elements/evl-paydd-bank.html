@@ -76,7 +76,7 @@
 
 			
 
-			<label>Account number</label>
+			<label>Bank account number</label>
 			<div class="address-form-line" style="margin-bottom:1em">
 			<input id="ddbankac" name="ddbankac" class="num form-control form-control-1-4" type="text" maxlength="10" >
 			</div>
@@ -90,7 +90,7 @@
 
 			<input id="dob-mm" name="dob-mm" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em">
 
-			<input id="dob-yyyy" name="dob-yyyy" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px">
+			<input id="dob-yyyy" name="dob-yyyy" class="num form-control form-control-1-8" maxlength="4" type="text"  style="width:71px">
 			<p style="margin-top:0.75em">Example: 03 11 1976<br>
 			We need this to confirm who you are if you ever need to call our Contact Centre</p>
 			</div>
@@ -128,17 +128,20 @@
 
 
 
-				<p style="margin: 0.5em 0 0.2em 0">Please confirm both:</p>
+				<p style="margin: 0.5em 0 0.2em 0">Please confirm :</p>
 
 				<label for="radio-inline-1" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1em">
 	            <input id="radio-inline-1" type="checkbox" name="confirm" value="tick">
-	            I have the authority to set up a Direct Debit against this account
+	            I have the authority to set up a Direct Debit against this account,
+
+	            <br>
+	            and this account does not require multiple signatories
 	            </label>
 
-	            <label for="radio-inline-2" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1.5em">
+	            <!-- <label for="radio-inline-2" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1.5em">
 	            <input id="radio-inline-2" type="checkbox" name="confirm" value="tick">
 	            This account does not require multiple signatories
-	            </label>
+	            </label> -->
 
 	            <br clear="all" />
 	            
