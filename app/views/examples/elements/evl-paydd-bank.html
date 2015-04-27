@@ -12,6 +12,9 @@
 
 	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
 
+    <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
+
+
 
  {{/head}}
 
@@ -42,6 +45,8 @@
 	  <input type="hidden" name="nextlink" value="evl-paydd-summary">
 	  <input type="hidden" name="nextbacklink" value="evl-paydd-address-playback">
       <input type="hidden" name="regmark" value="{{defaultreg}}">
+            <input type="hidden" name="email" value="{{email}}">
+
 
 
 
@@ -60,25 +65,25 @@
 
 			<label>Name of account holder</label>
 			<div class="address-form-line" style="margin-bottom:1em">
-			<input id="ddbankname" name="ddbankname" class="form-control form-control-1-4" type="text">
+			<input id="ddbankname" name="ddbankname" class="form-control form-control-1-4" type="text" required>
 			</div>
 
 
 
 			<label>Sort code</label>
 			<div class="address-form-line" style="margin-bottom:1em">
-			<input id="ddbanksort-1" name="ddbanksortcode-1" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em">
+			<input id="ddbanksort-1" name="ddbanksortcode-1" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em" required>
 
-			<input id="ddbanksort-2" name="ddbanksortcode-2" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em">
+			<input id="ddbanksort-2" name="ddbanksortcode-2" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em" required>
 
-			<input id="ddbanksort-3" name="ddbanksortcode-3" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px">
+			<input id="ddbanksort-3" name="ddbanksortcode-3" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px" required>
 			</div>
 
 			
 
 			<label>Bank account number</label>
 			<div class="address-form-line" style="margin-bottom:1em">
-			<input id="ddbankac" name="ddbankac" class="num form-control form-control-1-4" type="text" maxlength="10" >
+			<input id="ddbankac" name="ddbankac" class="num form-control form-control-1-4" type="text" maxlength="8" required >
 			</div>
 
 
@@ -86,11 +91,11 @@
 			<label>Date of birth</label>
 			
 			<div class="address-form-line" style="margin-bottom:1em">
-			<input id="dob-dd" name="dob-dd" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em">
+			<input id="dob-dd" name="dob-dd" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em" required>
 
-			<input id="dob-mm" name="dob-mm" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em">
+			<input id="dob-mm" name="dob-mm" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em" required>
 
-			<input id="dob-yyyy" name="dob-yyyy" class="num form-control form-control-1-8" maxlength="4" type="text"  style="width:71px">
+			<input id="dob-yyyy" name="dob-yyyy" class="num form-control form-control-1-8" maxlength="4" type="text"  style="width:71px" required>
 			<p style="margin-top:0.75em">Example: 03 11 1976<br>
 			We need this to confirm who you are if you ever need to call our Contact Centre</p>
 			</div>
@@ -131,13 +136,13 @@
 				<p style="margin: 0.5em 0 0.2em 0">Please confirm both:</p>
 
 				<label for="radio-inline-1" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1em">
-	            <input id="radio-inline-1" type="checkbox" name="confirm" value="tick">
+	            <input id="radio-inline-1" type="checkbox" name="confirm" value="tick" required>
 	            I have the authority to set up a Direct Debit against this account
 	            </label>
 
 	            <label for="radio-inline-2" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1.5em">
-	            <input id="radio-inline-2" type="checkbox" name="confirm" value="tick">
-	            This account does not require multiple signatories
+	            <input id="radio-inline-2" type="checkbox" name="confirm" value="tick" required>
+	            If this is a joint account, only one account holder is required to sign
 	            </label>
 
 	            <br clear="all" />

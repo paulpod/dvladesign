@@ -47,6 +47,7 @@ module.exports = {
     var next = req.query.nextlink;
     var back = req.query.nextbacklink;
     var regmark = req.query.regmark;
+    var email = req.query.email;
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -54,7 +55,7 @@ module.exports = {
         var defaultreg = regmark;
     }
 
-    res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg});
+    res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg, 'email' : email});
     
  
     });
@@ -251,6 +252,8 @@ module.exports = {
 
       /*var Handlebars = require('Handlebars');*/
       var regmark = req.query.regmark;
+      var email = req.query.email;
+
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -268,7 +271,7 @@ module.exports = {
         }
 
         console.log(results); 
-        res.render('examples/elements/evl-paydd-address.html', {'postcode' : postcode, 'result' : results, 'defaultreg' : defaultreg})
+        res.render('examples/elements/evl-paydd-address.html', {'postcode' : postcode, 'result' : results, 'defaultreg' : defaultreg, 'email' : email})
 
       });
 
@@ -287,6 +290,8 @@ module.exports = {
 
       /*var Handlebars = require('Handlebars');*/
       var regmark = req.query.regmark;
+      var email = req.query.email;
+
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -304,7 +309,7 @@ module.exports = {
         }
 
         console.log(address); 
-        res.render('examples/elements/evl-paydd-address-playback.html', {'address' : address, 'defaultreg' : defaultreg})
+        res.render('examples/elements/evl-paydd-address-playback.html', {'address' : address, 'defaultreg' : defaultreg, 'email' : email})
 
       });
 

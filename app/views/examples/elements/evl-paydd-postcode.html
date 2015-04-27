@@ -12,6 +12,9 @@
 
 	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
 
+    <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
+
+
 
  {{/head}}
 
@@ -44,15 +47,15 @@
 
 
 
-
 	<form method="get" action="evl-find-postcode" class="form">
 	    <input type="hidden" name="regmark" value="{{defaultreg}}">
+	    <input type="hidden" name="email" value="{{email}}">
 
 
 
 		<label>Postcode</label>
 
-		<input id="postcode" name="postcode" class="form-control form-control-1-4" type="text">
+		<input id="postcode" name="postcode" class="form-control form-control-1-4" type="text" required>
 
 
 

@@ -12,6 +12,9 @@
 
 	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
 
+    <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
+
+
 
  {{/head}}
 
@@ -40,8 +43,9 @@
 
 
 	<form method="get" action="evl-chosen-address" class="form">
-	  <input type="hidden" name="paynum" value="{{paynum}}">
-      <input type="hidden" name="regmark" value="{{defaultreg}}">
+		<input type="hidden" name="paynum" value="{{paynum}}">
+		<input type="hidden" name="regmark" value="{{defaultreg}}">
+		<input type="hidden" name="email" value="{{email}}">
 
 
 

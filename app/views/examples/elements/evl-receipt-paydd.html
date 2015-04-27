@@ -9,6 +9,9 @@
 
     <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
 
+    <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
+
+
 
 
 {{/head}}
@@ -53,7 +56,7 @@
 
         <span id="MainContent_revtxtEmailConfirmation" class="Validator" style="display:none;">Please enter a valid email address</span>
         <p>
-            <input name="ctl00$MainContent$txtEmailConfirmation" maxlength="150" id="MainContent_txtEmailConfirmation" class="form-control input-large" type="email" autocomplete="off">
+            <input maxlength="150" id="email" class="form-control input-large" type="email" autocomplete="off" name="email" required>
 
         </p>
 
