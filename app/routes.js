@@ -128,6 +128,46 @@ module.exports = {
 
 
 
+    /* - - - - - - - - - - - - - - - - - - - - - - - - - -  */
+    /* Multiple routes from How to pay, renewal period page */
+
+    app.get('/examples/elements/evl-11-renewal-picto', function (req, res) {
+
+
+    var payperiod = req.query.payperiod;
+    var paynum = req.query.paynum;
+    var back = req.query.nextbacklink;
+    var regmark = req.query.regmark;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
+
+    console.log('reg=' + defaultreg);
+
+
+    if (payperiod != undefined) {
+        if (paynum == undefined) {
+            /* catch if the user has pressed first set of radios only - 1 vs 6, 12 month  */
+            res.render('examples/elements/evl-renewal-period-' + payperiod, {'back' : back, 'defaultreg' : defaultreg});
+        } else {
+            /* render correct summary page for payment vs duration type 1, 2, 3, 4 or 5  */
+            res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg});
+        };
+    } else {
+        res.render('examples/elements/evl-renewal-period', {'back' : back, 'defaultreg' : defaultreg})
+    }
+
+    
+
+    });
+
+
+
+
+
 
 
 
@@ -160,6 +200,44 @@ module.exports = {
     }
 
     });
+
+
+
+
+
+
+    /* - - - - - - - - - - - - - - - - - - - - - - */
+    /* Pages for EVL New Keeper V5c named vs V5C/2 */
+
+    app.get('/examples/elements/evl-11-newkeeper', function (req, res) {
+
+    var x = req.query.reftype;
+    var back = req.query.nextbacklink;
+    var regmark = req.query.regmark;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
+
+
+    if (x == "v5c") {
+        console.log(x);
+        res.render('examples/elements/evl-11-v5c-newkeeper', {'back' : back, 'defaultreg' : defaultreg});
+    } else if (x == "v5c2") {
+        console.log(x);
+        res.render('examples/elements/evl-11-v5c2-newkeeper', {'back' : back, 'defaultreg' : defaultreg});
+    } else {
+        console.log(x);
+        res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
+    }
+
+    });
+
+
+
+
 
 
 

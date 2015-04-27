@@ -1,0 +1,106 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main">
+
+
+  
+  <div>
+  <a class="back-to-previous" href="evl-11">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">
+
+  
+
+
+  <form action="evl-3-flow" method="get" class="form">
+  <input type="hidden" name="nextlink" value="evl-vehicle-details">
+  <input type="hidden" name="nextbacklink" value="evl-3-v5c">
+
+
+    <h1 class="form-title heading-large" style="margin:0 0 1em 0;padding:0">
+      Taxing a vehicle as a new keeper
+    </h1>
+
+
+
+    <h2 class="heading-medium" style="font-weight:normal;padding:0;margin:1em 0 1em 0">Using a V5C in your name</h2>
+
+    <img src="/public/images/v5c-diagram.png" width="280" height="162" align="middle" style="padding:0 0 1em 0">
+
+
+
+    
+
+    <!-- Ref number select -->
+    <div class="form-group form-group-compound">
+
+    
+    <label class="form-label" for="nationality-other-v11" style="font-size:120%;padding-top:0.75em">
+    11 digit reference number</label>
+
+    <input class="form-control" type="text" id="ref-v5c" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6" size="16">
+
+
+
+    <label class="form-label" for="vehicle-reg" style="font-size:120%;padding-top:0.75em">
+    Vehicle registration</label>
+
+    <input class="form-control" type="text" id="regmark" name="regmark" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;text-transform:uppercase" size="8">
+
+
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+        <div class="help-notice" style="font-weight:700;width:80%;padding-left:3em;margin-bottom:0.1em;padding-top:0.2em">Do not use this number if you have received a V11 reminder letter, or if the V5C is not in your name</div>
+
+        <p>You should have received a V5C vehicle registration certificate with your name on, within two weeks of acquiring your vehicle.</p>
+
+     </div>
+   </div>
+          
+
+
+    </div>
+
+
+
+  </fieldset>
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding-top:0.2em">
+    <input type="submit" class="button" value="Continue">
+    
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

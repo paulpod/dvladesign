@@ -1,0 +1,101 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+  <!-- <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1> -->
+
+
+  <div>
+    <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+    </div>
+
+    <br clear="all">
+
+
+    <form action="evl-11-renewals" method="get" class="form">
+
+    <input type="hidden" name="nextbacklink" value="evl-renewal-period">
+    <input type="hidden" name="paymethod" value="dd">
+    <input type="hidden" name="regmark" value="{{defaultreg}}">
+
+    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">How to pay</h2>
+
+
+    <div class="form-group form-group-compound">
+
+
+    <h3 class="heading-small">Pay for 6 months</h3>
+
+
+    <br clear="all">
+
+    <div class="panel-indent " id="6months" style="margin-top:1em">
+
+    <p style="max-width:620px">Direct Debit payments will be taken continuously from your bank account at 6 intervals, and we will stop it automatically when no longer required, eg. you sell your vehicle</p>
+      
+      <label for="radio-inline-3" class="block-label">
+      <input id="radio-inline-3" type="radio"  name="paynum" value="4">
+      By Direct Debit: Repeating payments, every 6 months of <strong>£57.50</strong> (that's £115 per year)
+      </label>
+
+      <br clear="all">
+      <p style="padding:0.5em 0;margin:0">Or</p>
+
+      <label for="radio-inline-4" class="block-label">
+      <input id="radio-inline-4" type="radio"  name="paynum" value="1">
+      By card: One payment of £60.50
+      </label>
+
+    </div>
+  </div>
+
+
+  <br clear="all">
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding:1em 0">
+    <input type="submit" class="button" value="Continue">
+
+    <p style="padding:1em 0"><a href="start">Cancel application</a>
+
+
+    
+    <p style="margin-top:1em"><a rel="external" href="https://www.gov.uk/government/publications/rates-of-vehicle-tax-v149" target="_blank">Rates of vehicle tax (V149)</a>
+    </p>
+
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
