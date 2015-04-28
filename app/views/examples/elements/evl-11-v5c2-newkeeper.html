@@ -51,7 +51,7 @@
     <label class="form-label" for="vehicle-reg" style="font-size:120%;padding-top:0.75em">
     Vehicle registration (number plate)</label>
 
-    <input class="form-control" id="regmark" name="regmark" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;text-transform:uppercase" maxlength="8" type="text" required>
+    <input class="form-control" id="regmark" name="regmark" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;text-transform:uppercase" maxlength="8" type="text" required data-parsley-required-message="You must provide the vehicle registration"> 
 
 
   <br clear="all">
@@ -73,7 +73,7 @@
     12 digit reference number</label>
 
 
-    <input class="num form-control" type="text" id="ref-v5c2" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;margin-bottom:1em" maxlength="12" required data-parsley-minlength="12" data-parsley-maxlength="12" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment..">
+    <input class="num form-control" type="text" id="ref-v5c2" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;margin-bottom:1em" maxlength="12" required data-parsley-minlength="12" data-parsley-maxlength="12" data-parsley-minlength-message="You must provide the document reference number from the green slip">
 
 
 <script>

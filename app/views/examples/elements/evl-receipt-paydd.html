@@ -37,7 +37,7 @@
 
 
 
-  <form action="evl-3-flow" method="get" class="form">
+  <form action="evl-3-flow" method="get" class="form" data-parsley-validate>
 
   <input type="hidden" name="paynum" value="{{paynum}}">
   <input type="hidden" name="nextlink" value="evl-paydd-postcode">
@@ -56,7 +56,7 @@
 
         <span id="MainContent_revtxtEmailConfirmation" class="Validator" style="display:none;">Please enter a valid email address</span>
         <p>
-            <input maxlength="150" id="email" class="form-control input-large" type="email" autocomplete="off" name="email" required>
+            <input maxlength="150" id="email" class="form-control input-large" type="email" data-parsley-trigger="change" autocomplete="off" name="email" required data-parsley-required-message="You must provide an email so we can send your direct debit schedule">
 
         </p>
 

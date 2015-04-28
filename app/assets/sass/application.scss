@@ -747,3 +747,38 @@ padding: 0.5em 0.2em 0.3em 0.5em;
   margin:1em 0;
   display:block; }
   }
+
+
+
+
+
+
+
+
+/** using Parsley for quick + easy validation  **/
+
+.parsley-errors-list li {
+display: block;
+font-size: 19px;
+clear: both;
+padding: 10px;
+margin: 0.3em 0 1em -14px;
+border-left: 4px solid #df3034;
+color: #df3034;
+font-weight: bold;
+}
+
+input.parsley-error,
+      select.parsley-error,
+      textarea.parsley-error {
+        color: #df3034;
+        border: 3px solid #df3034 !important;
+      }
+
+
+#date-error-field ul.parsley-errors-list  {
+    display:inline-block;
+}
+#date-error-field ul.parsley-errors-list li  {
+    border-left: none;
+}

@@ -34,7 +34,7 @@
   
 
 
-  <form action="evl-3-flow" method="get" class="form">
+  <form action="evl-3-flow" method="get" class="form" data-parsley-validate>
   <input type="hidden" name="nextlink" value="evl-vehicle-details">
   <input type="hidden" name="nextbacklink" value="evl-3-v5c">
 
@@ -52,7 +52,11 @@
     <label class="form-label" for="vehicle-reg" style="font-size:120%;padding-top:0.75em">
     Vehicle registration (number plate)</label>
 
-    <input class="form-control" type="text" id="regmark" name="regmark" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;text-transform:uppercase" size="8">
+    
+    <div id="validfield-1">
+    <input class="form-control" type="text" maxlength="8" id="regmark" name="regmark" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;text-transform:uppercase" size="8" data-parsley-trigger="focusin focusout" data-parsley-required-message="A vehicle registration is required" required required data-parsley-errors-container="validfield-1">
+
+    </div>
 
 
   <br clear="all">
@@ -75,7 +79,10 @@
     11 digit reference number</label>
 
 
-    <input class="num form-control" type="text" id="ref-v5c" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6" size="16">
+    <div id="validfield-2">
+    <input class="num form-control" type="text" maxlength="11" id="ref-v5c" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6" size="16" data-parsley-required-message="The document reference number is required" required data-parsley-errors-container="validfield-2">
+    
+    </div>
 
 
 <script>

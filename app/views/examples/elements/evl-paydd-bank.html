@@ -4,15 +4,15 @@
   {{>includes/elements_head}}
 
 
-	<script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
 
 	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
 
 	<script type="text/javascript" src="/public/javascripts/application.js"></script>
 
-	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
-
     <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
 
 
 
@@ -22,7 +22,7 @@
 
 <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
 
-<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+<!-- <link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" /> -->
 
 
 
@@ -41,64 +41,67 @@
 	<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Enter bank account details
 	</h2>
 
-	<form action="evl-3-flow" method="get" class="form">
-	  <input type="hidden" name="nextlink" value="evl-paydd-summary">
-	  <input type="hidden" name="nextbacklink" value="evl-paydd-address-playback">
-      <input type="hidden" name="regmark" value="{{defaultreg}}">
-            <input type="hidden" name="email" value="{{email}}">
+	<form id="bank" action="evl-3-flow" method="get" class="form" data-parsley-validate>
+		<input type="hidden" name="nextlink" value="evl-paydd-summary">
+		<input type="hidden" name="nextbacklink" value="evl-paydd-address-playback">
+		<input type="hidden" name="regmark" value="{{defaultreg}}">
+		<input type="hidden" name="email" value="{{email}}">
 
 
-
-
-
-
-
-
-	<!-- <form method="get" action="evl-select-postcode" class="form"> -->
-
-
-		
 		
 
 		<div class="form-group">
 
 
+
+
 			<label>Name of account holder</label>
 			<div class="address-form-line" style="margin-bottom:1em">
-			<input id="ddbankname" name="ddbankname" class="form-control form-control-1-4" type="text" required>
+			<input id="ddbankname" name="ddbankname" class="form-control form-control-1-4" type="text" data-parsley-trigger=" change" required data-parsley-required-message="The name of the account holder is required">
 			</div>
 
 
 
 			<label>Sort code</label>
 			<div class="address-form-line" style="margin-bottom:1em">
-			<input id="ddbanksort-1" name="ddbanksortcode-1" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em" required>
+			<input id="ddbanksort-1" name="ddbanksortcode-1" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em" >
 
-			<input id="ddbanksort-2" name="ddbanksortcode-2" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em" required>
+			<input id="ddbanksort-2" name="ddbanksortcode-2" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em" >
 
-			<input id="ddbanksort-3" name="ddbanksortcode-3" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px" required>
+			<input id="ddbanksort-3" name="ddbanksortcode-3" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px" required >
 			</div>
+
+
+
+
+
 
 			
 
 			<label>Bank account number</label>
 			<div class="address-form-line" style="margin-bottom:1em">
-			<input id="ddbankac" name="ddbankac" class="num form-control form-control-1-4" type="text" maxlength="8" required >
+			<input id="ddbankac" name="ddbankac" class="num form-control form-control-1-4" type="text" maxlength="8" required data-parsley-required-message="A bank account number is required" data-parsley-trigger="focusin focusout">
 			</div>
 
 
 
 			<label>Date of birth</label>
 			
-			<div class="address-form-line" style="margin-bottom:1em">
-			<input id="dob-dd" name="dob-dd" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em" required>
+			<div class="address-form-line autotabbed" style="margin-bottom:1em">
+			<input id="dob-dd" name="dob-dd" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em" required data-parsley-required-message="add day as two digits " data-parsley-errors-container="#date-error-field" data-parsley-trigger="focusin focusout" data-parsley-max="31">
 
-			<input id="dob-mm" name="dob-mm" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em" required>
+			<input id="dob-mm" name="dob-mm" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em" required data-parsley-required-message="add month as two digits " data-parsley-errors-container="#date-error-field" data-parsley-trigger="focusin focusout" data-parsley-max="12">
 
-			<input id="dob-yyyy" name="dob-yyyy" class="num form-control form-control-1-8" maxlength="4" type="text"  style="width:71px" required>
+			<input id="dob-yyyy" name="dob-yyyy" class="num form-control form-control-1-8" maxlength="4" type="text"  style="width:71px" required data-parsley-required-message="add year as four digits" required data-parsley-errors-container="#date-error-field" data-parsley-trigger="focusin focusout">
 			<p style="margin-top:0.75em">Example: 03 11 1976<br>
 			We need this to confirm who you are if you ever need to call our Contact Centre</p>
+
+			<div id="date-error-field">
+
 			</div>
+			</div>
+
+
 
 
 
@@ -136,12 +139,12 @@
 				<p style="margin: 0.5em 0 0.2em 0">Please confirm both:</p>
 
 				<label for="radio-inline-1" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1em">
-	            <input id="radio-inline-1" type="checkbox" name="confirm" value="tick" required>
+	            <input id="radio-inline-1" type="checkbox" name="confirm" value="tick" required data-parsley-required-message="Please read and confirm this statement" data-parsley-trigger="focusin focusout">
 	            I have the authority to set up a Direct Debit against this account
 	            </label>
 
 	            <label for="radio-inline-2" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1.5em">
-	            <input id="radio-inline-2" type="checkbox" name="confirm" value="tick" required>
+	            <input id="radio-inline-2" type="checkbox" name="confirm" value="tick" required data-parsley-required-message="Please read and confirm this statement" data-parsley-trigger="focusin focusout">
 	            If this is a joint account, only one account holder is required to sign
 	            </label>
 
@@ -161,7 +164,8 @@
 		<div class="form-group" style="margin:0 0 2em 0">
 			<input type="submit" class="button" value="Continue">
         </div>
-
+		
+		</form>
 
 
 
