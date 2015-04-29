@@ -92,11 +92,11 @@
 			<label>Date of birth</label>
 			
 			<div class="address-form-line autotabbed" style="margin-bottom:1em">
-			<input id="dob-dd" name="dob-dd" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em" required data-parsley-required-message="add day as two digits " data-parsley-errors-container="#date-error-field" data-parsley-trigger="focusin focusout" data-parsley-max="31">
+			<input id="dob-dd" name="dob-dd" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em" required data-parsley-required-message="add day as two digits " data-parsley-errors-container="#date-error-field" data-parsley-trigger="change" data-parsley-max="31">
 
-			<input id="dob-mm" name="dob-mm" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em" required data-parsley-required-message="add month as two digits " data-parsley-errors-container="#date-error-field" data-parsley-trigger="focusin focusout" data-parsley-max="12">
+			<input id="dob-mm" name="dob-mm" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em" required data-parsley-required-message="add month as two digits " data-parsley-errors-container="#date-error-field" data-parsley-trigger="change" data-parsley-max="12">
 
-			<input id="dob-yyyy" name="dob-yyyy" class="num form-control form-control-1-8" maxlength="4" type="text"  style="width:71px" required data-parsley-required-message="add year as four digits" required data-parsley-errors-container="#date-error-field" data-parsley-trigger="focusin focusout">
+			<input id="dob-yyyy" name="dob-yyyy" class="num form-control form-control-1-8" maxlength="4" type="text"  style="width:71px" required data-parsley-required-message="add year as four digits" required data-parsley-errors-container="#date-error-field" data-parsley-trigger="change">
 			<p style="margin-top:0.75em">Example: 03 11 1976<br>
 			We need this to confirm who you are if you ever need to call our Contact Centre</p>
 
@@ -140,7 +140,28 @@
 
 
 
-				<p style="margin: 0.5em 0 0.2em 0">Please confirm both:</p>
+				
+	            <div id="truthbox" style="border:4px #ccc solid;padding:1em">
+
+	            <div id="truth-error-field">
+
+	            </div>
+
+	            <label for="radio-inline-1" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1em">
+	            <input id="radio-inline-1" type="checkbox" name="confirm" value="tick" required data-parsley-required-message="Please read and confirm this statement" data-parsley-trigger="change" data-parsley-errors-container="#truth-error-field">
+	            Please confirm the following are true:
+	            </label>
+
+	            <br clear="all" />
+
+
+	            <p>I have the authority to set up a Direct Debit against this account</p>
+
+	            <p>If this is a joint account, only one account holder is required to sign</p>
+	            </div>
+
+
+				<!--<p style="margin: 0.5em 0 0.2em 0">Please confirm both:</p>
 
 				<label for="radio-inline-1" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1em">
 	            <input id="radio-inline-1" type="checkbox" name="confirm" value="tick" required data-parsley-required-message="Please read and confirm this statement" data-parsley-trigger="focusin focusout">
@@ -150,9 +171,11 @@
 	            <label for="radio-inline-2" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:1.5em">
 	            <input id="radio-inline-2" type="checkbox" name="confirm" value="tick" required data-parsley-required-message="Please read and confirm this statement" data-parsley-trigger="focusin focusout">
 	            If this is a joint account, only one account holder is required to sign
-	            </label>
+	            </label> -->
 
-	            <br clear="all" />
+	            
+
+	            <p>
 	            
 	            <!--<p>A Direct Debit can be set up on a joint account where only one signature is required to transact.</p>-->
             </div>
