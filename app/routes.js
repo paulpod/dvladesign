@@ -108,17 +108,20 @@ module.exports = {
         var defaultreg = regmark;
     }
 
+    var now = moment(new Date());
+    var today = now.format("D MMM YYYY");
+
 
     if (paymethod != undefined) {
         if (paynum == undefined) {
             /* catch if the user has pressed first set of radios only - card vs dd  */
-            res.render('examples/elements/evl-renewal-period-' + paymethod, {'back' : back, 'defaultreg' : defaultreg});
+            res.render('examples/elements/evl-renewal-period-' + paymethod, {'back' : back, 'defaultreg' : defaultreg, 'today' : today});
         } else {
             /* render correct summary page for payment vs duration type 1, 2, 3, 4 or 5  */
-            res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg});
+            res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today});
         };
     } else {
-        res.render('examples/elements/evl-renewal-period', {'back' : back, 'defaultreg' : defaultreg})
+        res.render('examples/elements/evl-renewal-period', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
     }
 
     
@@ -146,19 +149,21 @@ module.exports = {
         var defaultreg = regmark;
     }
 
-    console.log('reg=' + defaultreg);
+    var moment = require("moment");
+    var now = moment(new Date());
+    var today = now.format("D MMM YYYY");
 
 
     if (payperiod != undefined) {
         if (paynum == undefined) {
             /* catch if the user has pressed first set of radios only - 1 vs 6, 12 month  */
-            res.render('examples/elements/evl-renewal-period-' + payperiod, {'back' : back, 'defaultreg' : defaultreg});
+            res.render('examples/elements/evl-renewal-period-' + payperiod, {'back' : back, 'defaultreg' : defaultreg, 'today' : today});
         } else {
             /* render correct summary page for payment vs duration type 1, 2, 3, 4 or 5  */
-            res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg});
+            res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today});
         };
     } else {
-        res.render('examples/elements/evl-renewal-period', {'back' : back, 'defaultreg' : defaultreg})
+        res.render('examples/elements/evl-renewal-period', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
     }
 
     

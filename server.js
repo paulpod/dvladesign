@@ -9,6 +9,12 @@ var path = require('path'),
     password = process.env.PASSWORD,
     env = process.env.NODE_ENV || 'development';
 
+    // Moment to grab the date and do that in places
+    var moment = require("moment");
+
+
+
+
 // Authenticate against the environment-provided credentials, if running
 // the app in production (Heroku, effectively)
 if (env === 'production') {
@@ -30,7 +36,7 @@ app.use('/public', express.static(__dirname + '/public'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_template/assets'));
 app.use('/public', express.static(__dirname + '/govuk_modules/govuk_frontend_toolkit'));
 
-app.use(express.favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images','favicon.ico'))); 
+app.use(express.favicon(path.join(__dirname, 'govuk_modules', 'govuk_template', 'assets', 'images','favicon.ico')));
 
 
 // send assetPath to all views
@@ -38,6 +44,8 @@ app.use(function (req, res, next) {
   res.locals({'assetPath': '/public/'});
   next();
 });
+
+
 
 
 // routes (found in app/routes.js)
