@@ -1,0 +1,123 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+  <!-- <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1> -->
+
+
+  <div>
+  <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">
+
+
+
+
+  <form action="evl-11-renewal-picto" method="get" class="form">
+
+  <input type="hidden" name="nextbacklink" value="evl-renewal-period">
+  <input type="hidden" name="regmark" value="{{defaultreg}}">
+
+
+
+
+    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">How to pay</h2>
+
+
+
+    <div class="form-group form-group-compound" style="font-size:100%">
+
+    <label for="pradio-inline-1" class="block-label" data-target="monthly" style="margin-bottom:1em">
+    <input id="pradio-inline-1" type="radio"  name="paynum" value="3">
+    Pay monthly by Direct Debit, approximately <strong>£9.17</strong> each
+    </label>
+
+    <br clear="all">
+
+    <p>Payments will be taken from your bank account each month continuously.</p>
+    <p>No need to renew, automatically stops when no longer required, eg. you sell your vehicle.</p>
+    <p>Total: <strong>£110.00</strong> per year</p>
+      
+
+
+    <br clear="all">
+    <p style="padding: 0 0 1.5em 0;margin:0">Or</p>
+
+
+
+    <label for="pradio-inline-3" class="block-label" data-target="12months" style="margin-bottom:1em">
+    <input id="pradio-inline-3" type="radio"  name="paynum" value="2">
+    Pay for 12 months, one payment by card of <strong>£110.00</strong>
+    </label>
+
+    <br clear="all">
+
+    <p>There's an additional £2.50 fee for paying by credit card (including prepaid cards).</p>
+    <p>There is no fee for paying by debit cards.</p>
+
+
+
+    </div>
+
+  </div>
+
+
+
+  </fieldset>
+
+
+    
+    
+
+
+    <br clear="all">
+
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding:1em 0">
+    <input type="submit" class="button" value="Continue">
+
+    <p style="padding:1em 0"><a href="start">Cancel application</a>
+
+
+    
+    <p style="margin-top:1em"><a rel="external" href="https://www.gov.uk/government/publications/rates-of-vehicle-tax-v149" target="_blank">Rates of vehicle tax (V149)</a>
+    </p>
+
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

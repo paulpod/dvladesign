@@ -1,0 +1,144 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main">
+
+
+  
+  <div>
+  <a class="back-to-previous" href="evl-11">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">
+
+  
+
+
+  <form action="evl-3-flow" method="get" class="form" data-parsley-validate>
+  <input type="hidden" name="nextlink" value="evl-vehicle-details">
+  <input type="hidden" name="nextbacklink" value="evl-3-v5c">
+
+
+    <h1 class="form-title heading-large" style="margin:0 0 1em 0;padding:0">
+      Pay vehicle tax
+    </h1>
+
+
+
+    <h2 class="heading-medium" style="font-weight:normal;padding:0;margin:1em 0 1em 0">Using a warning letter</h2>
+
+
+     <label class="form-label" for="vehicle-reg" style="font-size:120%;padding-top:0.75em">
+    Vehicle registration (number plate)</label>
+
+
+    <div id="validfield-1">
+    <input class="form-control" type="text" maxlength="8" id="regmark" name="regmark" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6;text-transform:uppercase" size="8" data-parsley-trigger="change" data-parsley-required-message="A vehicle registration is required" required required data-parsley-errors-container="validfield-1">
+
+    </div>
+
+
+    <br clear="all">
+
+
+    <img src="/public/images/warning-diagram.png" width="280" height="190" align="middle" style="padding:1em 0 0.2em 0">
+
+
+
+
+    
+
+    <!-- Ref number select -->
+    <div class="form-group form-group-compound">
+
+     <!--<div class="help-notice" style="font-weight:700;width:80%;padding-left:3em;margin-bottom:0.1em;padding-top:0.2em">Do not use this number if you have received a V11 reminder letter,<br>or if the V5C is not in your name</div>-->
+
+    
+    <label class="form-label" for="nationality-other-v11" style="font-size:120%;padding-top:0.75em">
+    11 digit reference number</label>
+
+
+    <div id="validfield-2">
+    <input class="num form-control" type="text" maxlength="11" id="ref-v5c" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6" size="16" data-parsley-trigger="change" data-parsley-required-message="The document reference number is required" required data-parsley-errors-container="validfield-2">
+
+    </div>
+
+
+<script>
+        $(document).ready(function() {
+          $("input.num").keydown(function (e) {
+              // Allow: backspace, delete, tab, escape, enter and .
+              if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                   // Allow: Ctrl+A
+                  (e.keyCode == 65 && e.ctrlKey === true) ||
+                   // Allow: Ctrl+C
+                  (e.keyCode == 67 && e.ctrlKey === true) ||
+                   // Allow: Ctrl+X
+                  (e.keyCode == 88 && e.ctrlKey === true) ||
+                   // Allow: home, end, left, right
+                  (e.keyCode >= 35 && e.keyCode <= 39)) {
+                       // let it happen, don't do anything
+                       return;
+              }
+              // Ensure that it is a number and stop the keypress
+              if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                  e.preventDefault();
+              }
+          });
+      });     
+      </script>
+
+
+
+    <!-- div class="grid-row">
+      <div class="column-two-thirds">
+        
+        <p style="margin-top:1em">You should have received a V5C vehicle registration certificate with your name on, within two weeks of acquiring your vehicle.</p>
+
+     </div-->
+   </div>
+          
+
+
+    </div>
+
+
+
+  </fieldset>
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding-top:2.2em">
+    <input type="submit" class="button" value="Continue">
+    
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
