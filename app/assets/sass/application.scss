@@ -430,6 +430,10 @@ font-size: 140%;
 border-radius: 0.25em;
 text-transform:uppercase;
 }
+@media (max-width: 640px) {
+  .reg-mark {
+    margin-top: 0.8em;} }
+
 
 
 
