@@ -200,6 +200,9 @@ module.exports = {
     } else if (x == "v5c2") {
         console.log(x);
         res.render('examples/elements/evl-11-v5c2-chooser', {'back' : back, 'defaultreg' : defaultreg});
+    } else if (x == "warn") {
+        console.log(x);
+        res.render('examples/elements/evl-11-v5c2-w', {'back' : back, 'defaultreg' : defaultreg});
     } else {
         console.log(x);
         res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
