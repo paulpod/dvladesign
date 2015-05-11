@@ -431,8 +431,10 @@ border-radius: 0.25em;
 text-transform:uppercase;
 }
 @media (max-width: 640px) {
-  .reg-mark {
-    margin-top: 0.8em;} }
+  .reg-mark-parent {
+  margin-bottom: 0.5em;
+  }
+}
 
 
 
@@ -770,6 +772,11 @@ margin: 0.3em 0 1em -14px;
 border-left: 4px solid #df3034;
 color: #df3034;
 font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .parsley-errors-list li {
+  font-size: 16px;}
 }
 
 input.parsley-error,

@@ -121,10 +121,17 @@ fieldset {
 
 .form-control-1-4 {
   width: 25%;
+   @media (max-width: 640px) {
+    width: 75%;
+  }
 }
 
 .form-control-1-8 {
   width: 12.5%;
+   @media (max-width: 640px) {
+    width: 50%;
+  }
+
 }
 
 
