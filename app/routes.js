@@ -202,7 +202,7 @@ module.exports = {
         res.render('examples/elements/evl-11-v5c2-chooser', {'back' : back, 'defaultreg' : defaultreg});
     } else if (x == "warn") {
         console.log(x);
-        res.render('examples/elements/evl-11-v5c-w', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/evl-11-warn-chooser', {'back' : back, 'defaultreg' : defaultreg});
     } else {
         console.log(x);
         res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
@@ -243,6 +243,40 @@ module.exports = {
     }
 
     });
+
+
+
+
+
+    /* - - - - - - - - - - - - - - - - - - - - - - */
+    /* Pages for EVL warning letters v11 or v5c doc refs */
+
+    app.get('/examples/elements/evl-11-warning', function (req, res) {
+
+    var x = req.query.reftype;
+    var back = req.query.nextbacklink;
+    var regmark = req.query.regmark;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
+
+
+    if (x == "v11-lc") {
+        console.log(x);
+        res.render('examples/elements/evl-11-v11-lc', {'back' : back, 'defaultreg' : defaultreg});
+    } else if (x == "v5c-w") {
+        console.log(x);
+        res.render('examples/elements/evl-11-v5c-w', {'back' : back, 'defaultreg' : defaultreg});
+    } else {
+        console.log(x);
+        res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
+    }
+
+    });
+
 
 
 

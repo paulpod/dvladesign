@@ -1,0 +1,347 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+  
+  <script>
+  		var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+  		var lineChartData = {
+  			labels : ["1997","1998","1999","2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014"],
+  			datasets : [
+  				{
+  					label: "Mileage",
+  					fillColor : "rgba(220,220,220,0.2)",
+  					strokeColor : "rgba(48,162,151,1)",
+  					pointColor : "rgba(27,131,121,1)",
+  					pointStrokeColor : "#fff",
+  					pointHighlightFill : "#222",
+  					pointHighlightStroke : "rgba(220,220,220,1)",
+  					data : [3,26618,39491,59635,79896,90567,109254,119254,157422,169570,176480,178128,180007,181178,183018,186307,186318,186828]
+  				}
+  			]
+
+  		}
+		
+		
+		
+
+	  	window.onload = function(){
+	  		var ctx = document.getElementById("canvas").getContext("2d");
+	  		window.myLine = new Chart(ctx).Line(lineChartData, {
+	  			responsive: true
+	  		});
+	  	}
+		
+	  	
+
+
+  	</script>
+  
+  <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+  
+  <script type="text/javascript" src="/public/javascripts/application.js"></script>
+  
+  <script  type="text/javascript" src="/public/javascripts/Chart.js"></script>
+  
+  
+ 
+
+  
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/propositional_blank}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<div id="global-header-bar">
+  <div class="inner-block">
+    <div class="header-bar"></div>
+  </div>
+</div>
+	
+	
+<main id="wrapper" role="main">
+  <div id="content">
+    <div class="inner-block">
+		
+	<a class="back-to-previous" href="transfer-4">Back <span class="visuallyhidden"> to the previous question</span></a>
+		
+		
+	<article>
+	
+	
+	<h1 class="heading-48">
+	Vehicle enquiry
+	</h1>
+	
+	<h2>
+	Registration number: <span class="car-reg">EAZ 115</span>
+	</h2>
+	  
+	  
+	<div class="isValidTax">
+	<h2>✔ Taxed</h2>
+	<p>Expires: 01 August 2015</p>
+	</div>
+
+
+	<div class="isValidMot">
+	<h2>✔ MOT</h2>
+	<p>Expires: 24 February 2015</p>
+	</div>
+
+
+	<h2 class="heading-24">Vehicle excise duty for this vehicle</h2>
+
+
+<ul class="ul-data">
+	<li><span>6 Month rate</span><strong>£126.50</strong></li>
+		
+	<li><span>12 Month rate</span><strong>£230.00</strong></li>
+
+</ul>
+
+
+<h2 class="heading-24">Vehicle details</h2>
+	
+	
+	
+<ul class="ul-data">
+	<li><span>Vehicle make</span><strong>TOYOTA</strong></li>
+	
+	<li><span>Date of first registration</span><strong>20 August 1997</strong></li>
+	
+	<li><span>Year of manufacture</span><strong>1997</strong></li>
+	
+	<li><span>Cylinder capacity (cc)</span><strong>2982cc</strong></li>
+	
+	<li><span>CO₂Emissions</span><strong>Not available</strong></li>
+	
+	<li><span>Fuel type</span><strong>HEAVY OIL</strong></li>
+	
+	<li><span>Export marker</span><strong>No</strong></li>
+	
+	<li><span>Vehicle status</span><strong>Tax not due</strong></li>
+	
+	<li><span>Vehicle colour</span><strong>GREEN</strong></li>
+	
+	<li><span>Vehicle type approval</span><strong>Not available</strong></li>
+	
+</ul>
+
+
+	<p class="grid-2-3">
+	Please be aware that if you have taxed, made a SORN or had an MOT in the last 5 days these details may not have updated.
+	</p>
+	
+	
+
+	<details>
+	<summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true"><span class="summary">Are the details above incorrect?</span></summary>
+	<div class="panel-indent" id="details-content-0" aria-hidden="false" style="display: block;">
+    <h2 class="visuallyhidden">Help with corrections to vehicle records</h2>
+	<p>If you think that the details on the vehicle record are incorrect please write to:</p>
+	<p>
+	CCG<br>
+	DVLA<br>
+	Swansea<br>
+	SA99 1BA
+	</p>
+
+	<p>
+	Please include the incorrect V5C registration certificate for amendment.
+	</p>
+	</div>
+	</details>
+	
+	
+	
+	<div style="padding-top:1em">
+	<h2 class="heading-24">MOT History</h2>
+	</div>
+	
+	
+	
+
+	<ul class="ul-data">
+		<li class="mot-pass">Certificate issued (Pass)</li>
+		<li><span>Date of test</span><strong>25/02/2014</strong></li>
+		<li><span>Odometer reading</span><strong>186,828 Miles</strong></li>
+		<li><span>Test number</span><strong>149946854486</strong></li>
+		<li><span>Test expiry date</span><strong>24/02/2015</strong></li>
+	</ul>
+	
+	
+	
+		
+	<div>
+		<h2 class="heading-19" style="text-align:center;font-size:16px">Mileage recorded : 1997–2014</h2>
+		<div class="graphbox">
+			<canvas id="canvas" height="60"></canvas>
+		</div>
+	</div>
+
+	
+	<details style="margin-top:1.5em" >
+	<summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true">
+		<span class="summary">Full test history (2002 to 2014)</span>
+	</summary>
+	<div class="" id="details-content-0" aria-hidden="false" style="display:block;border-left:none">
+	
+	
+	
+		<!-- ><div id="chart_div" style="width: 960px; height: 250px;margin-top:4em"></div> -->
+		<!-- <img src="/public/images/mileage.png" width="80%" alt="Mileage" style="margin-top:1em"> -->
+
+
+
+
+		<ul class="ul-data">
+			<li class="mot-pass">Certificate issued (Pass)</li>
+			<li><span>Date of test</span><strong>25/02/2014</strong></li>
+			<li><span>Odometer reading</span><strong>186,828 Miles</strong></li>
+			<li><span>Test number</span><strong>149946854486</strong></li>
+			<li><span>Test expiry date</span><strong>24/02/2015</strong></li>
+		</ul>
+
+
+		<ul class="ul-data">
+			<li class="mot-pass">Certificate issued (Pass)</li>
+			<li><span>Date of test</span><strong>09/01/2013</strong></li>
+			<li><span>Odometer reading</span><strong>186,318 Miles</strong></li>
+			<li><span>Test number</span><strong>468429703070</strong></li>
+			<li><span>Test expiry date</span><strong>08/01/2014</strong></li>
+		</ul>
+
+
+		<ul class="ul-data">
+			<li class="mot-fail">Certificate refused (Fail)</li>
+			<li><span>Date of test</span><strong>14/12/2012</strong></li>
+			<li><span>Odometer reading</span><strong>186,307 Miles</strong></li>
+			<li><span>Test number</span><strong>336679742344</strong></li>
+		</ul>
+
+
+		<ul class="ul-data">
+			<li class="mot-pass">Certificate issued (Pass)</li>
+			<li><span>Date of test</span><strong>05/12/2011</strong></li>
+			<li><span>Odometer reading</span><strong>183,018 Miles</strong></li>
+			<li><span>Test number</span><strong>498069231321</strong></li>
+			<li><span>Test expiry date</span><strong>04/12/2012</strong></li>
+		</ul>
+
+
+		<ul class="ul-data">
+			<li class="mot-pass">Certificate issued (Pass)</li>
+			<li><span>Date of test</span><strong>02/12/2010</strong></li>
+			<li><span>Odometer reading</span><strong>181,178 Miles</strong></li>
+			<li><span>Test number</span><strong>824096830318</strong></li>
+		</ul>
+
+
+		<ul class="ul-data">
+			<li class="mot-pass">Certificate issued (Pass)</li>
+			<li><span>Date of test</span><strong>04/12/2009</strong></li>
+			<li><span>Odometer reading</span><strong>180,007 Miles</strong></li>
+			<li><span>Test number</span><strong>582668139389</strong></li>
+		</ul>
+
+
+		<ul class="ul-data">
+			<li class="mot-pass">Certificate issued (Pass)</li>
+			<li><span>Date of test</span><strong>03/12/2008</strong></li>
+			<li><span>Odometer reading</span><strong>178,128 Miles</strong></li>
+			<li><span>Test number</span><strong>290288238325</strong></li>
+		</ul>
+
+
+		<ul class="ul-data">
+			<li class="mot-fail">Certificate refused (Fail)</li>
+			<li><span>Date of test</span><strong>03/12/2008</strong></li>
+			<li><span>Odometer reading</span><strong>178,128 Miles</strong></li>
+			<li><span>Test number</span><strong>374148838381</strong></li>
+		</ul>
+
+
+		<ul class="ul-data">
+			<li class="mot-pass">Certificate issued (Pass)</li>
+			<li><span>Date of test</span><strong>03/12/2007</strong></li>
+			<li><span>Odometer reading</span><strong>176,480 Miles</strong></li>
+			<li><span>Test number</span><strong>312417337328</strong></li>
+			<li><span>Test expiry date</span><strong>02/12/2008</strong></li>
+		</ul>
+
+
+		<ul class="ul-data">
+			<li class="mot-fail">Certificate refused (Fail)</li>
+			<li><span>Date of test</span><strong>21/11/2007</strong></li>
+			<li><span>Odometer reading</span><strong>176,467 Miles</strong></li>
+			<li><span>Test number</span><strong>733225027326</strong></li>
+		</ul>
+
+
+		<ul class="ul-data">
+			<li class="mot-fail">Certificate refused (Fail)</li>
+			<li><span>Date of test</span><strong>21/11/2007</strong></li>
+			<li><span>Odometer reading</span><strong>176,466 Miles</strong></li>
+			<li><span>Test number</span><strong>343735327362</strong></li>
+		</ul>
+
+
+		<ul class="ul-data">
+			<li class="mot-pass">Certificate issued (Pass)</li>
+			<li><span>Date of test</span><strong>30/10/2006</strong></li>
+			<li><span>Odometer reading</span><strong>169,570 Miles</strong></li>
+			<li><span>Test number</span><strong>512463006306</strong></li>
+			<li><span>Test expiry date</span><strong>01/11/2007</strong></li>
+		</ul>
+
+
+		<ul class="ul-data">
+			<li class="mot-pass">Certificate issued (Pass)</li>
+			<li><span>Date of test</span><strong>02/11/2005</strong></li>
+			<li><span>Odometer reading</span><strong>157,422 Miles</strong></li>
+			<li><span>Test number</span><strong>414246005332</strong></li>
+			<li><span>Test expiry date</span><strong>01/11/2006</strong></li>
+		</ul>
+
+	</div>
+	</details>
+
+</article>		
+
+
+<form action="get" class="form" style="margin-top:2.5em">
+	<fieldset>
+		<div style="float:left;padding-right:1em">
+		  <input type="submit" class="button" value="Finish">
+		</div>
+	  
+
+		<div>
+		  <p><a href="transfer-3">
+			Search for another vehicle
+		</a></p>
+		</div>
+
+	</fieldset>
+</form>
+                    
+                
+
+    </div>
+  </div>
+</main>
+{{/content}}
+
+{{/govuk_template}}
