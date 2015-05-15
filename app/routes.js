@@ -163,7 +163,7 @@ module.exports = {
             res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today});
         };
     } else {
-        res.render('examples/elements/evl-11-renewal-picto', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
+        res.render('examples/elements/evl-renewal-period', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
     }
 
     
