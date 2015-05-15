@@ -15,8 +15,15 @@
 
 
 
+{{/head}}
 
- {{/head}}
+
+{{$propositionHeader}}
+  {{>includes/govuk_evlprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
 
 {{$content}}
 
@@ -92,12 +99,25 @@
 			<label>Date of birth</label>
 			
 			<div class="address-form-line autotabbed" style="margin-bottom:1em">
+
+			<div style="float:left">
+			Day<br/>
 			<input id="dob-dd" name="dob-dd" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em" required data-parsley-required-message="add day as two digits " data-parsley-errors-container="#date-error-field" data-parsley-trigger="change" data-parsley-max="31">
+			</div>
 
+			<div style="float:left">
+			Month<br/>
 			<input id="dob-mm" name="dob-mm" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em" required data-parsley-required-message="add month as two digits " data-parsley-errors-container="#date-error-field" data-parsley-trigger="change" data-parsley-max="12">
+			</div>
 
+			<div style="float:left">
+			Year<br/>
 			<input id="dob-yyyy" name="dob-yyyy" class="num form-control form-control-1-8" maxlength="4" type="text"  style="width:71px" required data-parsley-required-message="add year as four digits" required data-parsley-errors-container="#date-error-field" data-parsley-trigger="change">
-			<p style="margin-top:0.75em">Example: 03 11 1976<br>
+			</div>
+
+			<br clear="all">
+
+			<p style="margin-top:0.75em"><!--Example: 03 11 1976<br>-->
 			We need this to confirm who you are if you ever need to call our Contact Centre</p>
 
 			<div id="date-error-field">
