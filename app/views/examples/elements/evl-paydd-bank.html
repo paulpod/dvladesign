@@ -64,7 +64,7 @@
 
 			<label>Name of account holder</label>
 			<div class="address-form-line" style="margin-bottom:1em">
-			<input id="ddbankname" name="ddbankname" class="form-control form-control-1-4" type="text" data-parsley-trigger=" change" required data-parsley-required-message="The name of the account holder is required">
+			<input id="ddbankname" name="ddbankname" autocomplete="off" class="form-control form-control-1-4" type="text" data-parsley-trigger=" change" required data-parsley-required-message="The name of the account holder is required">
 			</div>
 
 
@@ -72,11 +72,11 @@
 			<label>Sort code</label>
 			<div class="address-form-line" style="margin-bottom:1em">
 			<fieldset required>
-			<input id="ddbanksort-1" name="ddbanksortcode-1" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em;float:left">
+			<input id="ddbanksort-1" autocomplete="off" name="ddbanksortcode-1" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em;float:left">
 
-			<input id="ddbanksort-2" name="ddbanksortcode-2" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em;float:left">
+			<input id="ddbanksort-2" autocomplete="off" name="ddbanksortcode-2" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em;float:left">
 
-			<input id="ddbanksort-3" name="ddbanksortcode-3" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px">
+			<input id="ddbanksort-3" autocomplete="off" name="ddbanksortcode-3" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px">
 			</fieldset>
 			</div>
 
@@ -91,7 +91,7 @@
 
 			<label>Bank account number</label>
 			<div class="address-form-line" style="margin-bottom:1em">
-			<input id="ddbankac" name="ddbankac" class="num form-control form-control-1-4" type="text" maxlength="8" required data-parsley-required-message="A bank account number is required" data-parsley-trigger="focusin focusout">
+			<input id="ddbankac" name="ddbankac" autocomplete="off" class="num form-control form-control-1-4" type="text" maxlength="8" required data-parsley-required-message="A bank account number is required" data-parsley-trigger="focusin focusout">
 			</div>
 
 
@@ -102,17 +102,17 @@
 
 			<div style="float:left">
 			Day<br/>
-			<input id="dob-dd" name="dob-dd" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em" required data-parsley-required-message="add day as two digits " data-parsley-errors-container="#date-error-field" data-parsley-trigger="change" data-parsley-max="31">
+			<input id="dob-dd" name="dob-dd" autocomplete="off" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em" required data-parsley-required-message="add day as two digits " data-parsley-errors-container="#date-error-field" data-parsley-trigger="change" data-parsley-max="31">
 			</div>
 
 			<div style="float:left">
 			Month<br/>
-			<input id="dob-mm" name="dob-mm" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em" required data-parsley-required-message="add month as two digits " data-parsley-errors-container="#date-error-field" data-parsley-trigger="change" data-parsley-max="12">
+			<input id="dob-mm" name="dob-mm" autocomplete="off" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em" required data-parsley-required-message="add month as two digits " data-parsley-errors-container="#date-error-field" data-parsley-trigger="change" data-parsley-max="12">
 			</div>
 
 			<div style="float:left">
 			Year<br/>
-			<input id="dob-yyyy" name="dob-yyyy" class="num form-control form-control-1-8" maxlength="4" type="text"  style="width:71px" required data-parsley-required-message="add year as four digits" required data-parsley-errors-container="#date-error-field" data-parsley-trigger="change">
+			<input id="dob-yyyy" name="dob-yyyy" autocomplete="off" class="num form-control form-control-1-8" maxlength="4" type="text"  style="width:71px" required data-parsley-required-message="add year as four digits" required data-parsley-errors-container="#date-error-field" data-parsley-trigger="change">
 			</div>
 
 			<br clear="all">
@@ -175,9 +175,9 @@
 	            <br clear="all" />
 
 
-	            <p>I have the authority to set up a Direct Debit against this account</p>
+	            <p>I have the authority to set up a Direct Debit against this account.</p>
 
-	            <p>If this is a joint account, only one account holder is required to sign</p>
+	            <p>If this is a joint account, only one account holder is required to authorise payments.</p>
 	            </div>
 
 
