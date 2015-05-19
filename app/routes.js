@@ -55,7 +55,13 @@ module.exports = {
         var defaultreg = regmark;
     }
 
-    res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg, 'email' : email});
+
+    var moment = require("moment");
+    var now = moment(new Date());
+    var today = now.format("D MMM YYYY");
+
+
+    res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg, 'email' : email, 'today' : today});
     
  
     });
@@ -108,6 +114,7 @@ module.exports = {
         var defaultreg = regmark;
     }
 
+    var moment = require("moment");
     var now = moment(new Date());
     var today = now.format("D MMM YYYY");
 
@@ -121,7 +128,7 @@ module.exports = {
             res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today});
         };
     } else {
-        res.render('examples/elements/evl-renewal-period', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
+        res.render('examples/elements/evl-renewal-period-picto', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
     }
 
     
@@ -163,7 +170,7 @@ module.exports = {
             res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today});
         };
     } else {
-        res.render('examples/elements/evl-renewal-period', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
+        res.render('examples/elements/evl-renewal-period-picto', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
     }
 
     
@@ -202,7 +209,7 @@ module.exports = {
         res.render('examples/elements/evl-11-v5c2-chooser', {'back' : back, 'defaultreg' : defaultreg});
     } else if (x == "warn") {
         console.log(x);
-        res.render('examples/elements/evl-11-warn-choos', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/evl-11-warn-chooser', {'back' : back, 'defaultreg' : defaultreg});
     } else {
         console.log(x);
         res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
