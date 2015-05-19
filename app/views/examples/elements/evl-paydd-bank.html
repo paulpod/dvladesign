@@ -69,7 +69,7 @@
 
 
 
-			<label>Sort code</label>
+			<!-- <label>Sort code</label>
 			<div class="address-form-line" style="margin-bottom:1em">
 			<fieldset required>
 			<input id="ddbanksort-1" autocomplete="off" name="ddbanksortcode-1" class="num form-control form-control-1-8" maxlength="2" type="text" style="width:71px;margin-right:0.5em;float:left">
@@ -77,6 +77,19 @@
 			<input id="ddbanksort-2" autocomplete="off" name="ddbanksortcode-2" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px;margin-right:0.5em;float:left">
 
 			<input id="ddbanksort-3" autocomplete="off" name="ddbanksortcode-3" class="num form-control form-control-1-8" maxlength="2" type="text"  style="width:71px">
+			</fieldset>
+			</div>
+
+			<br clear="all"> -->
+
+
+
+			<label>Sort code</label>
+			<div class="address-form-line" style="margin-bottom:1em">
+			<fieldset required>
+			<input id="ddbanksort" autocomplete="off" name="ddbanksortcode" class="num form-control form-control-1-8" maxlength="8" type="text" style="width:120px;margin-right:0.5em;float:left">
+
+		
 			</fieldset>
 			</div>
 
@@ -137,7 +150,7 @@
 				$(document).ready(function() {
 			    $("input.num").keydown(function (e) {
 			        // Allow: backspace, delete, tab, escape, enter and .
-			        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+			        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, ,189, 109, 190, 32]) !== -1 ||
 			             // Allow: Ctrl+A
 			            (e.keyCode == 65 && e.ctrlKey === true) ||
 			             // Allow: Ctrl+C
