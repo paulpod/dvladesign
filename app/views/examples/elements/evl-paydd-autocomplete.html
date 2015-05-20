@@ -1,0 +1,77 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+
+	<script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/postcodes.min.js"></script>
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_evlprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+
+
+	<div style="visibility:hidden">
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+		
+	
+	<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">
+	Setting up your Direct Debit...
+	</h2>
+
+	<form action="evl-3-flow" method="get" class="form">
+	  <input type="hidden" name="nextlink" value="evl-end-dd">
+	  <input type="hidden" name="nextbacklink" value="evl-paydd-address-playback">
+      <input type="hidden" name="regmark" value="{{defaultreg}}">
+
+
+<div>
+	<center>
+		<img src="/public/images/ajax-loader.gif" height="54px" width="55px" style="margin:3em 0 20em 0">
+	</center>
+</div>
+
+<meta http-equiv="refresh" content="3;url=evl-end-dd">
+
+
+</form>
+
+                
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

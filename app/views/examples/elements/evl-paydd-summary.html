@@ -44,38 +44,338 @@
 		
 	
 	<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">
-	Direct Debit summary
+	One more step
 	</h2>
 
 	<form action="evl-3-flow" method="get" class="form">
-		<input type="hidden" name="nextlink" value="evl-paydd-complete">
+		<input type="hidden" name="nextlink" value="evl-paydd-autocomplete">
 		<input type="hidden" name="nextbacklink" value="evl-paydd-summary">
 		<input type="hidden" name="regmark" value="{{defaultreg}}">
 		<input type="hidden" name="email" value="{{email}}">
 
 
 
-
-	<p style="margin-top:1em">Read more about <a rel="external" href="https://www.gov.uk/vehicle-tax-direct-debit" target="blank">using Direct Debit to pay your vehicle tax</a>, which also explains renewals, refunds and cancelations.</p>
+	
 
 <!--A summary of what your payments will be-->
 
 
-<ul class="ul-data">
-	<li><span style="width:32%" class="reg-mark-parent">Total £116.00 payable for vehicle </span><i class="reg-mark" style="font-size:120%">{{defaultreg}}</i></li>
-	<li><span style="width:32%">First payment of £9.74 </span><strong>{{today}}</strong></li>
-	<li><span style="width:32%">11 monthly payments of £9.66 </span><strong>1st of each subsequent month</strong></li>
-	<li><span style="width:32%">Email address for receipts </span><strong>{{email}}</strong></li>
+	<ul class="ul-data">
+		<li><span style="width:32%" class="reg-mark-parent">Total £116.00 payable for vehicle </span><i class="reg-mark" style="font-size:120%">{{defaultreg}}</i></li>
+		<li><span style="width:32%">First payment of £9.74 </span><strong>{{today}}</strong></li>
+		<li><span style="width:32%">11 monthly payments of £9.66 </span><strong>1st of each subsequent month</strong></li>
+		<li><span style="width:32%">Email address for receipts </span><strong>{{email}}</strong></li>
+			<p>Please check your junk or spam folders if you do not receive it.</p>
 
-</ul>
+
+	</ul>
+
+	<div class="form-group" style="margin:1em 0 2.75em 0">
+			<input type="submit" class="button" value="Next">
+        </div>
+
+
+
+
+<!-- Contextual content dispaly menthod :: display a schedule in a new tab/window for desktops, but this is more confusing on mobile, so use an expander for those users -->
+
+	<div class="for-desktop">
+		<p><a rel="external" href="evl-paydd-schedule" target="_blank">View, save or print your entire Direct Debit schedule now</a><br />(opens in a new window)
+		</p>
+	</div>
+
+	<div class="for-mobile">
+		<details>
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true" style="padding-top:0.7em">
+          <span class="summary">View your entire Direct Debit schedule now</span>
+        </summary>
+        <div class="panel-indent js-hidden" id="details-content-0" aria-hidden="false" >
+        
+        
+				<div id="schedule-content">
+				<!--A summary of what your payments will be-->
+
+	<table class="payments" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:2em">
+		<tbody><tr>
+			<td>
+				<label><strong>Account Name</strong></label>&nbsp;
+			</td>
+			<td><label>Mr Jones</label>&nbsp;</td>
+			<td><strong>Account number</strong>&nbsp;</td>
+			<td>*****678&nbsp;</td>
+		</tr>
+		<tr>
+			<td><strong>Payment frequency</strong>&nbsp;</td>
+			<td>Monthly&nbsp;
+			</td>
+			<td><strong>Sort code</strong>&nbsp;</td>
+			<td>102030</td>
+		</tr>
+	</tbody></table>
+
+
+	<table class="payments" width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td scope="col"><strong>Payment Amount</strong>&nbsp;</td>
+			<td scope="col"><strong>Date of Payment</strong>&nbsp;</td>
+		</tr>
+		
+			<tr>
+				<td scope="row">£9.74&nbsp;</td>
+				<td>17 April 2017&nbsp;</td>
+			</tr>
+		
+			<tr>
+				<td scope="row">£9.66&nbsp;</td>
+				<td>01 May 2017&nbsp;</td>
+			</tr>
+		
+			<tr>
+				<td scope="row">£9.66&nbsp;</td>
+				<td>01 June 2017&nbsp;</td>
+			</tr>
+		
+			<tr>
+				<td scope="row">£9.66&nbsp;</td>
+				<td>03 July 2017&nbsp;</td>
+			</tr>
+		
+			<tr>
+				<td scope="row">£9.66&nbsp;</td>
+				<td>01 August 2017&nbsp;</td>
+			</tr>
+		
+			<tr>
+				<td scope="row">£9.66&nbsp;</td>
+				<td>01 September 2017&nbsp;</td>
+			</tr>
+		
+			<tr>
+				<td scope="row">£9.66&nbsp;</td>
+				<td>02 October 2017&nbsp;</td>
+			</tr>
+		
+			<tr>
+				<td scope="row">£9.66&nbsp;</td>
+				<td>01 November 2017&nbsp;</td>
+			</tr>
+		
+			<tr>
+				<td scope="row">£9.66&nbsp;</td>
+				<td>01 December 2017&nbsp;</td>
+			</tr>
+		
+			<tr>
+				<td scope="row">£9.66&nbsp;</td>
+				<td>01 January 2018&nbsp;</td>
+			</tr>
+		
+			<tr>
+				<td scope="row">£9.66&nbsp;</td>
+				<td>01 February 2018&nbsp;</td>
+			</tr>
+		
+			<tr>
+				<td scope="row">£9.66&nbsp;</td>
+				<td>01 March 2018&nbsp;</td>
+			</tr>
+		
+	</tbody></table>
+
+
+
+	<img src="/public/images/dvla-logo.png" alt="Driver and Vehicle Licensing Agency" style="margin:1em 0">
+			
+	<p>
+	DVLA<br>
+	Swansea<br>
+	SA99 1AR<br>
+	</p>
+	<p>
+	Telephone:
+	0300 123 4321
+	</p>
+	<p>
+	Email Address:
+
+	<a href="https://emaildvla.direct.gov.uk/emaildvla/cegemail/dvla/en/index.html" target="_blank"> https://emaildvla.direct.gov.uk/emaildvla/cegemail/dvla/en/index.html </a>
+	</p>
+	<p>
+	Website:	<a href="https://www.gov.uk/browse/driving" target="_blank"> https://www.gov.uk/browse/driving </a></p>
+			
+
+	<h2 class="heading-medium"><strong>Please do not send this form to your bank</strong></h2>
+			
+
+
+
+
+
+
+	<table class="payments" width="100%" cellpadding="2" cellspacing="2">
+		<tbody><tr>
+			<td >
+				<p>DVLA</p>
+				<p>Swansea</p>
+				<p>SA99 1AR</p>
+				<p>T: 0300 123 4321</p>
+			</td>
+			<td >
+				<p>Instruction to your bank or building society to pay by Direct Debit</p>
+
+				<img src="/public/images/dd-logo.png" alt="Direct Debit logo" height="35" width="90">
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<strong>Name of account holder</strong>
+			</td>
+			<td>
+				<strong>Service user number</strong>
+			</td>
+		</tr>
+		<tr>
+			<td><label>Mr Jones</label></td>
+			<td>
+				2  9  5  4  0  2
+		</td></tr>
+		<tr>
+			<td>
+				<strong>Bank / Building society account number</strong>
+			</td>
+			<td>
+				FOR DVLA OFFICIAL USE ONLY. This is not part of this instruction to your bank or building society.
+			</td>
+		</tr>
+		<tr>
+			<td>
+				*  *  *  *  *  6  7  8
+
+			</td>
+			<td >&nbsp;</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>Branch sort code</strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				1  0  2  0  3  0
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>Name and address of bank or building society</strong>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				
+					<p>Test Bank                     </p>
+				
+				
+					<p>Test Street                   </p>
+				
+				
+					<p>Test Localit                  </p>
+				
+				
+					<p>Test Town                     </p>
+				
+				
+					<p>Test County                   </p>
+				
+				
+					<p></p>
+				
+				
+					<p>TST 111 </p>
+				
+			</td>
+			<td >
+				
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				<strong>Reference</strong>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+				0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  8  3  4
+			</td>
+		</tr>
+			<td colspan="2">
+				<p>
+				<strong>Instruction to your bank or building society</strong>
+				</p>
+				<p>Please pay DVLA Direct Debits from the account detailed in this instruction subject to the safeguards assured by the Direct Debit Guarantee.</p>
+
+				<p>I understand that this instruction may remain with DVLA and if so, details will be passed electronically to my bank/ building society.</p>
+
+				<p>Banks and building societies may not accept Direct Debit Instructions for some types of account.</p>
+			</td>
+		</tr>
+	</tbody></table>
+
+
+
+	<table class="payments" width="100%" border="0" cellpadding="0" cellspacing="0">
+		<tbody><tr>
+			<td colspan="2">
+				<strong>Direct Debit Guarantee</strong>
+			</td>
+			<td>
+				<img src="/public/images/dd-logo.png" alt="Direct Debit logo" height="45" width="121" align="right">
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<p>This Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.</p>
+
+				<p>If there are any changes to the amount, date or frequency of your Direct Debit the Driver and Vehicle Licensing Agency (DVLA) will notify you 10 working days in advance of your account being debited or as otherwise agreed. If you request DVLA to collect a payment, confirmation of the amount and date will be given to you at thetime of the request.</p>
+
+				<p>If an error is made in the payment of your Direct Debit, by DVLA or your bank or building society, you are entitled to a full and immediate  refund of the amount paid from your bank or building society. </p>
+
+				<p>If you receive a refund you are not entitled to, you must pay it back when DVLA asks you to.</p>
+
+				<p>You can cancel a Direct Debit at any time by simply contacting your bank or building society. Written confirmation may be required. Please also notify us.</p>
+				
+			</td>
+		</tr>
+	</tbody></table>
+				</div>
+          
+        </div>
+      </details>
+
+
+
+	</div>
+
+
+<!-- <div class="grid-row">
+  <div class="column-two-thirds">
+
+	<p>A confirmation email and full payment schedule will be sent to your email address <strong>{{email}}</strong> within 24 hours confirming this direct debit has been set up. </p>
+
+	<p>Please check your junk or spam folders if you have not received it.</p>
 	
+	<p>The collections will appear on your bank statement with these references: <strong>DVLA 295402</strong> and <strong style="text-transform:uppercase">{{defaultreg}}</strong></p>
+
+	<p>Your vehicle tax will automatically renew, and we will stop your direct debits if you no longer need to pay it, eg. you sell your car.</p>
+
+	<p style="margin:1em 0 3em 0">Read more about <a rel="external" href="https://www.gov.uk/vehicle-tax-direct-debit" target="blank">using Direct Debit to pay your vehicle tax</a>, which also explains renewals, refunds and cancellations.</p>
+
+	</div>
+</div> -->
 		
 
 
 
-		<div class="form-group" style="margin-top:0">
-			<input type="submit" class="button" value="Next">
-        </div>
+		
 
 
 
