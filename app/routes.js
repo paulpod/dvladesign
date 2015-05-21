@@ -184,6 +184,46 @@ module.exports = {
 
 
 
+    /* - - - - - - - - - - - - - - - - - - - -- - -  */
+    /* Re-simplified How to pay, renewal period page */
+
+    app.get('/examples/elements/evl-11-renewal-three', function (req, res) {
+
+
+    var payperiod = req.query.payperiod;
+    var paynum = req.query.paynum;
+    var back = req.query.nextbacklink;
+    var regmark = req.query.regmark;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
+
+    var moment = require("moment");
+    var now = moment(new Date());
+    var today = now.format("D MMM YYYY");
+
+
+    if (paynum != undefined) {
+        /* render correct summary page for payment vs duration type 1, 2, 3, 4 or 5  */
+        res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today});
+    } else {
+        res.render('examples/elements/evl-renewal-period-three', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
+    }
+
+    
+
+    });
+
+
+
+
+
+
+
+
 
     /* - - - - - - - - - - - - - - - - - - - */
     /* Pages for EVL revision to entrypoint */
