@@ -85,7 +85,7 @@
 
 
 			<label>Sort code</label>
-			<div class="address-form-line" style="margin-bottom:1em">
+			<div class="address-form-line" style="margin-bottom:0.2em">
 			<fieldset required>
 			<input id="ddbanksort" autocomplete="off" name="ddbanksortcode" class="num form-control form-control-1-8" maxlength="8" type="text" style="width:120px;margin-right:0.5em;float:left">
 
@@ -111,7 +111,7 @@
 
 			<label>Date of birth</label>
 			
-			<div class="address-form-line autotabbed" style="margin-bottom:0">
+			<div class="address-form-line autotabbed" style="padding-bottom:0;margin-bottom:0">
 
 			<div style="float:left">
 			Day<br/>
@@ -130,7 +130,7 @@
 
 			<br clear="all">
 
-			<p style="margin-top:0.75em"><!--Example: 03 11 1976<br>-->
+			<p style="margin:0.75em 0 0 0"><!--Example: 03 11 1976<br>-->
 			We need this to confirm who you are if you ever need to call our Contact Centre</p>
 
 			<div id="date-error-field">
@@ -138,7 +138,7 @@
 			</div>
 			</div>
 
-			<br clear="all">
+			<br clear="all" />
 
 
 
@@ -175,8 +175,36 @@
 
 
 
-				
-	            <div id="truthbox" style="border:4px #ccc solid;padding:1em;margin-top:0">
+		<div class="form-group" style="margin:0 0 2em 0">
+			<input type="submit" class="button" value="Continue">
+        </div>
+
+
+
+	<div id="dd-guarantee">
+		<div class="grid-row">
+			<div class="column-two-thirds">
+				<h2 class="heading-medium" style="margin-top:0">Direct Debit Guarantee</h2>
+
+				<ul class="dd-guarantee">
+				<li>This Guarantee is offered by all banks and building societies that accept instructions to pay Direct Debits.</li>
+
+				<li>If there are any changes to the amount, date or frequency of your Direct Debit the Driver and Vehicle Licensing Agency (DVLA) will notify you 10 working days in advance of your account being debited or as otherwise agreed. If you request DVLA to collect a payment, confirmation of the amount and date will be given to you at the time of the request.</li>
+
+				<li>If an error is made in the payment of your Direct Debit, by DVLA or your bank or building society, you are entitled to a full and immediate refund of the amount paid from your bank or building society.</li>
+
+				<li>If you receive a refund you are not entitled to, you must pay it back when DVLA asks you to.
+				You can cancel a Direct Debit at any time by simply contacting your bank or building society. Written confirmation may be required. Please also notify us.</li>
+				</uL>
+
+			</div>
+			<div class="column-one-third">
+			<img src="/public/images/dd-logo.png" style="padding-top:1.5em">
+			</div>
+		</div>
+	</div>
+
+	            <!--<div id="truthbox" style="border:4px #ccc solid;padding:1em;margin-top:0">
 
 	            <div id="truth-error-field">
 
@@ -193,7 +221,7 @@
 	            <p>I have the authority to set up a Direct Debit against this account.</p>
 
 	            <p>If this is a joint account, only one account holder is required to authorise payments.</p>
-	            </div>
+	            </div>-->
 
 
 				<!--<p style="margin: 0.5em 0 0.2em 0">Please confirm both:</p>
@@ -223,9 +251,7 @@
 
 
 
-		<div class="form-group" style="margin:0 0 2em 0">
-			<input type="submit" class="button" value="Continue">
-        </div>
+		
 		
 		</form>
 

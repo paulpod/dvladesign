@@ -43,8 +43,8 @@
 	<br clear="all">
 		
 	
-	<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">
-	One more step
+	<h2 class="heading-medium" style="padding:0;margin:0 0 0.5em 0">
+	Almost done...
 	</h2>
 
 	<form action="evl-3-flow" method="get" class="form">
@@ -64,15 +64,26 @@
 		<li><span style="width:32%" class="reg-mark-parent">Total £116.00 payable for vehicle </span><i class="reg-mark" style="font-size:120%">{{defaultreg}}</i></li>
 		<li><span style="width:32%">First payment of £9.74 </span><strong>{{today}}</strong></li>
 		<li><span style="width:32%">11 monthly payments of £9.66 </span><strong>1st of each subsequent month</strong></li>
-		<li><span style="width:32%">Email address for receipts </span><strong>{{email}}</strong></li>
-			<p>Please check your junk or spam folders if you do not receive it.</p>
-
-
+		<li><span style="width:32%">Email address for receipts </span><strong>{{email}}</strong><br>
+		Please check your junk or spam folders if you do not receive it.</li>
 	</ul>
 
-	<div class="form-group" style="margin:1em 0 2.75em 0">
-			<input type="submit" class="button" value="Next">
-        </div>
+
+	<!-- moved the legal confirmation to this page -->
+	<h2 class="heading-medium" style="margin-top:0.5em">Please confirm the following</h2>
+
+	<div id="truthbox" style="border-left:8px #ccc solid;padding:0.1em 0 0 0.8em;margin:1em 0 0 0">
+	    <p>I have the authority to set up a Direct Debit against this account.</p>
+
+	    <p>If this is a joint account, only one account holder is required to authorise payments.</p>
+    </div>
+
+
+
+    <!-- removed the checkbox, made the progression button double as the statement of agreement -->
+	<div class="form-group" style="margin:0.5em 0 2.75em 0">
+		<input type="submit" class="button" value="I agree, set up my Direct Debit">
+    </div>
 
 
 
