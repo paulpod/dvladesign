@@ -204,11 +204,12 @@ module.exports = {
     var moment = require("moment");
     var now = moment(new Date());
     var today = now.format("D MMM YYYY");
+    var month = now.format("MMM");
 
 
     if (paynum != undefined) {
         /* render correct summary page for payment vs duration type 1, 2, 3, 4 or 5  */
-        res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today});
+        res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today, 'month' : month});
     } else {
         res.render('examples/elements/evl-renewal-period-three', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
     }
