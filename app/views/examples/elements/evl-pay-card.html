@@ -76,7 +76,7 @@
 
 
 
-    <div style="margin-top:1.5em">
+    <div style="margin-top:0.5em">
         <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Card number</label>
 
         <br clear="all">
@@ -99,7 +99,7 @@
 
         <br clear="all">
 
-            <select name="ctl00$MainContent$ExpiryMonthDropDown" id="MainContent_ExpiryMonthDropDown" style="margin-right:1em">
+            <!--<select name="ctl00$MainContent$ExpiryMonthDropDown" id="MainContent_ExpiryMonthDropDown" style="margin-right:1em">
             <option selected="selected" value="-">Month</option>
             <option value="01">01</option>
             <option value="02">02</option>
@@ -114,9 +114,9 @@
             <option value="11">11</option>
             <option value="12">12</option>
 
-            </select>
+            </select>-->
 
-            <select name="ctl00$MainContent$ExpiryYearDropDown" id="MainContent_ExpiryYearDropDown" class="input-small">
+            <!--<select name="ctl00$MainContent$ExpiryYearDropDown" id="MainContent_ExpiryYearDropDown" class="input-small">
             <option value="-">Year</option>
             <option value="2015">2015</option>
             <option value="2016">2016</option>
@@ -125,16 +125,34 @@
             <option value="2019">2019</option>
             <option value="2020">2020</option>
 
-            </select>
+            </select>-->
+
+            <div style="float:left">
+              <p style="margin-bottom:0">Month</p>
+
+              <input name="ctl00$MainContent$ExpiryMonth" id="MainContent_txtEmailConfirmation" class="num form-control input-short" type="tel" maxlength="2" style="width:3em">
+            </div>
+
+            <div style="float:left;margin:2em 0.8em 0 0.8em">
+
+            <span style="font-size:130%">/</span>
+
+            </div>
+
+            <div>
+              <p style="margin-bottom:0">Year</p>
+
+              <input name="ctl00$MainContent$ExpiryYear" id="MainContent_txtEmailConfirmation" class="num form-control input-short" type="tel" maxlength="2" style="width:3em">
+            </div>
           
 
-          <br clear="all />"
+          <br clear="all" />
         
     </div>
 
 
 
-    <div style="margin-top:3em">
+    <div style="margin-top:1em">
         <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Last 3 digits of card security code</label>
 
         
@@ -181,6 +199,17 @@
 
         
     </div>
+
+
+    <div style="margin-top:2.5em">
+      <h2 class="heading-small">Total charge to card</h2>
+      <div><span style="width:12em;float:left">Amount</span> <span style="">£110.00</span></div>
+
+      <div><span style="width:12em;float:left">Credit card fee</span> £2.50</div>
+      <div><strong><span style="width:12em;float:left">Total</span> £112.50</strong></div>
+
+
+    </div>
                 
 
             
@@ -193,7 +222,7 @@
 
 
   <!-- Primary buttons, secondary links -->
-  <div class="form-group" style="padding:1em 0">
+  <div class="form-group" style="padding:0.5em 0">
     <input type="submit" class="button" value="Pay now">
 
     <p style="padding:1em 0"><a href="start">Cancel application</a>
