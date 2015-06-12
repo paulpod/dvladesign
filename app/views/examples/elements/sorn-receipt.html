@@ -1,0 +1,123 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_sornprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+
+  <div>
+  <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">
+
+
+
+  <form action="evl-3-flow" method="get" class="form">
+
+  <input type="hidden" name="paynum" value="{{paynum}}">
+  <input type="hidden" name="nextlink" value="sorn-end">
+  <input type="hidden" name="nextbacklink" value="evl-renewal-period-check">
+  <input type="hidden" name="regmark" value="{{defaultreg}}">
+  <input type="hidden" name="paynum" value="{{paynum}}">
+
+
+
+
+    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Get a receipt by email or text</h2>
+
+    <p>DVLA will not send you an acknowledgement letter.</p>
+
+    <div class="body-container group">
+
+
+
+    <div style="margin:1em 0 2em 0">
+        <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Email address (optional)</label>
+
+        <span id="MainContent_revtxtEmailConfirmation" class="Validator" style="display:none;">Please enter a valid email address</span>
+        <p>
+            <input name="ctl00$MainContent$txtEmailConfirmation" maxlength="150" id="MainContent_txtEmailConfirmation" class="form-control input-large" type="email" autocomplete="off">
+
+        </p>
+
+    </div>
+
+
+    <div>
+        <label class="heading-small" for="MainContent_txtMobileConfirmation" id="MainContent_lblMobileConfirmationText">Mobile number (optional)</label>
+
+        <span id="MainContent_revtxtMobileConfirmation" class="Validator" style="display:none;">Please enter a valid mobile number</span>
+        <p>
+            <input name="ctl00$MainContent$txtMobileConfirmation" maxlength="14" id="MainContent_txtMobileConfirmation" class="form-control input-large" type="tel" autocomplete="off" pattern="[0-9]*" onkeypress="return isNumber(event)">
+        </p>
+
+
+        <p>The DVLA does not share mobile phone numbers or email addresses with anyone.</p>
+        
+
+        <!--<p>
+            <label for="MainContent_chkEmailOptOut" class="block-label">
+            <input id="MainContent_chkEmailOptOut" type="checkbox" name="ctl00$MainContent$chkEmailOptOut">Please tick if you wish to be sent information.</label>
+        </p> -->
+    </div> 
+                
+
+            
+        
+    </div>
+
+
+
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding:1em 0">
+    <input type="submit" class="button" value="Complete application">
+
+    <p style="padding:1em 0"><a href="start">Cancel application</a>
+
+
+
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

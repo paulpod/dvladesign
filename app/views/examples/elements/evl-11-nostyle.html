@@ -1,0 +1,139 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/common.js"></script>
+
+
+{{/head}}
+
+
+
+
+{{$content}}
+
+
+
+<main id="content" role="main">
+
+
+
+  <h1 class="form-title heading-large">
+    Taxing a vehicle
+  </h1>
+
+
+
+
+
+  
+
+    <form action="evl-11-flow" method="get" class="form">
+
+
+ 
+
+
+<div class="grid-row">
+      <div class="column-half">
+    <!-- Ref number select -->
+
+    <h2 class="heading-medium">Your V11 reminder letter</h2>
+
+    <img src="/public/images/v11-diagram.png" width="280" height="162">
+
+
+    <label class="form-label" for="nationality-other-v11">16 digit reference number</label>
+
+    <input class="form-control" type="text" id="nationality-other-v11" autocomplete="off" size="16" >
+
+
+
+
+
+
+
+    <div><details>
+        <summary role="button">
+
+          <span class="summary">I don't have a V11 reminder in my name</span>
+
+        </summary>
+
+
+        <div class="panel-indent js-hidden" id="details-content-0" >
+        
+
+            <label for="radio-inline-1" class="block-label">
+            <input id="radio-inline-1" type="radio" name="reftype" value="v5c">
+
+            I have taxed, or declared the vehicle ‘off road’ before
+
+            </label>
+
+
+            <label for="radio-inline-2" class="block-label">
+            <input id="radio-inline-2" type="radio" name="reftype" value="v5c2">
+
+            I have recently bought this vehicle
+
+            </label>
+
+
+            <label for="radio-inline-3" class="block-label" >
+            <input id="radio-inline-3" type="radio" name="reftype" value="warn">
+
+            I have received a warning letter
+
+            </label>
+
+        </div>
+      </details></div>
+
+
+      </div>
+      <div class="column-half">
+
+      </div>
+    </div>
+
+
+
+
+    <br clear="all">
+
+
+
+
+    <!-- Primary buttons, secondary links -->
+
+    <div class="form-group">
+
+      <input type="submit" class="button" value="Continue">
+
+    </div>
+
+  </form>
+
+
+  <br clear="all">
+
+
+    
+
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

@@ -1,0 +1,167 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/common.js"></script>
+
+
+
+
+{{/head}}
+
+{{$propositionHeader}}
+  {{>includes/govuk_sornprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main">
+
+
+
+<!-- <div style="visibility:hidden">
+  <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div> -->
+
+
+  <h1 class="form-title heading-large" style="margin:0.75em 0 0.5em 0;padding:0">
+    Taxing a vehicle
+  </h1>
+
+
+
+
+
+  
+
+    <form action="evl-11-flow" method="get" class="form">
+
+
+ 
+
+
+<div class="grid-row">
+      <div class="column-half">
+    <!-- Ref number select -->
+
+    <h2 class="heading-medium" style="font-weight:normal;padding:0;margin:0.5em 0 0.5em 0">Your V11 reminder letter</h2>
+
+    <img src="/public/images/v11-diagram.png" width="280" height="162" align="middle" style="padding:0 0 0.25em 0">
+
+
+    <label class="form-label" for="nationality-other-v11" style="font-size:120%;padding-top:0.75em">
+    16 digit reference number</label>
+    <input class="form-control" type="text" id="nationality-other-v11" autocomplete="off" style="border:#ccc solid 2px;font-size:120%;width:280px;border-radius:4px;line-height:1.6" size="16" >
+
+
+
+    <br clear="all">
+
+
+
+
+
+
+    <div style="padding-top:0.3em;font-size:120%"><details style="" >
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true" style="padding-top:0.7em">
+          <span class="summary">I don't have a V11 reminder in my name</span>
+        </summary>
+        <div class="panel-indent js-hidden" id="details-content-0" aria-hidden="false" style="display:block;border-left:16px solid #ebebeb;padding:0 20px;margin:12px 0">
+        
+        
+
+            <label for="radio-inline-1" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-top:0;margin-bottom:0.66em">
+            <input id="radio-inline-1" type="radio" name="reftype" value="v5c">
+            I have taxed, or declared the vehicle ‘off road’ before
+
+            </label>
+
+             <label for="radio-inline-2" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:0.66em">
+            <input id="radio-inline-2" type="radio" name="reftype" value="v5c2">
+            I have recently bought this vehicle
+
+            </label>
+
+
+             <label for="radio-inline-3" class="block-label" style="border-bottom:#7f7f7f solid 3px;padding-left:50px;margin-bottom:0">
+            <input id="radio-inline-3" type="radio" name="reftype" value="warn">
+            I have received a warning letter
+
+            </label>
+
+
+
+          
+        </div>
+      </details></div>
+
+
+      </div>
+            <div class="column-half">
+
+
+
+
+    <!-- div style="margin-top:2.2em;padding:1em 1em 0 1em;font-size:120%;background-color:#eee">
+    <p>
+    <img src="/public/images/warning-pic.png" width="103" height="143" align="middle" style="padding:0 0.2em 1em 0">
+
+    <a href="evl-11-v5c-w">I have received a warning letter</a>
+    </p>
+    </div -->
+
+</div>
+</div>
+
+
+
+
+
+
+  </fieldset>
+
+
+
+  <br clear="all">
+
+
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding-top:1em">
+    <input type="submit" class="button" value="Continue">
+    
+
+  </div>
+
+</form>
+
+
+  <br clear="all">
+
+
+    
+
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

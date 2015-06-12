@@ -1,0 +1,137 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_evlprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+  <!-- <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1> -->
+
+
+  <!--<div>
+  <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">-->
+
+
+
+
+
+  <form action="evl-3-flow" method="get" class="form">
+  <input type="hidden" name="nextlink" value="sorn-end">
+  <input type="hidden" name="nextbacklink" value="evl-pay-card">
+  <input type="hidden" name="regmark" value="{{defaultreg}}">
+
+
+
+    <h2 class="heading-medium" style="padding:0;margin:1.33em 0 0.66em 0">Confirmation</h2>
+
+    <div class="body-container group">
+
+      <div class="application-confirmation" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+        <h1>✔ Application complete</h1>
+        <h2>Your application reference:
+        <strong>4982-1637-7958-4457</strong></h2>
+      </div>
+
+    </div>
+
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+      <p>Thank you for making a SORN. Your transaction has been successful. The SORN will be valid until the vehicle is taxed, sold, permanently exported or scrapped. SORN cannot be transferred to a new keeper.</p>
+
+      </div>
+    </div>
+
+
+
+
+    <ul class="ul-data">
+
+      <li style="margin-bottom:8px"><span class="reg-mark-parent">Registration number</span>
+      <i class="reg-mark" style="font-size:120%">{{defaultreg}}</i>
+      </li>
+
+      <li><span>Vehicle make</span><strong>TOYOTA</strong></li>
+
+      <li><span>SORN start date</span><strong>{{today}}</strong></li>
+
+    </ul>
+
+        
+     
+
+
+    <div class="grid-row">
+      <div class="column-two-thirds">
+
+      <p style="margin-top:1em">
+      Any refund of vehicle tax will be automatically issued within 4-6 weeks and any Direct Debit mandate (if applicable) will be cancelled.</p>
+
+      <p>DVLA will not send you an acknowledgement letter so you may want to <a href="#">print this page for your records</a>.</p>
+
+      <p>If this is not possible then you should make a note of the reference number and vehicle registration number which can be used to confirm your transaction.</p>
+
+      </div>
+    </div>
+
+    
+
+
+
+
+
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding:1em 0">
+    <input type="submit" class="button" value="Finished">
+
+    <!--<p style="padding:1em 0"><a href="start">Cancel application</a>-->
+
+
+
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

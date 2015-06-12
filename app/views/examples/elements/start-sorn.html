@@ -1,0 +1,177 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_navigation_searchbox}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main" class="vehicle-tax-start">
+  <div id="global-breadcrumb" class="header-context">
+    <nav role="navigation">
+      <ol class="group">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Driving and transport</a></li>
+        <li><a href="#">Driving licences</a></li>
+      </ol>
+    </nav>
+  </div>
+
+
+
+
+
+  <div class="grid-row" style="border-bottom:1px solid #aaa">
+
+    <div class="column-two-thirds">
+      <h1 class="form-title heading-xlarge">
+      Tell us you’re taking your vehicle off the road (SORN)
+      </h1>
+    </div>
+
+
+    <div class="column-third" style="margin-bottom:0.75em">
+      <nav class="popular-needs">
+        <ul class="top-tasks">
+          <li><a href="/register-sorn-statutory-off-road-notification">Make a <abbr title="Statutory off road notice">SORN</abbr> declaration</a></li>
+          <li><a href="/apply-hgv-vehicle-licence-tax-disc-form-v85">Apply for <abbr title="Heavy goods vehicle">HGV</abbr> vehicle tax</a></li>
+          <li><a href="/calculate-vehicle-tax-rates">Calculate vehicle tax rates</a></li>
+        </ul>
+      </nav>
+    </div>
+
+  </div><!-- close gridrow -->
+
+
+
+ 
+
+  <div class="grid-row" style="border-bottom:1px solid #aaa;padding-bottom:1.8em">
+
+    <div class="column-two-thirds" style="width:75%">
+
+      <h2 class="heading-medium" style="margin-top:0.75em;margin-bottom:0.15em">Apply using the new service <span class="beta">beta</span></h2>
+
+      <p style="font-size:0.85em;margin-bottom:1.4em">This is a 'beta' service - find out <a href="#">what this means for you</a>.</p>
+
+      <p>To apply online you'll need either:</p>
+
+      <ul class="list-bullet">
+        <li>the 11 digit reference number on your log book (V5C)</li>
+        <li>the 16 digit reference number on your vehicle tax renewal letter (V11)</li>
+        <li>the 12 digit reference number on your New Keeper Supplement (V5C/2) if you've just bought the vehicle</li>
+        <li>the 16 digit reference number on your last chance letter</li>
+        <li>the 11 digit reference number on your warning letter</li>
+      </ul>
+      
+
+      <!--<form class="get-started" action="/g" style="margin-top:1.5em">-->
+      <form action="evl-3-flow" method="get" class="get-started" style="margin-top:1.5em">
+      <input type="hidden" name="nextlink" value="sorn-v5c">
+      <input type="hidden" name="nextbacklink" value="start">
+
+        <input type="submit" value="Apply now" class="button medium" role="button">
+      </form>
+
+
+      <div class="help-notice">
+        <p>You must only use vehicle registration documents with your name on.</p>
+      </div>
+
+      <!-- <p>Contact us if you need to correct the registered keeper of your vehicle.</p> -->
+
+
+    </div>
+
+    <div class="column-third">
+
+      <!-- <h2 class="heading-medium" style="margin-top:0.75em">You will need</h2>
+
+      removed this as it is duplicate of information in the main list on the left
+
+      <p>Vehicle tax renewal letter (V11)</p> -->
+
+    </div>
+
+  </div><!-- close gridrow -->
+
+
+
+  <div class="grid-row">
+
+    <div class="column-third">
+
+      <h2 class="heading-medium" style="margin-top:0.75em">Other ways to apply</h2>
+
+    </div>
+
+    <div class="column-two-thirds">
+
+      <h2 class="heading-medium" style="margin-top:0.75em">By phone</h2>
+
+      <ul class="contact-numbers">
+      <li><span class="contact-type">Telephone:</span> 0300 123 4321</li>
+      <li><span class="contact-type">Textphone:</span> 0300 790 6201</li>
+      </ul>
+
+      <div class="call-charges">
+        <p>Calls to 03 numbers cost approximately:</p>
+        <ul class="charges">
+        <li>2p to 10p from landlines</li>
+        <li>10p to 40p from mobile phones</li>
+        </ul>
+        <p><a href="/call-charges">Find out more about call charges</a></p>
+      </div>
+
+      <h2 class="heading-medium" style="">At the Post Office</h2>
+
+      <p>Go to your local Post Office that deals with vehicle tax. You'll need to take:</p>
+
+      <ul class="list-bullet">
+        <li>completed V11 reminder (or your V5C)</li>
+        <li>MOT test certificate if required (must be valid when the tax starts)</li>
+        <li>the payment shown on the reminder</li>
+      </ul>
+
+      <p>In <a href="#">Northern Ireland</a> you'll also need an insurance certificate or cover note.</p>
+
+
+    </div>
+
+  </div><!-- close gridrow -->
+
+
+
+
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

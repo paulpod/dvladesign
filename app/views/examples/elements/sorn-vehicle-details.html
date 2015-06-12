@@ -1,0 +1,148 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_sornprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+  <!-- <h1 class="form-title heading-xlarge">
+    Taxing a vehicle
+  </h1> -->
+
+
+  <div>
+  <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">
+
+
+
+
+
+  <form action="sorn-flow" method="get" class="form">
+  <input type="hidden" name="nextlink" value="sorn-receipt">
+  <input type="hidden" name="regmark" value="{{defaultreg}}">
+
+
+
+
+    <h2 class="heading-medium" style="padding:0;margin:0 0 0.3em 0">Check vehicle that is off the road</h2>
+      <p style="">You are about to make a Statutory Off Road Notification (SORN) for your vehicle.</p>
+
+
+    <ul class="ul-data">
+
+        <li style="margin-bottom:8px"><span class="reg-mark-parent">Registration number</span>
+        <i class="reg-mark" style="font-size:120%">{{defaultreg}}</i>
+        </li>
+
+          <li><span>Vehicle make</span><strong>TOYOTA</strong></li>
+          <li><span>Tax class</span><strong>PLG (Private/Light Goods)</strong></li>
+          <li><span>Tax/SORN status</span><strong>This vehicle was taxed from 01 November 2014</strong></li>
+          <li><span>SORN start date</span><strong>{{today}}</strong></li>
+        </ul>
+
+
+        <div><details>
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true" style="padding-top:0.7em">
+          <span class="summary">Incorrect details?</span>
+        </summary>
+
+        <div class="panel-indent" id="details-content-0" aria-hidden="false" style="display:block;">
+
+
+          <div class="grid-row">
+          <div class="column-two-thirds">
+            <p>If any of the above are incorrect you may have put in the wrong details, press the cancel button below to start again.</p>
+            <p>If the details are still incorrect please phone DVLA on 0300 123 4321 for advice</p>
+          </div>
+          </div>
+      
+        </div>
+      </details></div>
+
+      </div>
+      <div class="column-two-thirds" style="width:72%">
+
+        <div class="vehicle-details">
+        
+        </div>
+
+      </div>
+    </div><!-- end grid row -->
+
+
+    
+
+
+  <br clear="all">
+
+  
+
+
+  <!-- pretty useless info about how we check electronic MOT certificates here 
+  from policy I assume <a href="#" rel="external" target="_new">Find out how we do this</a> -->
+
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+
+      <p>Refunds will not be issued for the month in which you apply, only any ‘full’ remaining months.</p>
+
+      <p>Any refund of vehicle tax will be automatically issued to the name and address on our records within 4-6 weeks (the address shown on your vehicle registration certificate (V5C) or V11).</p>
+
+      <p>Please check the details are correct before you continue.</p>
+
+    </div>
+  </div>
+
+
+  <!-- Primary buttons, secondary links -->
+  <div class="form-group" style="padding:1em 0">
+    <input type="submit" class="button" value="Continue">
+
+    <p style="padding:1em 0"><a href="start">Cancel application</a>
+
+  </div>
+
+</form>
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

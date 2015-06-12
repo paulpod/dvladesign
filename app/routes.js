@@ -67,6 +67,37 @@ module.exports = {
     });
 
 
+
+
+    /* - - - - - - - - - - - - - - - - - - - -  */
+    /* Pass nextpage for SORN FLOW */
+
+    app.get('/examples/elements/sorn-flow', function (req, res) {
+
+    var next = req.query.nextlink;
+    var back = req.query.nextbacklink;
+    var regmark = req.query.regmark;
+    var email = req.query.email;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
+
+
+    var moment = require("moment");
+    var now = moment(new Date());
+    var today = now.format("D MMMM YYYY");
+
+
+    res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg, 'email' : email, 'today' : today});
+    
+ 
+    });
+
+
+
 	
 
      /* - - - - - - - - - - - - - - - - - - - */
@@ -254,6 +285,48 @@ module.exports = {
     } else {
         console.log(x);
         res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
+    }
+
+    });
+
+
+
+
+
+    /* - - - - - - - - - - - - - - - - - - - */
+    /* Pages SORN to entrypoint */
+
+    app.get('/examples/elements/sorn-begin', function (req, res) {
+
+    var x = req.query.reftype;
+    var back = req.query.nextbacklink;
+    var regmark = req.query.regmark;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
+
+
+    var moment = require("moment");
+    var now = moment(new Date());
+    var today = now.format("D MMMM YYYY");
+    var month = now.format("MMMM");
+
+
+    if (x == "v11") {
+        console.log(x);
+        res.render('examples/elements/sorn-v11', {'back' : back, 'defaultreg' : defaultreg});
+    } else if (x == "v5c2") {
+        console.log(x);
+        res.render('examples/elements/sorn-v5c2-chooser', {'back' : back, 'defaultreg' : defaultreg});
+    } else if (x == "warn") {
+        console.log(x);
+        res.render('examples/elements/sorn-warn-chooser', {'back' : back, 'defaultreg' : defaultreg});
+    } else {
+        console.log(x);
+        res.render('examples/elements/sorn-vehicle-details', {'back' : back, 'defaultreg' : defaultreg, 'today' : today});
     }
 
     });
