@@ -368,6 +368,40 @@ module.exports = {
 
 
 
+    /* - - - - - - - - - - - - - - - - - - - - - - */
+    /* Pages for SORN New Keeper V5c named vs V5C/2 */
+
+    app.get('/examples/elements/sorn-newkeeper', function (req, res) {
+
+    var x = req.query.reftype;
+    var back = req.query.nextbacklink;
+    var regmark = req.query.regmark;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
+
+
+    if (x == "v5c") {
+        console.log(x);
+        res.render('examples/elements/sorn-v5c', {'back' : back, 'defaultreg' : defaultreg});
+    } else if (x == "v5c2") {
+        console.log(x);
+        res.render('examples/elements/sorn-v5c2-newkeeper', {'back' : back, 'defaultreg' : defaultreg});
+    } else {
+        console.log(x);
+        res.render('examples/elements/sorn-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
+    }
+
+    });
+
+
+
+
+
+
 
     /* - - - - - - - - - - - - - - - - - - - - - - */
     /* Pages for EVL warning letters v11 or v5c doc refs */
@@ -394,6 +428,36 @@ module.exports = {
     } else {
         console.log(x);
         res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
+    }
+
+    });
+
+
+     /* - - - - - - - - - - - - - - - - - - - - - - */
+    /* Pages for SORN via warning letters v11 or v5c doc refs */
+
+    app.get('/examples/elements/sorn-warning', function (req, res) {
+
+    var x = req.query.reftype;
+    var back = req.query.nextbacklink;
+    var regmark = req.query.regmark;
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
+
+
+    if (x == "v11-lc") {
+        console.log(x);
+        res.render('examples/elements/sorn-v11-lc', {'back' : back, 'defaultreg' : defaultreg});
+    } else if (x == "v5c-w") {
+        console.log(x);
+        res.render('examples/elements/sorn-v5c-w', {'back' : back, 'defaultreg' : defaultreg});
+    } else {
+        console.log(x);
+        res.render('examples/elements/sorn-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
     }
 
     });
