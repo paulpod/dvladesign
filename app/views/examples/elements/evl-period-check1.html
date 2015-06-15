@@ -54,6 +54,7 @@
   <input type="hidden" name="nextlink" value="evl-receipt-paycard">
   <input type="hidden" name="nextbacklink" value="evl-renewal-period-check">
   <input type="hidden" name="regmark" value="{{defaultreg}}">
+  <input type="hidden" name="kind" value="{{kind}}">
 
 
     <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">You have chosen a 6 month card payment<!-- &amp; optional receipt--></h2>
@@ -61,15 +62,32 @@
     <div class="body-container group">
 
 
-<ul class="ul-data">
-  <li><span>Start date </span><strong>{{today}}</strong></li>
-  <li><span>Duration </span><strong>6 Months</strong></li>
-  <li style="margin-bottom:8px"><span class="reg-mark-parent">Registration number </span><i class="reg-mark" style="font-size:120%">{{defaultreg}}</i></li>
-  <li><span>Vehicle make </span><strong>TOYOTA</strong></li>
-  <li><span>Price </span><strong>£60.50</strong></li>
-  <li><span>Payment method </span><strong>Card payment</strong></li>
-</ul>
-<input type="Hidden" value="ConfirmLicenseIssue" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <div style="max-width:620px">
+      <p style="padding-top:0.2em">
+      {{{sorntax}}}
+      </p>
+    </div>
+
+
+  <!-- - - - - - - - - - - - - - - - - - - - - - - - -->
+  <!-- NB. do a thing with the var(kind) for the scenario
+  of a user having their vehicle currently on SORN and
+  taking it back on road for 6 months eg. open sports car
+  ...when taxing within 2 days of the end of month   -->
+
+    <ul class="ul-data">
+   
+      
+      {{{taxedfrom}}}
+      
+      <li><span>Duration </span><strong>6 Months</strong></li>
+      <li style="margin-bottom:8px"><span class="reg-mark-parent">Registration number </span><i class="reg-mark" style="font-size:120%">{{defaultreg}}</i></li>
+      <li><span>Vehicle make </span><strong>TOYOTA</strong></li>
+      <li><span>Price </span><strong>£60.50</strong></li>
+      <li><span>Payment method </span><strong>Card payment</strong></li>
+    </ul>
+    <input type="Hidden" value="ConfirmLicenseIssue" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 
 

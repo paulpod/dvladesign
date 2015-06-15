@@ -48,6 +48,11 @@ module.exports = {
     var back = req.query.nextbacklink;
     var regmark = req.query.regmark;
     var email = req.query.email;
+    var kind = req.query.kind;
+    var paynum = req.query.paynum;
+
+    console.log(kind);
+    console.log(paynum);
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -61,7 +66,15 @@ module.exports = {
     var today = now.format("D MMM YYYY");
 
 
-    res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg, 'email' : email, 'today' : today});
+    if (kind == 'v5c') {
+        if (paynum == 1) {
+            console.log(sorntax);
+            var sorntax = "Note: You are taxing a vehicle previously declared off the road within 2 days of the end of the current month.</p><p>Your vehicle tax will start on the <strong>1st of the next month</strong>. You are not taxed until then.";
+        }
+    }
+
+
+    res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg, 'paynum' : paynum, 'email' : email, 'today' : today, 'kind' : kind, 'sorntax' : sorntax});
     
  
     });
@@ -78,6 +91,7 @@ module.exports = {
     var back = req.query.nextbacklink;
     var regmark = req.query.regmark;
     var email = req.query.email;
+    var kind = req.query.kind;
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -91,7 +105,7 @@ module.exports = {
     var today = now.format("D MMMM YYYY");
 
 
-    res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg, 'email' : email, 'today' : today});
+    res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg, 'email' : email, 'today' : today, 'kind' : kind});
     
  
     });
@@ -138,6 +152,8 @@ module.exports = {
     var paynum = req.query.paynum;
     var back = req.query.nextbacklink;
     var regmark = req.query.regmark;
+    var kind = req.query.kind;
+
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -153,13 +169,13 @@ module.exports = {
     if (paymethod != undefined) {
         if (paynum == undefined) {
             /* catch if the user has pressed first set of radios only - card vs dd  */
-            res.render('examples/elements/evl-renewal-period-' + paymethod, {'back' : back, 'defaultreg' : defaultreg, 'today' : today});
+            res.render('examples/elements/evl-renewal-period-' + paymethod, {'back' : back, 'defaultreg' : defaultreg, 'today' : today, 'kind' : kind});
         } else {
             /* render correct summary page for payment vs duration type 1, 2, 3, 4 or 5  */
-            res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today});
+            res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today, 'kind' : kind});
         };
     } else {
-        res.render('examples/elements/evl-renewal-period-picto', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
+        res.render('examples/elements/evl-renewal-period-picto', {'back' : back, 'defaultreg' : defaultreg, 'today' : today, 'kind' : kind})
     }
 
     
@@ -180,6 +196,8 @@ module.exports = {
     var paynum = req.query.paynum;
     var back = req.query.nextbacklink;
     var regmark = req.query.regmark;
+    var kind = req.query.kind;
+
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -195,13 +213,13 @@ module.exports = {
     if (payperiod != undefined) {
         if (paynum == undefined) {
             /* catch if the user has pressed first set of radios only - 1 vs 6, 12 month  */
-            res.render('examples/elements/evl-renewal-period-' + payperiod, {'back' : back, 'defaultreg' : defaultreg, 'today' : today});
+            res.render('examples/elements/evl-renewal-period-' + payperiod, {'back' : back, 'defaultreg' : defaultreg, 'today' : today, 'kind' : kind});
         } else {
             /* render correct summary page for payment vs duration type 1, 2, 3, 4 or 5  */
-            res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today});
+            res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today, 'kind' : kind});
         };
     } else {
-        res.render('examples/elements/evl-renewal-period-picto', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
+        res.render('examples/elements/evl-renewal-period-picto', {'back' : back, 'defaultreg' : defaultreg, 'today' : today, 'kind' : kind})
     }
 
     
@@ -225,6 +243,8 @@ module.exports = {
     var paynum = req.query.paynum;
     var back = req.query.nextbacklink;
     var regmark = req.query.regmark;
+    var kind = req.query.kind;
+
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -234,15 +254,26 @@ module.exports = {
 
     var moment = require("moment");
     var now = moment(new Date());
-    var today = now.format("D MMM YYYY");
-    var month = now.format("MMM");
+    var today = now.format("D MMMM YYYY");
+    var month = now.format("MMMM");
+    now.add(1, 'months');
+    var nextmonth = now.format("MMMM");
+
+    if (kind == 'v5c') {
+        console.log(sorntax);
+        var sorntax = "Note: You are taxing a vehicle previously declared off the road within 2 days of the end of the current month.</p><p>Your vehicle tax will start on the <strong>1st of the next month</strong>. If you need to drive it before then, you must tax it at a post office.";
+        var taxedfrom = "<li><span>Start date </span><strong>1st " + nextmonth + "</strong></li>";
+    } else {
+        var taxedfrom = "<li><span>Start date </span><strong>" + today + "</strong></li>";
+    }
+    
 
 
     if (paynum != undefined) {
         /* render correct summary page for payment vs duration type 1, 2, 3, 4 or 5  */
-        res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today, 'month' : month});
+        res.render('examples/elements/evl-period-check' + paynum, {'back' : back, 'paynum' : paynum, 'defaultreg' : defaultreg, 'today' : today, 'month' : month, 'kind' : kind, 'nextmonth' : nextmonth, 'sorntax' : sorntax, 'taxedfrom' : taxedfrom});
     } else {
-        res.render('examples/elements/evl-renewal-period-three', {'back' : back, 'defaultreg' : defaultreg, 'today' : today})
+        res.render('examples/elements/evl-renewal-period-three', {'back' : back, 'defaultreg' : defaultreg, 'today' : today, 'kind' : kind})
     }
 
     
@@ -265,6 +296,8 @@ module.exports = {
     var x = req.query.reftype;
     var back = req.query.nextbacklink;
     var regmark = req.query.regmark;
+    var kind = req.query.reftype;
+
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -275,16 +308,16 @@ module.exports = {
 
     if (x == "v5c") {
         console.log(x);
-        res.render('examples/elements/evl-11-v5c', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/evl-11-v5c', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else if (x == "v5c2") {
         console.log(x);
-        res.render('examples/elements/evl-11-v5c2-chooser', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/evl-11-v5c2-chooser', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else if (x == "warn") {
         console.log(x);
-        res.render('examples/elements/evl-11-warn-chooser', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/evl-11-warn-chooser', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else {
         console.log(x);
-        res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     }
 
     });
@@ -301,6 +334,8 @@ module.exports = {
     var x = req.query.reftype;
     var back = req.query.nextbacklink;
     var regmark = req.query.regmark;
+    var kind = req.query.kind;
+
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -317,16 +352,16 @@ module.exports = {
 
     if (x == "v11") {
         console.log(x);
-        res.render('examples/elements/sorn-v11', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/sorn-v11', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else if (x == "v5c2") {
         console.log(x);
-        res.render('examples/elements/sorn-v5c2-chooser', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/sorn-v5c2-chooser', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else if (x == "warn") {
         console.log(x);
-        res.render('examples/elements/sorn-warn-chooser', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/sorn-warn-chooser', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else {
         console.log(x);
-        res.render('examples/elements/sorn-vehicle-details', {'back' : back, 'defaultreg' : defaultreg, 'today' : today});
+        res.render('examples/elements/sorn-vehicle-details', {'back' : back, 'defaultreg' : defaultreg, 'today' : today, 'kind' : kind});
     }
 
     });
@@ -344,6 +379,8 @@ module.exports = {
     var x = req.query.reftype;
     var back = req.query.nextbacklink;
     var regmark = req.query.regmark;
+    var kind = req.query.kind;
+
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -354,13 +391,13 @@ module.exports = {
 
     if (x == "v5c") {
         console.log(x);
-        res.render('examples/elements/evl-11-v5c-newkeeper', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/evl-11-v5c-newkeeper', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else if (x == "v5c2") {
         console.log(x);
-        res.render('examples/elements/evl-11-v5c2-newkeeper', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/evl-11-v5c2-newkeeper', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else {
         console.log(x);
-        res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     }
 
     });
@@ -376,6 +413,8 @@ module.exports = {
     var x = req.query.reftype;
     var back = req.query.nextbacklink;
     var regmark = req.query.regmark;
+    var kind = req.query.kind;
+
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -386,13 +425,13 @@ module.exports = {
 
     if (x == "v5c") {
         console.log(x);
-        res.render('examples/elements/sorn-v5c', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/sorn-v5c', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else if (x == "v5c2") {
         console.log(x);
-        res.render('examples/elements/sorn-v5c2-newkeeper', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/sorn-v5c2-newkeeper', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else {
         console.log(x);
-        res.render('examples/elements/sorn-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/sorn-vehicle-details', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     }
 
     });
@@ -411,6 +450,8 @@ module.exports = {
     var x = req.query.reftype;
     var back = req.query.nextbacklink;
     var regmark = req.query.regmark;
+    var kind = req.query.kind;
+
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -421,13 +462,13 @@ module.exports = {
 
     if (x == "v11-lc") {
         console.log(x);
-        res.render('examples/elements/evl-11-v11-lc', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/evl-11-v11-lc', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else if (x == "v5c-w") {
         console.log(x);
-        res.render('examples/elements/evl-11-v5c-w', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/evl-11-v5c-w', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else {
         console.log(x);
-        res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     }
 
     });
@@ -441,6 +482,8 @@ module.exports = {
     var x = req.query.reftype;
     var back = req.query.nextbacklink;
     var regmark = req.query.regmark;
+    var kind = req.query.kind;
+
 
     if (regmark == undefined) {
         var defaultreg = 'CU57\xA0ABC';
@@ -451,13 +494,13 @@ module.exports = {
 
     if (x == "v11-lc") {
         console.log(x);
-        res.render('examples/elements/sorn-v11-lc', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/sorn-v11-lc', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else if (x == "v5c-w") {
         console.log(x);
-        res.render('examples/elements/sorn-v5c-w', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/sorn-v5c-w', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else {
         console.log(x);
-        res.render('examples/elements/sorn-vehicle-details', {'back' : back, 'defaultreg' : defaultreg});
+        res.render('examples/elements/sorn-vehicle-details', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     }
 
     });
@@ -480,6 +523,8 @@ module.exports = {
       /*var Handlebars = require('Handlebars');*/
       var regmark = req.query.regmark;
       var email = req.query.email;
+      var kind = req.query.kind;
+
 
 
     if (regmark == undefined) {
@@ -498,7 +543,7 @@ module.exports = {
         }
 
         console.log(results); 
-        res.render('examples/elements/evl-paydd-address.html', {'postcode' : postcode, 'result' : results, 'defaultreg' : defaultreg, 'email' : email})
+        res.render('examples/elements/evl-paydd-address.html', {'postcode' : postcode, 'result' : results, 'defaultreg' : defaultreg, 'email' : email, 'kind' : kind})
 
       });
 
@@ -518,6 +563,8 @@ module.exports = {
       /*var Handlebars = require('Handlebars');*/
       var regmark = req.query.regmark;
       var email = req.query.email;
+      var kind = req.query.kind;
+
 
 
     if (regmark == undefined) {
@@ -536,7 +583,7 @@ module.exports = {
         }
 
         console.log(address); 
-        res.render('examples/elements/evl-paydd-address-playback.html', {'address' : address, 'defaultreg' : defaultreg, 'email' : email})
+        res.render('examples/elements/evl-paydd-address-playback.html', {'address' : address, 'defaultreg' : defaultreg, 'email' : email, 'kind' : kind})
 
       });
 
