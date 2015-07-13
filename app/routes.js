@@ -314,7 +314,42 @@ module.exports = {
         res.render('examples/elements/evl-11-v5c2-chooser', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else if (x == "warn") {
         console.log(x);
-        res.render('examples/elements/evl-11-lastchance-merged', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
+        res.render('examples/elements/evl-11-lastchance-chooser', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
+    } else {
+        console.log(x);
+        res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
+    }
+
+    });
+
+
+
+
+
+    /* - - - - - - - - - - - - - - - - - - - */
+    /* Chooser for lastchance letter type */
+
+    app.get('/examples/elements/evl-lastchance', function (req, res) {
+
+    var x = req.query.reftype;
+    var back = req.query.nextbacklink;
+    var regmark = req.query.regmark;
+    var kind = req.query.reftype;
+
+
+    if (regmark == undefined) {
+        var defaultreg = 'CU57\xA0ABC';
+    } else {
+        var defaultreg = regmark;
+    }
+
+
+    if (x == "doc11") {
+        console.log(x);
+        res.render('examples/elements/evl-11-lastchance-doc11', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
+    } else if (x == "doc16") {
+        console.log(x);
+        res.render('examples/elements/evl-11-lastchance-doc16', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else {
         console.log(x);
         res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
