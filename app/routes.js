@@ -314,7 +314,7 @@ module.exports = {
         res.render('examples/elements/evl-11-v5c2-chooser', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else if (x == "warn") {
         console.log(x);
-        res.render('examples/elements/evl-11-warn-chooser', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
+        res.render('examples/elements/evl-11-lastchance-merged', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
     } else {
         console.log(x);
         res.render('examples/elements/evl-vehicle-details', {'back' : back, 'defaultreg' : defaultreg, 'kind' : kind});
