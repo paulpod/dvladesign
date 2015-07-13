@@ -77,7 +77,7 @@
     <input type="hidden" value="CreditCardChargeNotice" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
 
-<div id="card-front" style="background-color:#e0e0e0;border-radius:1.5em;padding:1em 1.25em 0.3em 1em;max-width:400px;max-height:240px">
+
     <div style="margin-top:0.5em">
         <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Card number</label>
 
@@ -86,6 +86,10 @@
         <div style="float:left;padding-right:1em">
         <input name="ctl00$MainContent$txtEmailConfirmation" maxlength="19" id="MainContent_txtEmailConfirmation" class="num form-control input-large" autocomplete="off" style="width:13em">
         </div>
+
+        
+
+       
         
     </div>
 
@@ -93,10 +97,37 @@
 
 
     <div style="margin-top:1.5em">
-        <label class="heading-small" for="MainContent_txtMobileConfirmation" id="MainContent_lblMobileConfirmationText">Expires</label>
+        <label class="heading-small" for="MainContent_txtMobileConfirmation" id="MainContent_lblMobileConfirmationText">Card expiry date</label>
 
         <br clear="all">
 
+            <!--<select name="ctl00$MainContent$ExpiryMonthDropDown" id="MainContent_ExpiryMonthDropDown" style="margin-right:1em">
+            <option selected="selected" value="-">Month</option>
+            <option value="01">01</option>
+            <option value="02">02</option>
+            <option value="03">03</option>
+            <option value="04">04</option>
+            <option value="05">05</option>
+            <option value="06">06</option>
+            <option value="07">07</option>
+            <option value="08">08</option>
+            <option value="09">09</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+
+            </select>-->
+
+            <!--<select name="ctl00$MainContent$ExpiryYearDropDown" id="MainContent_ExpiryYearDropDown" class="input-small">
+            <option value="-">Year</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+
+            </select>-->
 
             <div style="float:left">
               <p style="margin-bottom:0">Month</p>
@@ -120,9 +151,9 @@
           <br clear="all" />
         
     </div>
-</div><!-- card front -->
 
-<div id="card-back" style="background-color:#e0e0e0;border-radius:1.5em;padding:1em 1.25em 0.3em 1em;max-width:400px;min-height:240px">
+
+
     <div style="margin-top:1em">
         <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Last 3 digits of card security code</label>
 
@@ -133,12 +164,12 @@
         <input name="ctl00$MainContent$txtEmailConfirmation" id="MainContent_txtEmailConfirmation" class="num form-control input-short" type="text" maxlength="3" >
         </div>
 
-        <!--<div style="padding:0.5em 1em 0 1.5em;float:left"><img src="/public/images/cards-ccv.png" width="80"height="32">
-        </div>-->
+        <div style="padding:0.5em 1em 0 1.5em;float:left"><img src="/public/images/cards-ccv.png" width="80"height="32">
+        </div>
 
-        <!--<div style="padding:0.5em 0 0 1.5em">
+        <div style="padding:0.5em 0 0 1.5em">
         <p>The last three digits on the signature strip</p>
-        </div>-->
+        </div>
 
 
 
@@ -170,7 +201,7 @@
 
         
     </div>
-</div><!-- card back -->
+
 
     <div style="margin-top:2.5em">
       <h2 class="heading-small">Total charge to card</h2>

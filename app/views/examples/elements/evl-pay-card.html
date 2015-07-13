@@ -9,6 +9,28 @@
 
     <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
 
+    <script type='text/javascript'>//<![CDATA[ 
+      $(window).load(function(){
+      $("#ccnum").keyup(function () {
+          $(".less-than-500,.less-than-1500").hide();
+          var myValue = $(this).val();
+          if (myValue <= 500) {
+              $(".less-than-500").show();
+          } else if (myValue <= 1500) {
+              $(".less-than-1500").show();
+          }
+
+      });
+      });//]]>  
+    </script>
+
+   
+
+<script type='text/javascript' src='/public/javascripts/jquery-1.7.js'></script>
+<!--<![endif]-->
+<script src="/public/javascripts/jquery-1.js" type="text/javascript"></script>
+<!--[if lt IE 9]-->
+
 
 {{/head}}
 
@@ -28,213 +50,426 @@
 <main id="content" role="main" style="padding-bottom:0">
 
 
-  <!-- <h1 class="form-title heading-xlarge">
-    Taxing a vehicle
-  </h1> -->
 
 
-  <div>
+
+<style type="text/css">
+
+#MainContent_VedPicker_rbVED h4 {
+padding: 0;
+margin: 0;
+margin-top: 1em;
+margin-bottom: 0.5em;
+}
+
+body .maincontent .body-container .input-small {
+width: 6rem;
+min-width: 3rem;
+}
+
+.form-hint {
+font-family: "nta", Arial, sans-serif;
+font-size: 19px;
+line-height: 1.3157894737;
+font-weight: 400;
+text-transform: none;
+display: block;
+color: #6f777b;
+font-weight: normal;
+margin-bottom: 5px;
+}
+body .maincontent .body-container .action {
+margin: 1em 0 1em;
+}
+       
+</style>
+        
+
+        
+
+
+<script type='text/javascript'>//<![CDATA[ 
+$(window).load(function(){
+$("#ccnum").keyup(function () {
+    $(".less-than-500,.less-than-1500").hide();
+    var myValue = $(this).val();
+    if (myValue <= 500) {
+        $(".less-than-500").show();
+    } else if (myValue <= 1500) {
+        $(".less-than-1500").show();
+    }
+
+
+    
+});
+});//]]>  
+</script>
+
+
+</head>
+
+
+
+<body class="js-enabled" ontouchstart="">
+    <form method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="EVL" autocomplete="off">
+    <div class="aspNetHidden">
+    <input name="__LASTFOCUS" id="__LASTFOCUS" value="" type="hidden">
+    <input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
+    <input name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" type="hidden">
+    <input name="__VIEWSTATE" id="__VIEWSTATE" value="" type="hidden">
+    </div>
+
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+
+<script type="text/javascript">
+//<![CDATA[
+function WebForm_OnSubmit() {
+if (typeof(ValidatorOnSubmit) == "function" && ValidatorOnSubmit() == false) return false;
+return true;
+}
+//]]>
+</script>
+
+
+<div class="aspNetHidden">
+
+  <input name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="CA0B0334" type="hidden">
+  <input name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABupn+IeWslQqXWJ2KX+mqug0Ra0qlxtMJxYYDh+EM0y15sYgzLfplAYKk1/j4ZTOTR2wHKawadIC0it2Kg5SvNl05BCn9zlVPZMGjc4t7vpRrk4QntpF+MJ/HoLPMqJlPljcgsdlv8wqba+6bvMb/IFASQwq7EvK+wjQNyJb0LEnotDDGv6Y1Ij9Gi87k0ymeJlNRTcFjQK6P5NkeJS7vfDkAnZr3fSCadCH88kX7wpMZgcI0dyuODQUeJ5D95rs0L0hRKHFkuMNN3VzVNoSvf+IDSx8CQdnH4kdQKvUgIgOxaUPF/C+aHhR6ZlElg+W1jN7uKmXQax6bw5Xq02GXnXB1NYMerzZ4fh9Dm3KKyfXY418WPDEmE5Wx4env2rrK1tOfQwXjsiLVb8DdA+hv2iU0IhYrdEV4XIhpOyYo1fsSCZXIYxsYHKwCkkT8n0pkon0jghp9+izu4cO3u8rbFTrLFZjTGaups5r09Ek/HbJcgY0ZomxU7q8BCrytPah85uq13amHK+5iM+O8zPKc9QvuWW0JdN22cNuK1i6NsMkjQZBIgyK/fYOt4vqhFtilClO2shxXd6gGMhoGLZmrLWus61usDqI4Nuq06FaGlfxQ==" type="hidden">
+</div>
+
+
+<script type="text/javascript">
+document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+</script>
+
+
+<div style="padding-top:1.75em;padding-bottom:1em">
   <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
-  </div>
+</div>
 
   <br clear="all">
 
 
-
-
-
-  <form action="evl-3-flow" method="get" class="form">
-  <input type="hidden" name="nextlink" value="evl-end-card">
-  <input type="hidden" name="nextbacklink" value="evl-pay-card">
-  <input type="hidden" name="regmark" value="{{defaultreg}}">
-  <input type="hidden" name="kind" value="{{kind}}">
-  <input type="hidden" name="paynum" value="{{paynum}}">
-
-
-    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Pay by debit or credit card</h2>
-
     <div class="body-container group">
-
-    <div class="grid-row">
-      <div class="column-two-thirds">
-
-      <div style="padding:0.5em 0 0.5em 0"><img src="/public/images/cards-visa-vdebit-master-maestro.png" width="216"height="32"></div>
-
-        <p>Only UK Maestro, VISA Debit, MasterCard Debit, Electron debit cards, VISA and MasterCard credit cards are accepted.</p>
-
-        <p>The amount payable for vehicle <strong>{{defaultreg}}</strong> is <strong>£110.00</strong> for <strong>12 months</strong>.
-        </p>
-      </div>
-    </div>
+            
+      <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Pay by debit or credit card</h2>
 
 
-    <div class="help-notice">
-      <p style="padding-top:0.2em">There's an additional £2.50 fee for paying by credit card (including prepaid cards).<br>
+
+      <div style="padding:0.8em 0 0.5em 0"><img src="/public/images/cards-visa-vdebit-master-maestro.png" width="216" height="32"></div>
+
+<p xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      Only UK Maestro, VISA Debit, MasterCard Debit, Electron debit cards, VISA <br />and MasterCard credit cards are accepted.
+    </p>
+<p xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      The amount payable for vehicle <strong>WO06 LNM</strong> is
+      <strong>
+        £110.00</strong> for
+      <strong>12 months</strong></p>
+
+
+       
+
+
+<div class="help-notice">
+      <p style="padding-top:0.2em; padding-left:60px">There's an additional £2.50 fee for paying by credit card (including prepaid cards).<br>
       There is no fee for paying with a debit card.</p>
     </div>
 
 
-    <input type="hidden" value="CreditCardChargeNotice" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
+<input value="CreditCardChargeNotice" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="hidden"><input value="CardNumberPrompt" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="hidden">
+                    <div class="redborder">
+                        <div>
+                        
+                            <strong>
+                                <label class="label">Card number</label>
+                                
+                            </strong>
 
+                        <span id="MainContent_revPanTextBox" class="Validator" style="display:none;">Card number is invalid. The card number should be between 16 and 19 digits.</span>
+                        <span id="MainContent_rfvPanTextBox" class="Validator" style="display:none;">Enter full card number</span>
 
-    <div style="margin-top:0.5em">
-        <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Card number</label>
+                        <div>
+
+                            <span class="field">
+
+                            
+
+                             <input type="tel" size="19" name="ccnum" value="" id="ccnum" class="form-control input-large" maxlength="19" style="width:13em">
+                            </span>
+                            
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+
+                    <div style="margin-top:1.9em">
+        <label class="heading-small"><strong>Card expiry date</strong></label>
+
 
         <br clear="all">
 
-        <div style="float:left;padding-right:1em">
-        <input name="ctl00$MainContent$txtEmailConfirmation" maxlength="19" id="MainContent_txtEmailConfirmation" class="num form-control input-large" autocomplete="off" style="width:13em">
-        </div>
-
-        
-
-       
-        
-    </div>
-
-    <br clear="all">
-
-
-    <div style="margin-top:1.5em">
-        <label class="heading-small" for="MainContent_txtMobileConfirmation" id="MainContent_lblMobileConfirmationText">Card expiry date</label>
-
-        <br clear="all">
-
-            <!--<select name="ctl00$MainContent$ExpiryMonthDropDown" id="MainContent_ExpiryMonthDropDown" style="margin-right:1em">
-            <option selected="selected" value="-">Month</option>
-            <option value="01">01</option>
-            <option value="02">02</option>
-            <option value="03">03</option>
-            <option value="04">04</option>
-            <option value="05">05</option>
-            <option value="06">06</option>
-            <option value="07">07</option>
-            <option value="08">08</option>
-            <option value="09">09</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-
-            </select>-->
-
-            <!--<select name="ctl00$MainContent$ExpiryYearDropDown" id="MainContent_ExpiryYearDropDown" class="input-small">
-            <option value="-">Year</option>
-            <option value="2015">2015</option>
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option>
-            <option value="2020">2020</option>
-
-            </select>-->
 
             <div style="float:left">
-              <p style="margin-bottom:0">Month</p>
+              <div style="margin-bottom:0">Month</div>
 
-              <input name="ctl00$MainContent$ExpiryMonth" id="MainContent_txtEmailConfirmation" class="num form-control input-short" type="tel" maxlength="2" style="width:3em">
+              <input  maxlength="2" type="tel" name="expiry" value="" id="expiry"  class="form-control input-small" pattern="[0-9]*">
+
+              
             </div>
 
-            <div style="float:left;margin:2em 0.8em 0 0.8em">
+            <div style="float:left;margin:1.8em 1em 0 0.8em">
 
             <span style="font-size:130%">/</span>
 
             </div>
 
             <div>
-              <p style="margin-bottom:0">Year</p>
+              <div style="margin-bottom:0">Year</div>
 
-              <input name="ctl00$MainContent$ExpiryYear" id="MainContent_txtEmailConfirmation" class="num form-control input-short" type="tel" maxlength="2" style="width:3em">
+              <input maxlength="4" class="form-control input-small"  onkeypress="return isNumber(event)" autocomplete="off" pattern="[0-9]*" type="tel">
+            </div>
             </div>
           
 
-          <br clear="all" />
+          <br clear="all">
         
     </div>
+                   
+                    <div style="margin-top:1.0em">
+                        <span>
+                            <strong>
+                                <label for="MainContent_SecurityCodeTextBox" id="MainContent_SecurityCodeLabel" class="label">
+                                    Card security code</label>
+                            </strong></span>
+                            <span class="form-hint"><noscript>a 3 or 4 digit code from your card</noscript></span>
+                           <div><small><strong id="ccnum-type" class="form-hint"></strong></small></div>
+                           <div><small><strong id="ccnum-typeone" class="form-hint"></strong></small></div>
+                        
+                        
+
+                        <span id="MainContent_CardSecurityValid" class="Validator" style="display:none;">The card security code is invalid<br></span>
+                        <span id="MainContent_SecurityRequiredValidator" class="Validator" style="display:none;">Enter card security code</span>
+                        <div>
+
+                            <span class="cvc field">
+           
+            <input  size="4" type="tel" name="cvc" class="form-control input-small" value="" id="cvc" pattern="[0-9]*">
+        </span>    
 
 
+                            <!--<span class="less-than-500" style="display:none;">
+                            <img id="myimg" src="index_files/CreditCard_Security_Code_Image.png" width="67px" height="31px">
+                            </span>-->
 
-    <div style="margin-top:1em">
-        <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Last 3 digits of card security code</label>
+                            
 
-        
-        <br clear="all">
-
-        <div style="float:left">
-        <input name="ctl00$MainContent$txtEmailConfirmation" id="MainContent_txtEmailConfirmation" class="num form-control input-short" type="text" maxlength="3" >
-        </div>
-
-        <div style="padding:0.5em 1em 0 1.5em;float:left"><img src="/public/images/cards-ccv.png" width="80"height="32">
-        </div>
-
-        <div style="padding:0.5em 0 0 1.5em">
-        <p>The last three digits on the signature strip</p>
-        </div>
-
-
-
-
-
-        <script>
-        $(document).ready(function() {
-          $("input.num").keydown(function (e) {
-              // Allow: backspace, delete, tab, escape, enter and .
-              if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
-                   // Allow: Ctrl+A
-                  (e.keyCode == 65 && e.ctrlKey === true) ||
-                   // Allow: Ctrl+C
-                  (e.keyCode == 67 && e.ctrlKey === true) ||
-                   // Allow: Ctrl+X
-                  (e.keyCode == 88 && e.ctrlKey === true) ||
-                   // Allow: home, end, left, right
-                  (e.keyCode >= 35 && e.keyCode <= 39)) {
-                       // let it happen, don't do anything
-                       return;
-              }
-              // Ensure that it is a number and stop the keypress
-              if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
-                  e.preventDefault();
-              }
-          });
-      });     
-      </script>
-
-        
-    </div>
-
-
-    <div style="margin-top:2.5em">
-      <h2 class="heading-small">Total charge to card</h2>
+                            &nbsp;
+                            
+                        </div>
+                       
+                    </div>
+                <div style="margin-top:1.5em">
+      <p class="label"><strong>Total charge to card</strong></p>
       <div><span style="width:12em;float:left">Amount</span> <span style="">£110.00</span></div>
 
+
+      <div class="less-than-1500" style="display:none;">
       <div><span style="width:12em;float:left">Credit card fee</span> £2.50</div>
-      <div><strong><span style="width:12em;float:left">Total</span> £112.50</strong></div>
+      <div><span style="width:12em;float:left"><strong>Total</span> £112.50</strong></div>
+      </div>
+
+      <div class="less-than-500" style="display:none;">
+      <div><span style="width:12em;float:left"><strong>&nbsp;</span> &nbsp;</strong></div>
+      <div><span style="width:12em;float:left"><strong>Total</span> £110.00</strong></div>
+      </div>
+
+      
 
 
     </div>
-                
 
-            
+            <div class="action" style="padding-top:2em">
+                <input name="ctl00$MainContent$butContinue" value="Pay now" onclick='moveNext();WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("ctl00$MainContent$butContinue", "", true, "", "", false, false))' id="MainContent_butContinue" class="button" type="submit">
+                <img src="/public/images/loading.gif" id="Loading" alt="loading..." style="display: none;">
+                </div>
+            </div>
+                <div class="action">
+                <div id="">
+                <div id="" style="margin:1.5em 0 2.5em 0">
+                    <a id="MainContent_butCancel" href="javascript:__doPostBack('ctl00$MainContent$butCancel','')">Cancel application</a>
+                </div>
+                
+                </div>
+                <br />
+            </div>
         
     </div>
 
+    
+</div>
+            </div>
+<script type="text/javascript">
+
+        //isNumber(event) 
+        function isNumber(evt) {
+            evt = (evt) ? evt : window.event;
+            var charCode = (evt.which) ? evt.which : evt.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+                return false;
+            }
+            return true;
+        }
+        //MOT Validation
+        function ClientMotExemptionValidate(source, args) {
+            var rbC = document.getElementById('MainContent_rbSelfCertMotCorrect');
+            var rbI = document.getElementById('MainContent_rbSelfCertMotIncorrect');
+
+            if (rbC.checked || rbI.checked) {
+                args.IsValid = true;
+            }
+            else {
+                args.IsValid = false;
+            }
+        }
+        //Card Expiry validation
+        function ClientExpiryDateValidate(source, args) {
+            // By default, validation should fail
+            args.IsValid = false;
+            var ddlMonth = document.getElementById('MainContent_ExpiryMonthDropDown');
+            var ddlYear = document.getElementById('MainContent_ExpiryYearDropDown');
+            var d = new Date();
+            var dateMonth = d.getMonth() + 1;
+            var dateYear = d.getFullYear();
+            var IsValid = false;
+
+            if (isNaN(ddlMonth.value) || isNaN(ddlYear.value)) {
+                args.IsValid = IsValid;
+                return;
+            }
+
+            if (ddlYear.value > dateYear) {
+                IsValid = true;
+            } else {
+                if (!(ddlMonth.value < dateMonth)) {
+                    IsValid = true;
+                }
+            }
+            args.IsValid = IsValid;
+        }
+        //used to disable the next button to stop double click
+        function moveNext() {
+            if (typeof Page_ClientValidate === "function") {
+                if (Page_ClientValidate()) ShowLoadingImage(true);
+            }
+            else {
+                ShowLoadingImage(true);
+            }
+        }
+        function ShowLoadingImage(result) {
+            var continueButton = document.getElementById('MainContent_butContinue');
+            var loadingImage = document.getElementById('Loading');
+
+            if (result == true) {
+                if (continueButton) continueButton.style.display = "none";
+                loadingImage.style.display = "";
+            } else {
+                if (continueButton) continueButton.style.display = "";
+                loadingImage.style.display = "none";
+            }
+        }
+        window.onload = function () { ShowLoadingImage(false); }
+        window.onunload = function () { };
+    </script>
+            
+
+  <div id="global-app-error" class="app-error hidden"></div>
+
+  <script src="/public/javascripts/core.js" type="text/javascript"></script>
+
+  <script src="/public/javascripts/govuk-template.js" type="text/javascript"></script>
+
+  <script src="/public/javascripts/testing-one.js"></script>
+
+  <script src="/public/javascripts/testing-two.js"></script>
+
+  <script type="text/javascript">
+    //used to reset the form before the form is unloaded
+    $(window).bind("beforeunload", function () {
+        if (typeof document.forms[0] !== 'undefined') {
+            document.forms[0].reset();
+        }
+    });
+  </script>
 
 
+<script type="text/javascript">
+//<![CDATA[
+var Page_Validators =  new Array(document.getElementById("MainContent_revPanTextBox"), document.getElementById("MainContent_rfvPanTextBox"), document.getElementById("MainContent_cusExpiryDate"), document.getElementById("MainContent_CardSecurityValid"), document.getElementById("MainContent_SecurityRequiredValidator"));
+//]]>
+</script>
+<script type="text/javascript">
+//<![CDATA[
+var MainContent_revPanTextBox = document.all ? document.all["MainContent_revPanTextBox"] : document.getElementById("MainContent_revPanTextBox");
+MainContent_revPanTextBox.controltovalidate = "MainContent_PanTextBox";
+MainContent_revPanTextBox.errormessage = "Card number is invalid. The card number should be between 16 and 19 digits.";
+MainContent_revPanTextBox.display = "Dynamic";
+MainContent_revPanTextBox.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+MainContent_revPanTextBox.validationexpression = "[0-9]{16,19}";
+var MainContent_rfvPanTextBox = document.all ? document.all["MainContent_rfvPanTextBox"] : document.getElementById("MainContent_rfvPanTextBox");
+MainContent_rfvPanTextBox.controltovalidate = "MainContent_PanTextBox";
+MainContent_rfvPanTextBox.errormessage = "Enter full card number";
+MainContent_rfvPanTextBox.display = "Dynamic";
+MainContent_rfvPanTextBox.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+MainContent_rfvPanTextBox.initialvalue = "";
+var MainContent_cusExpiryDate = document.all ? document.all["MainContent_cusExpiryDate"] : document.getElementById("MainContent_cusExpiryDate");
+MainContent_cusExpiryDate.errormessage = "Enter valid expiry date";
+MainContent_cusExpiryDate.display = "Dynamic";
+MainContent_cusExpiryDate.evaluationfunction = "CustomValidatorEvaluateIsValid";
+MainContent_cusExpiryDate.clientvalidationfunction = "ClientExpiryDateValidate";
+var MainContent_CardSecurityValid = document.all ? document.all["MainContent_CardSecurityValid"] : document.getElementById("MainContent_CardSecurityValid");
+MainContent_CardSecurityValid.controltovalidate = "MainContent_SecurityCodeTextBox";
+MainContent_CardSecurityValid.errormessage = "The card security code is invalid<br />";
+MainContent_CardSecurityValid.display = "Dynamic";
+MainContent_CardSecurityValid.evaluationfunction = "RegularExpressionValidatorEvaluateIsValid";
+MainContent_CardSecurityValid.validationexpression = "[0-9]{3}";
+var MainContent_SecurityRequiredValidator = document.all ? document.all["MainContent_SecurityRequiredValidator"] : document.getElementById("MainContent_SecurityRequiredValidator");
+MainContent_SecurityRequiredValidator.controltovalidate = "MainContent_SecurityCodeTextBox";
+MainContent_SecurityRequiredValidator.errormessage = "Enter card security code";
+MainContent_SecurityRequiredValidator.display = "Dynamic";
+MainContent_SecurityRequiredValidator.evaluationfunction = "RequiredFieldValidatorEvaluateIsValid";
+MainContent_SecurityRequiredValidator.initialvalue = "";
+//]]>
+</script>
 
 
+<script type="text/javascript">
+//<![CDATA[
 
-  <!-- Primary buttons, secondary links -->
-  <div class="form-group" style="padding:0.5em 0">
-    <input type="submit" class="button" value="Pay now">
+var Page_ValidationActive = false;
+if (typeof(ValidatorOnLoad) == "function") {
+    ValidatorOnLoad();
+}
 
-    <p style="padding:1em 0"><a href="start">Cancel application</a>
-
-
-
-
-  </div>
+function ValidatorOnSubmit() {
+    if (Page_ValidationActive) {
+        return ValidatorCommonOnSubmit();
+    }
+    else {
+        return true;
+    }
+}
+        WebForm_AutoFocus('MainContent_PanTextBox');//]]>
+</script>
 
 </form>
+
+
+
 
 </main><!-- / #page-container -->
 {{/content}}
