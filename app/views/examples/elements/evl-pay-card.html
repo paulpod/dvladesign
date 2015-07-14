@@ -9,20 +9,7 @@
 
     <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
 
-    <script type='text/javascript'>//<![CDATA[ 
-      $(window).load(function(){
-      $("#ccnum").keyup(function () {
-          $(".less-than-500,.less-than-1500").hide();
-          var myValue = $(this).val();
-          if (myValue <= 500) {
-              $(".less-than-500").show();
-          } else if (myValue <= 1500) {
-              $(".less-than-1500").show();
-          }
-
-      });
-      });//]]>  
-    </script>
+    
 
    
 
@@ -120,7 +107,7 @@ margin: 1em 0 1em;
 
 
 <body class="js-enabled" ontouchstart="">
-<form action="evl-3-flow" method="get" class="form">
+<form action="evl-3-flow" method="get" class="form" onsubmit="javascript:return WebForm_OnSubmit();" id="EVL" autocomplete="off">
 
   <input type="hidden" name="nextlink" value="evl-end-card">
   <input type="hidden" name="nextbacklink" value="evl-pay-card">
@@ -234,7 +221,7 @@ document.body.className = ((document.body.className) ? document.body.className +
             <div style="float:left">
               <div style="margin-bottom:0">Month</div>
 
-              <input  maxlength="2" type="tel" name="expiry" value="" id="expiry"  class="form-control input-small" pattern="[0-9]*">
+              <input  maxlength="2" type="tel" name="expiry" value=""  onkeypress="return isNumber(event)" autocomplete="off" id="expiry"  class="form-control input-small" >
 
               
             </div>
