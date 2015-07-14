@@ -111,7 +111,15 @@ $("#ccnum").keyup(function () {
 
 
 <body class="js-enabled" ontouchstart="">
-    <form method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="EVL" autocomplete="off">
+<form action="evl-3-flow" method="get" class="form">
+
+  <input type="hidden" name="nextlink" value="evl-end-card">
+  <input type="hidden" name="nextbacklink" value="evl-pay-card">
+  <input type="hidden" name="nextbacklink" value="evl-renewal-period-check">
+  <input type="hidden" name="regmark" value="{{defaultreg}}">
+  <input type="hidden" name="kind" value="{{kind}}">
+
+<!--    <form method="post" action="" onsubmit="javascript:return WebForm_OnSubmit();" id="EVL" autocomplete="off"> -->
     <div class="aspNetHidden">
     <input name="__LASTFOCUS" id="__LASTFOCUS" value="" type="hidden">
     <input name="__EVENTTARGET" id="__EVENTTARGET" value="" type="hidden">
