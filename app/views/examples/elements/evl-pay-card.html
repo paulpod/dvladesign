@@ -86,24 +86,33 @@ margin: 1em 0 1em;
         
 
         
+<script type='text/javascript'>
+        $(window).load(function(){
+            $("#ccnum").keyup(function () {
+                $(".less-than-500,.less-than-1500,.imageccv").hide();
+                var myValue = $(this).val();
+                var visaPattern = "^4(026|17500|405|508|844|91[37])";
+                var amexPattern = "^3[47]";
+                var masterPattern = "^5[1-5]";
+                if (myValue.match(visaPattern)) {
+                    $(".less-than-500,.imageccv").show();
+                    $("#myimg").attr("src","index_files/CreditCard_Security_Code_Image.png");
+                    //index_files/CreditCard_Security_Code_Image.png
+                }
+                if (myValue.match(amexPattern)) {
+                    $(".less-than-500,.imageccv").show();
+                    $("#myimg").attr("src","index_files/ccv-amex.jpg");
+                }
+                if (myValue.match(masterPattern)) {
+                    $(".less-than-1500,.imageccv").show();
+                    $("#myimg").attr("src","index_files/CreditCard_Security_Code_Image.png");
+                }
+                
+            });
+        });
+    </script>
 
 
-<script type='text/javascript'>//<![CDATA[ 
-$(window).load(function(){
-$("#ccnum").keyup(function () {
-    $(".less-than-500,.less-than-1500").hide();
-    var myValue = $(this).val();
-    if (myValue <= 500) {
-        $(".less-than-500").show();
-    } else if (myValue <= 1500) {
-        $(".less-than-1500").show();
-    }
-
-
-    
-});
-});//]]>  
-</script>
 
 
 </head>
