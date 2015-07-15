@@ -73,7 +73,6 @@ module.exports = {
         }
     }
 
-
     res.render('examples/elements/' + next, {'back' : back, 'defaultreg' : defaultreg, 'paynum' : paynum, 'email' : email, 'today' : today, 'kind' : kind, 'sorntax' : sorntax});
     
  
