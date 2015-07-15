@@ -83,21 +83,25 @@ margin: 1em 0 1em;
                 var masterPattern = "^5[1-5]";
                 if (myValue.match(visaPattern)) {
                     $(".less-than-500,.imageccv").show();
-                    $("#myimg").attr("src","index_files/CreditCard_Security_Code_Image.png");
+                    $("#myimg").attr("src","/public/images/CreditCard_Security_Code_Image.png");
+                    $('#cvc').attr('maxlength','3')
+                    
                     //index_files/CreditCard_Security_Code_Image.png
                 }
                 if (myValue.match(amexPattern)) {
                     $(".less-than-500,.imageccv").show();
-                    $("#myimg").attr("src","index_files/ccv-amex.jpg");
+                    $("#myimg").attr("src","/public/images/ccv-amex.jpg");
+                    $('#cvc').attr('maxlength','4')
                 }
                 if (myValue.match(masterPattern)) {
                     $(".less-than-1500,.imageccv").show();
-                    $("#myimg").attr("src","index_files/CreditCard_Security_Code_Image.png");
+                    $("#myimg").attr("src","/public/images/CreditCard_Security_Code_Image.png");
+                    $('#cvc').attr('maxlength','3')
                 }
                 
             });
         });
-    </script>
+</script> 
 
 
 
