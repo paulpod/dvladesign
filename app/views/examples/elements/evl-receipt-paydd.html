@@ -12,6 +12,10 @@
     <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
 
 
+      <script src="/public/javascripts/mailcheck.min.js"></script>
+
+
+
 
 
 {{/head}}
@@ -57,20 +61,56 @@
 
 
 
-    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Get a receipt by email or text</h2>
+    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Get a receipt by email</h2>
 
     <div class="body-container group">
 
 
+  
 
     <div style="margin:1em 0 2em 0">
         <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Email address - required for direct debit</label>
 
         <span id="MainContent_revtxtEmailConfirmation" class="Validator" style="display:none;">Please enter a valid email address</span>
-        <p>
-            <input maxlength="150" id="email" class="form-control input-large" type="email" data-parsley-trigger="change" autocomplete="off" name="email" required data-parsley-required-message="You must provide an email so we can send your direct debit schedule">
+        
+            
 
-        </p>
+
+    <p>
+      <input id="email" name="email" type="email" class="form-control input-large" data-parsley-trigger="change" required data-parsley-required-message="You must provide an email so we can send your direct debit schedule" />
+      
+    </p>
+
+    <p id="suggestion">
+    
+    </p>
+
+<script>
+var domains = ['hotmail.com', 'gmail.com', 'aol.com'];
+var topLevelDomains = ["com", "net", "org"];
+$('#email').on('blur', function(event) {
+  console.log("event ", event);
+  console.log("this ", $(this));
+  $(this).mailcheck({
+    domains: domains,                       // optional
+    topLevelDomains: topLevelDomains,       // optional
+    suggested: function(element, suggestion) {
+      // callback code
+      console.log("suggestion ", suggestion.full);
+      $('#suggestion').html("<ul class=parsley-errors-list filled><li class=parsley-required><span style=font-weight:300>Did you mean </span> " + suggestion.full + "?</li></ul>");
+    },
+    empty: function(element) {
+      // callback code
+      //$('#suggestion').html('No Suggestions :(');
+    }
+  });
+});
+</script>
+
+            <!-- <input maxlength="150" id="email" class="form-control input-large" type="email" data-parsley-trigger="change" autocomplete="off" name="email" required data-parsley-required-message="You must provide an email so we can send your direct debit schedule"> -->
+
+        
+        <p id="suggestion"></p>
 
     </div>
 
@@ -84,7 +124,7 @@
         </p>
 
 
-        <p>The DVLA does not share mobile phone numbers or email addresses with anyone.</p>
+        <p>A mobile number can help us get in touch to correct a mistake. The DVLA does not share mobile phone numbers or email addresses with anyone.</p>
         
 
         <!-- <p>
