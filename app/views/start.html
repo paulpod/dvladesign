@@ -1,0 +1,169 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+
+
+{{/head}}
+
+
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_navigation_searchbox}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+<main id="content" role="main" class="vehicle-tax-start">
+  <div id="global-breadcrumb" class="header-context">
+    <nav role="navigation">
+      <ol class="group">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Driving and transport</a></li>
+        <li><a href="#">Vehicle tax and SORN</a></li>
+      </ol>
+    </nav>
+  </div>
+
+
+
+
+
+  <div class="grid-row">
+
+    <div class="column-two-thirds">
+      <h1 class="form-title heading-xlarge">
+      Taxing a vehicle
+      </h1>
+
+
+      <!-- <h2 class="heading-medium" style="margin-top:0.75em;margin-bottom:0.15em">Apply using the new service <span class="beta">beta</span></h2> -->
+
+      <!-- <p style="font-size:0.85em;margin-bottom:1.4em">This is a 'beta' service - find out <a href="#">what this means for you</a>.</p> -->
+
+      <p>To apply online you'll need one of the following:</p>
+
+      <ul class="list-bullet">
+        <li>your vehicle tax renewal letter (V11)</li>
+        <li>your log book (V5C)</li>
+        <li>your New Keeper Supplement (V5C/2) if you've just bought the vehicle</li>
+        <li>your Last Chance letter</li>
+      </ul>
+
+      <!-- <ul class="list-bullet">
+        <li>the 16 digit reference number on your vehicle tax renewal letter (V11)</li>
+        <li>the 11 digit reference number on your log book (V5C)</li>
+        <li>the 12 digit reference number on your New Keeper Supplement (V5C/2) if you've just bought the vehicle</li>
+        <li>the 16 or 11 digit reference number on your Last Chance letter</li>
+      </ul> -->
+      
+
+      <!--<form class="get-started" action="/g" style="margin-top:1.5em">-->
+      <form action="examples/elements/evl-3-flow" method="get" class="get-started" style="margin-top:1.5em;margin-bottom:3em">
+      <input type="hidden" name="nextlink" value="evl-11">
+      <input type="hidden" name="nextbacklink" value="start">
+
+        <input type="submit" value="Start now" class="button medium" role="button">
+      </form>
+
+
+      <!--<div class="help-notice">
+        <p>You must only use vehicle registration documents with your name on.</p>
+      </div> -->
+
+      <!-- <p>Contact us if you need to correct the registered keeper of your vehicle.</p> -->
+
+
+      <h2 class="heading-medium" style="margin-top:0.75em">Other ways to apply</h2>
+
+      <h2 class="heading-small" style="margin-top:0.75em">By phone</h2>
+
+
+      <p>Telephone: 0300 123 4321<br>
+      Textphone: 0300 790 6201<br>
+      <a href="/call-charges">Find out more about call charges</a></p>
+      
+
+      <h2 class="heading-small" style="">At the Post Office</h2>
+
+      <p>Go to your local <a href="http://postoffice.co.uk" rel="external">Post Office</a> that deals with vehicle tax. You'll need to take:</p>
+
+      <ul class="list-bullet">
+        <li>completed V11 reminder, V5C or new keeper supplement (V5C/2)</li>
+        <li>MOT test certificate if required (must be valid when the tax starts)</li>
+        <li>the payment shown on the reminder</li>
+      </ul>
+
+      <p>In <a href="#" rel="external">Northern Ireland</a> you'll also need an insurance certificate or cover note.</p>
+
+
+
+    </div>
+
+
+    <div class="column-third" style=";margin-bottom:0.75em">
+      <nav class="popular-needs">
+
+        <h3 class="heading-medium" style="border-top:10px solid #005ea5;margin-top:0;padding-top:1em">Vehicle tax and SORN</h3>
+
+        <ul class="top-tasks">
+          <li><a href="/register-sorn-statutory-off-road-notification">Make a <abbr title="Statutory off road notice">SORN</abbr> declaration</a></li>
+          <li><a href="/calculate-vehicle-tax-rates">Calculate vehicle tax rates</a></li>
+          <li><a href="/calculate-vehicle-tax-rates">Vehicle tax rate tables</a></li>
+          <li><a href="/apply-hgv-vehicle-licence-tax-disc-form-v85">Apply for <abbr title="Heavy goods vehicle">HGV</abbr> vehicle tax</a></li>
+          <li><a href="#">More</a></li>
+        </ul>
+
+        <h3 class="heading-medium" style="margin-top:0.75em">Driving and transport</h3>
+
+        <ul class="top-tasks">
+          <li><a href="#">Getting an <abbr title="Certificate of Road Worthiness">MOT</abbr></a></li>
+          <li><a href="#">More</a></li>
+        </ul>
+
+        <h3 class="heading-medium" style="margin-top:0.75em">Elsewhere on GOV.UK</h3>
+
+        <ul class="top-tasks">
+          <li><a href="#">Vehicle tax changes</a></li>
+        </ul>
+
+      </nav>
+    </div>
+
+  </div><!-- close gridrow -->
+
+
+
+ 
+
+ 
+
+  
+
+
+
+
+
+</main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
