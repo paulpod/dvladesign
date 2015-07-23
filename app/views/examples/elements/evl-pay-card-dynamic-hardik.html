@@ -73,32 +73,35 @@ margin: 1em 0 1em;
         
 
         
-   <script type="text/javascript">
-$(document).ready(function(){
-    $("select").change(function(){
-        $(this).find("option:selected").each(function(){
-            if($(this).attr("value")=="cc"){
-                $(".box").not(".cc").hide();
-                $(".cc").show();
-
-            }
-            else if($(this).attr("value")=="dc"){
-                $(".box").not(".dc").hide();
-                $(".dc").show();
+<script type='text/javascript'>
+        $(window).load(function(){
+            $("#ccnum").keyup(function () {
+                $(".less-than-500,.less-than-1500,.imageccv").hide();
+                var myValue = $(this).val();
+                var visaPattern = "^4(026|17500|405|508|844|91[37])";
+                var amexPattern = "^3[47]";
+                var masterPattern = "^5[1-5]";
+                if (myValue.match(visaPattern)) {
+                    $(".less-than-500,.imageccv").show();
+                    $("#myimg").attr("src","/public/images/CreditCard_Security_Code_Image.png");
+                    $('#cvc').attr('maxlength','3')
+                    
+                    //index_files/CreditCard_Security_Code_Image.png
+                }
+                if (myValue.match(amexPattern)) {
+                    $(".less-than-500,.imageccv").show();
+                    $("#myimg").attr("src","/public/images/ccv-amex.jpg");
+                    $('#cvc').attr('maxlength','4')
+                }
+                if (myValue.match(masterPattern)) {
+                    $(".less-than-1500,.imageccv").show();
+                    $("#myimg").attr("src","/public/images/CreditCard_Security_Code_Image.png");
+                    $('#cvc').attr('maxlength','3')
+                }
                 
-            }
-            else if($(this).attr("value")=="amex"){
-                $(".box").not(".amex").hide();
-                $(".amex").show();
-                
-            }
-            else{
-                $(".box").hide();
-            }
+            });
         });
-    }).change();
-});
-</script>
+</script> 
 
 
 
@@ -164,173 +167,134 @@ document.body.className = ((document.body.className) ? document.body.className +
 
 
 
-      <div style="padding:0.8em 0 0.5em 0">
-        <img src="/public/images/cards-visa-vdebit-master-maestro.png" width="216" height="32">
-      </div>
+      <div style="padding:0.8em 0 0.5em 0"><img src="/public/images/cards-visa-vdebit-master-maestro.png" width="216" height="32"></div>
 
-      <p xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<p xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
       Only UK Maestro, VISA Debit, MasterCard Debit, Electron debit cards, VISA <br />and MasterCard credit cards are accepted.
-      </p>
-      <p xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-      The amount payable for vehicle <strong>{{defaultreg}}</strong> is
+    </p>
+<p xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+      The amount payable for vehicle <strong>WO06 LNM</strong> is
       <strong>
-        £230.00</strong> for
+        £110.00</strong> for
       <strong>12 months</strong></p>
 
 
-
-      <div class="help-notice">
-        <p style="padding-top:0.2em; padding-left:60px">There's an additional £2.50 fee for paying by credit card (including prepaid cards).<br>
-        There is no fee for paying with a debit card.</p>
-      </div>
+       
 
 
-
-      <div>
-
-        <strong>
-        <label class="label">Card type</label>
-
-        </strong>
-
-        <span id="MainContent_revPanTextBox" class="Validator" style="display:none;">Card number is invalid. The card number should be between 16 and 19 digits.</span>
-        <span id="MainContent_rfvPanTextBox" class="Validator" style="display:none;">Enter full card number</span>
-
-        <div>
-
-        <select name="selector" id="" class="input-medium">
-            <option selected="selected" value="-">-</option>
-            <option value="dc">Visa Debit card</option>
-            <option value="cc">Visa Credit card (+£2.50)</option>
-            <option value="dc">Debit MasterCard</option>
-            <option value="cc">Credit MasterCard (+£2.50)</option>
-            <option value="amex">American Express</option>
-        </select>
-
-        </div>
-
-      </div>
-
-      <br clear="all">
+<div class="help-notice">
+      <p style="padding-top:0.2em; padding-left:60px">There's an additional £2.50 fee for paying by credit card (including prepaid cards).<br>
+      There is no fee for paying with a debit card.</p>
+    </div>
 
 
 
-      <input value="CreditCardChargeNotice" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="hidden">
-      <input value="CardNumberPrompt" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="hidden">
+<input value="CreditCardChargeNotice" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="hidden"><input value="CardNumberPrompt" xmlns:utils="urn:utils" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" type="hidden">
+                    <div class="redborder">
+                        <div>
+                        
+                            <strong>
+                                <label class="label">Card number</label>
+                                
+                            </strong>
 
+                        <span id="MainContent_revPanTextBox" class="Validator" style="display:none;">Card number is invalid. The card number should be between 16 and 19 digits.</span>
+                        <span id="MainContent_rfvPanTextBox" class="Validator" style="display:none;">Enter full card number</span>
 
+                        <div>
 
-      <div class="redborder" style="margin-top:1.5em">
-        <div>
-          
-          <strong>
-              <label class="label">Card number</label>
-              
-          </strong>
+                            <span class="field">
 
-          <span id="MainContent_revPanTextBox" class="Validator" style="display:none;">Card number is invalid. The card number should be between 16 and 19 digits.</span>
-          <span id="MainContent_rfvPanTextBox" class="Validator" style="display:none;">Enter full card number</span>
+                            
 
-          <div>
-              <span class="field">
+                             <input type="tel" size="19" name="ccnum" value="" id="ccnum" class="form-control input-large" maxlength="19" style="width:13em">
+                            </span>
+                            
+                        </div>
+                    </div>
+                    <div>
+                    </div>
 
-               <input type="tel" size="19" name="ccnum" value="" id="ccnum" class="form-control input-large" maxlength="19" style="width:13em">
-              </span>
-          </div>
-
-        </div>
-                    
-
-        <div style="margin-top:1.9em">
-          <label class="heading-small"><strong>Card expiry date</strong></label>
-
-          <br clear="all">
-
-          <div style="float:left">
-            <div style="margin-bottom:0">Month</div>
-
-            <input  maxlength="2" type="tel" name="expiry" value=""  onkeypress="return isNumber(event)" autocomplete="off" id="expiry"  class="form-control input-small" >
-          </div>
-
-          <div style="float:left;margin:1.8em 1em 0 0.8em">
-            <span style="font-size:130%">/</span>
-          </div>
-
-          <div>
-
-            <div style="margin-bottom:0">Year</div>
-
-            <input maxlength="4" class="form-control input-small"  onkeypress="return isNumber(event)" autocomplete="off" pattern="[0-9]*" type="tel">
-          </div>
-        </div>
-
+                    <div style="margin-top:1.9em">
+        <label class="heading-small"><strong>Card expiry date</strong></label>
 
 
         <br clear="all">
 
-      </div>
+
+            <div style="float:left">
+              <div style="margin-bottom:0">Month</div>
+
+              <input  maxlength="2" type="tel" name="expiry" value=""  onkeypress="return isNumber(event)" autocomplete="off" id="expiry"  class="form-control input-small" >
+
+              
+            </div>
+
+            <div style="float:left;margin:1.8em 1em 0 0.8em">
+
+            <span style="font-size:130%">/</span>
+
+            </div>
+
+            <div>
+              <div style="margin-bottom:0">Year</div>
+
+              <input maxlength="4" class="form-control input-small"  onkeypress="return isNumber(event)" autocomplete="off" pattern="[0-9]*" type="tel">
+            </div>
+            </div>
+          
+
+          <br clear="all">
+        
+    </div>
                    
-      <div style="margin-top:1.0em">
-        
-        <span>
-          <strong>
-            <label for="MainContent_SecurityCodeTextBox" id="MainContent_SecurityCodeLabel" class="label">
-            Card security code</label>
-          </strong>
-        </span>
+                    <div style="margin-top:1.0em">
+                        <span>
+                            <strong>
+                                <label for="MainContent_SecurityCodeTextBox" id="MainContent_SecurityCodeLabel" class="label">
+                                    Card security code</label>
+                            </strong></span>
+                            <span class="form-hint"><noscript>a 3 or 4 digit code from your card</noscript></span>
+                           <div><small><strong id="ccnum-type" class="form-hint"></strong></small></div>
+                           <div><small><strong id="ccnum-typeone" class="form-hint"></strong></small></div>
+                        
+                        
 
-        <span class="form-hint"><noscript>a 3 or 4 digit code from your card</noscript></span>
+                        <span id="MainContent_CardSecurityValid" class="Validator" style="display:none;">The card security code is invalid<br></span>
+                        <span id="MainContent_SecurityRequiredValidator" class="Validator" style="display:none;">Enter card security code</span>
+                        <div>
 
-        
-        <!-- <div><small><strong id="ccnum-type" class="form-hint"></strong></small></div>
-        <div><small><strong id="ccnum-typeone" class="form-hint"></strong></small></div>
-
-        <span id="MainContent_CardSecurityValid" class="Validator" style="display:none;">The card security code is invalid<br></span>
-
-        <span id="MainContent_SecurityRequiredValidator" class="Validator" style="display:none;">Enter card security code</span>
-        -->
-
-
-        <div>
-          <div  class="cc dc box form-hint">
-            <span>Visa and MasterCard have a 3 digit card security number on the back of the card.</span>
-          </div>
-
-          <div  class="amex box form-hint">
-            <span>American Express has a 4 digit card security number on the front of the card.</span>
-          </div>
-
-          <span class="cvc field">
+                            <span class="cvc field">
+           
             <input  size="4" type="tel" name="cvc" class="form-control input-small" value="" id="cvc" pattern="[0-9]*">
-          </span>
-
-          &nbsp;
-
-        </div>
-      </div>
+        </span>    
 
 
+                            <!--<span class="less-than-500" style="display:none;">
+                            <img id="myimg" src="index_files/CreditCard_Security_Code_Image.png" width="67px" height="31px">
+                            </span>-->
 
-      <div style="margin-top:1.5em">
+                            
+
+                            &nbsp;
+                            
+                        </div>
+                       
+                    </div>
+                <div style="margin-top:1.5em">
       <p class="label"><strong>Total charge to card</strong></p>
-      <div><span style="width:12em;float:left">Amount</span> <span style="">£230.00</span></div>
+      <div><span style="width:12em;float:left">Amount</span> <span style="">£110.00</span></div>
 
 
-      <div class="cc box">
+      <div class="less-than-1500" style="display:none;">
       <div><span style="width:12em;float:left">Credit card fee</span> £2.50</div>
-      <div><span style="width:12em;float:left"><strong>Total</span> £232.50</strong></div>
+      <div><span style="width:12em;float:left"><strong>Total</span> £112.50</strong></div>
       </div>
 
-      <div class="dc box">
+      <div class="less-than-500" style="display:none;">
       <div><span style="width:12em;float:left"><strong>&nbsp;</span> &nbsp;</strong></div>
-      <div><span style="width:12em;float:left"><strong>Total</span> £230.00</strong></div>
+      <div><span style="width:12em;float:left"><strong>Total</span> £110.00</strong></div>
       </div>
-
-      <div class="amex box">
-      <div><span style="width:12em;float:left"><strong>&nbsp;</span> &nbsp;</strong></div>
-      <div><span style="width:12em;float:left"><strong>Total</span> £230.00</strong></div>
-      </div>
-
 
       
 

@@ -1,0 +1,166 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+
+
+	<script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/parsley.min.js"></script>
+
+	<script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+	<script src="/public/javascripts/mailcheck.min.js"></script>
+
+
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_evlprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+<link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+<!-- <link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" /> -->
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+
+
+	<div>
+	<a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+	</div>
+
+	<br clear="all">
+		
+	
+	<h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Email address - required for direct debit
+	</h2>
+
+	<form id="bank" action="evl-3-flow" method="get" class="form" data-parsley-validate>
+		<input type="hidden" name="nextlink" value="evl-paydd-bank">
+		<input type="hidden" name="nextbacklink" value="evl-paydd-address-playback">
+		<input type="hidden" name="regmark" value="{{defaultreg}}">
+		<input type="hidden" name="email" value="{{email}}">
+		<input type="hidden" name="paynum" value="{{paynum}}">
+		<input type="hidden" name="kind" value="{{kind}}">
+
+
+
+		
+
+		<div class="form-group">
+
+		<div style="margin:1em 0 2em 0">
+        
+	        <label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">We send the Direct Debit schedule to this address</label>
+
+	       
+
+	        <span id="MainContent_revtxtEmailConfirmation" class="Validator" style="display:none;">Please enter a valid email address</span>
+	        
+
+		    <p>
+		      <input id="email" name="email" type="email" class="form-control input-large" data-parsley-trigger="change" required data-parsley-required-message="You must provide an email so we can send your direct debit schedule" />
+		      
+		    </p>
+
+		    <p id="suggestion">
+		    
+		    </p>
+
+			<script>
+			var domains = ['hotmail.com', 'gmail.com', 'aol.com'];
+			var topLevelDomains = ["com", "net", "org"];
+			$('#email').on('blur', function(event) {
+			  console.log("event ", event);
+			  console.log("this ", $(this));
+			  $(this).mailcheck({
+			    domains: domains,                       // optional
+			    topLevelDomains: topLevelDomains,       // optional
+			    suggested: function(element, suggestion) {
+			      // callback code
+			      console.log("suggestion ", suggestion.full);
+			      $('#suggestion').html("<ul class=parsley-errors-list filled><li class=parsley-required><span style=font-weight:300>Did you mean </span> " + suggestion.full + "?</li></ul>");
+			    },
+			    empty: function(element) {
+			      // callback code
+			      //$('#suggestion').html('No Suggestions :(');
+			    }
+			  });
+			});
+			</script>
+
+
+	    </div>
+
+
+
+		<div id="repeat-confirm-email">
+
+			<label class="heading-small" for="MainContent_txtEmailConfirmation" id="MainContent_lblbEmailConfirmationText">Confirm your email address</label>
+
+	        <span id="MainContent_revtxtEmailConfirmation" class="Validator" style="display:none;">Please enter a valid email address</span>
+	        
+
+		    <p>
+		      <input id="email2" name="email2" type="email" class="form-control input-large" data-parsley-trigger="change" required data-parsley-required-message="You must provide an email so we can send your direct debit schedule" />
+		      
+		    </p>
+
+	    </div>
+
+
+
+
+
+		<div class="form-group" style="margin:2em 0 2em 0">
+			<input type="submit" class="button" value="Continue">
+        </div>
+
+
+
+	
+
+        </div>
+
+
+		
+
+		
+
+
+
+		
+		
+	</form>
+
+
+
+
+
+                
+
+   
+ </main><!-- / #page-container -->
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
