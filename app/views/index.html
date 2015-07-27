@@ -4,6 +4,10 @@
 	DVLA Design Kit
 {{/pageTitle}}
 
+{{$propositionHeader}}
+  {{>includes/govuk_dvladesignprop}}
+{{/propositionHeader}}
+
 {{$content}}
 
 <main id="content" role="main">
@@ -11,212 +15,58 @@
 	<!--<input type="hidden" name="nextlink" value="start">
 	<input type="hidden" name="nextbacklink" value="start">-->
 
-	<h1 class="heading-large">EVL Prototype</h1>
 
-	<p>In an ideal world, what changes would we make to EVL in order to improve it?</p>
+<div class="grid-row">
+  <div class="column-two-thirds">
 
-	<p><strong>NEW</strong> Use V5C + tax for 6 months / card to see SORN - &gt; Taxed scenario</p>
+	<h1 class="heading-xlarge">DVLA Design</h1>
 
 
-	<div class="form-group" style="margin:1.5em 0 1.5em 0">
-		<input type="submit" class="button" value="Start">
-	</div>
+	
+	<p><strong>What's this?</strong> The DVLA where possible follows the guidance for GOV.UK services, and uses the current best practice and most appropriate elements as discussed on the Design Elements hackpad.</p>
 
-	</form>
+	<p>Where specialist needs have presented themselves, this document aims to provide consistent guidance for use on DVLA services.</p>
 
-	<h2 class="heading-medium">SORN prototype</h2>
 
-	<p>Current service mirrors taxing a vehicle, but the user research does not support this approach. SORN as new keeper, SORN without a V11 to be looked at - Needs to be it's own thing.</p>
+	<ul class="list-number" style="font-size:0.85em">
+		<li><a href="#resources">GOV.UK and GDS resources</a></li>
+		<li><a href="#dvlaresources">DVLA resources</a></li>
+		<li><a href="#tools">Tools</a></li>
+		<li><a href="#simplepages">Simple pages</a></li>
 
-	<ol class="list-number">
-
-	<li>
-		<a href="/examples/elements/start-sorn">Start page</a><br />
-		A start page on GOV.UK...
-	</li>
-
-	<li>
-		<a href="/examples/elements/sorn-v5c">Use V5C as primary vehicle reference</a><br />
-		Experimental / User research suggests that people use SORN on seasonal vehicles, or from an insurance enforcement letter so might use a V5C to SORN / data shows +90% us a V11 letter.
-	</li>
-		
-	</ol>
-
-
-
-
-
-
-
-	<h2 class="heading-medium">Reference number variations</h2>
-
-	<p>All transactions require a doc ref of some sort. To protect the privacy of owners who pay reduced vehicle tax it is no longer possible to tax a vehicle with a surname and vehicle reg number.</p>
-
-	<p><strong>What:</strong> Trying to reduce the error rate, and subsequent case work to fix, of users confused by and entering the incorrect reference number when trying to tax their vehicle.</p>
-
-	<p><strong>How:</strong> Looking at alternative methods to direct the user to find and enter a correct reference number, with only genuinely *new* new keepers using the V2C/2 supplement.</p>
-
-
-	<h2 class="heading-medium">Direct debit</h2>
-
-	<p>New ways to pay were added in Oct 2014, but has introduced confusion for users.</p>
-
-	<p><strong>What:</strong> Making the choice of payment crystal clear.</p>
-
-	<p style="margin-bottom:1.5em"><strong>How:</strong> The most popular choices are more clearly presented, the least popular (and confusing) are less obvious.</p>
-
-	<p><strong>How:</strong> Making the direct debit sign up easier.</p>
-
-	<p><strong>What:</strong> Adoption of a more appropriate address-finder pattern, breaking the form into smaller pieces, reducing the number of steps, making boilerplate statement information optional.</p>
-
-
-
-	<h3 class="heading-medium">New ones</h3>
-
-	<ol class="list-number">
-
-		<li>
-			<a href="/examples/elements/start">Start page</a><br />
-			Current start page, runs directly into ...
-		</li>
-		
-
-		<li><a href="/examples/elements/evl-11">Guide pictures, each step</a><br />
-		Changed question to specific actions (taxed before or just bought) and each step has document pictogram. More risky actions escalate warning strength to avert misuse.
-		</li>
-
-		<li><a href="/examples/elements/evl-11-warning">Added 'warning letter' option off first page</a><br />
-		Added this to direct users coming from a letter sent for untaxed new keepers to a more easily used V5C doc ref.
-		</li>
-
-		<li><a href="/examples/elements/evl-renewal-period-minimal">Two payment options</a><br />
-		Discussion starter - would the reduction in payment options, and the equalising of cost provide enough benefit of reduced customer support to warrent the effort to introduce.
-		</li>
-
-		<li><a href="/examples/elements/evl-renewal-period-picto">Three payment periods</a><br />
-		After testing of the two payment methods as the first question, which did not result in easier comprehension, this is a different route. User picks the renewal period 1, 6 or 12 months and then chooses how to pay. Needs testing!
-		</li>
-
-	</ol>
-
-
-
-	<h3 class="heading-medium">Older ones</h3>
-
-
-
-
-	<ul class="list-bullet">
-		<li>
-			<a href="/examples/elements/start">Start page</a><br />
-			Minor copy changes, aligning naming of possible forms user may have with naming elsewhere, added "!" warning about using documents with your name on.
-		</li>
-	</ul>
-
-
-	<ol class="list-number">
-		
-
-		<li>
-			<a href="/examples/elements/evl-asis">EVL, as-is first page</a><br />
-			Close to the current EVL page, with slightly corrected text to match the alternate designs below
-		</li>
-
-		<li>
-			<a href="/examples/elements/evl-0">Radio button chooser</a><br />
-			This option lets users pick one, and enter the number for that reference number type.
-		</li>
-		<li>
-			<a href="/examples/elements/evl-1">Radio button chooser, fixed bottom field position</a><br />
-			Instead of the field and the 'where to find' element moving around under each radio button, this option always reveals the field at the bottom of the list of radio buttons.
-		</li>
-		<li>
-			<a href="/examples/elements/evl-2">Radio button chooser, default open for V11</a><br />
-			This is the same as the first, but the default state has the V11 option selected, and the field for entering that visible.
-		</li>
-		<li>
-			<a href="/examples/elements/evl-3">2 step process: select first, then enter ref number</a><br />
-			This splits out the choosing the reference number type and entering it into two separate pages/steps.
-		</li>
-
-		<li>
-			<a href="/examples/elements/evl-3b">2 step process: select first, then enter ref number + expanded single help section</a><br />
-			This has an expanded, single 'Where to find...' expanding section, rather than one for each, and is before the following screen where the number is entered.
-		</li>
-
-		<li>
-			<a href="/examples/elements/evl-4">Form images: select first, then enter ref number</a><br />
-			This one uses the example images of each form, shown in three columns - the V11 (preferred) had the green continue button, the other two use a text link.
-		</li>
-
-		<li>
-			<a href="/examples/elements/evl-5">Form images: select first, then enter ref number</a><br />
-			Variation, with the illustration + the radio button in rows.
-		</li>
-
-		<li>
-			<a href="/examples/elements/evl-5a">Form images: select first, then enter ref number</a><br />
-			Slight size difference, fits the button label on one line
-		</li>
-		<li>
-			<a href="/examples/elements/evl-6">Form images: includes the image inside the large radio button area.</a><br />
-			Big and chunky buttons to hit
-		</li>
-	</ol>
-
-
-	<h2 class="heading-medium" style="padding-top:2em">Rest of EVL flow...</h2>
-
-	<ol class="list-number">
-		<li>
-			<a href="/examples/elements/evl-vehicle-details">Vehicle details</a><br />
-			Show regmark, vehicle make, class, status page 
-		</li>
-
-		<li>
-			<a href="/examples/elements/evl-renewal-period">Renewal period</a><br />
-			User chooses between 6/12 month and Direct Debit annual, 6 or monthly
-		</li>
-
-		<li>
-			<a href="/examples/elements/evl-renewal-period-check">Renewal period check</a><br />
-			Confirm vehicle, payment, period + add email or mobile for receipt 
-		</li>
-
-		<li>
-			<a href="/examples/elements/evl-pay-card">Pay (cards)</a><br />
-			Payment form for cards 
-		</li>
-
-
-
-	</ol>
-
-
-
-
-
-	<h2 class="heading-medium" style="padding-top:2em">To do</h2>
-
-	<ul class="list-bullet">
-		<li>
-			Mocking up additional pages in flow: vehicle details, 6/12 months picker, pay...
-		</li>
-		<li>
-			Automatically putting the field revealed by the radio button into focus (gold border, user can type immediately)
-		</li>
-		<li>
-			<s>Trying a three column (vertical split) to the three options to display the diagram as standard rather than hidden</s>
-		</li>
 	</ul>
 
 
 
 
 
-	<h2 class="heading-medium">Resources</h2>
 
-	<ul class="list-bullet">
+
+	<a name="resources">
+	<h2 class="heading-large">Resources - use these first</h2>
+	</a>
+
+	<ul class="list-bullet" style="padding-bottom:2em">
+		<li>
+			<a href="https://designpatterns.hackpad.com">
+				GOV.UK Design patterns Hackpad
+			</a>
+			 - look here first for the most up-to-date discussion and solutions to common problems. A useful top 10 subjects:
+		</li>
+
+		<ul class="list-number" style="font-size:0.85em;margin-left:1.5em">
+			<li><a href="https://designpatterns.hackpad.com/Ask-for-email-address-AfMMqnW9E9b">Asking for an email address from a user</a></li>
+			<li><a href="https://designpatterns.hackpad.com/Peoples-names-mgFWXkwyPEt">Asking for people's names</a></li>
+			<li><a href="https://designpatterns.hackpad.com/Addresses-CgrMSGRAhRc">Asking for a postal address</a></li>
+			<li><a href="https://designpatterns.hackpad.com/Dates-vpx6XlVjIbE">Dates, date pickers vs smart parsing</a></li>
+			<li><a href="https://designpatterns.hackpad.com/Transaction-start-pages-8fitVQYufJX">Start pages</a></li>
+			<li><a href="https://designpatterns.hackpad.com/Navigation-buttons-continue-next-previous-zoP1sKiW3y4">Buttons - Next/Continue as well as others</a></li>
+			<li><a href="https://designpatterns.hackpad.com/Back-buttons-and-links-hsdYethVO6s">Back buttons</a></li>
+			<li><a href="https://designpatterns.hackpad.com/Iconography-UoIkbsbqgll">Icons and images</a></li>
+			<li><a href="https://designpatterns.hackpad.com/Progressive-disclosure-mi03xhbZQpu">Progressive disclosure, used for help text and explainations</a></li>
+			<li><a href="https://designpatterns.hackpad.com/Create-a-password-4dSSBUhCYjj">Users creating passwords</a></li>
+		</ul>
+
 		<li>
 			<a href="https://github.com/alphagov/govuk_prototype_kit/wiki">
 				GOV.UK kit documentation
@@ -224,7 +74,7 @@
 		</li>
 		<li>
 			<a href="http://govuk-elements.herokuapp.com/snippets/">
-				Guide to GOV.UK elements HTML
+				Guide to GOV.UK elements + HTML snippets
 			</a>
 		</li>
 		<li>
@@ -238,6 +88,146 @@
 			</a>
 		</li>
 	</ul>
+
+
+
+
+
+
+	<a name="dvlaresources">
+	<h2 class="heading-large">Extra DVLA resources</h2>
+	</a>
+
+	<a name="reg">
+	<h3 class="heading-medium">Vehicle registration marks</h3>
+	</a>
+
+	<p><strong>Usage:</strong> Where the mark is presented to the user, outside of longer copy, consider presenting the mark styled like a physical number plate.</p>
+
+	<p><strong>Benefits:</strong> User recognition is high, the distinctive style allows it to be presented without a label telling the user it is a vehicle registration mark.</p>
+
+	<p><strong>Implementation:</strong> The mark looks best when presented at medium to large headline sizes:</p>
+
+	
+	<div id="example-marks">
+		<link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+		<p style="margin:2.5em 0">
+		<span class="reg-mark" style="font-size:300%;margin-right:0.4em">
+		CU57&nbsp;ABD
+		</span>
+		 300%
+		 </p>
+
+
+		<p style="margin:3.5em 0 2.75em 0">
+		<span class="reg-mark" style="font-size:200%;margin-right:0.6em">
+		CU57&nbsp;ABC
+		</span>
+		 200%
+		</p>
+
+		<p style="margin:1.5em 0 2em 0">
+		 <span class="reg-mark" style="font-size:150%;margin-right:0.85em">
+		CU57&nbsp;ABC
+		</span>
+		 150%
+
+
+		 <span class="reg-mark" style="font-size:120%;margin-left:2em;margin-right:1.1em">
+		CU57&nbsp;ABC
+		</span>
+		 120%
+		</p>
+	</div>
+
+	<p>A class <code>.reg-mark</code> is available for inclusion in markup. The border width and rounded corner are measured using em units, so they scale with the font size. Use of a non-breaking space <code>&amp;nbsp;</code> between character chunks is recommended.</p>
+
+	<p>The UK number plate font is available as a base64 encoded webfont and can be added to pages that need it using:</p>
+
+	<p><a href="/public/stylesheets/numberplate.css">Numberplate Font encoded as base64 in a CSS file</a></p>
+
+	<p>And where it's needed in your HTML use:<br>
+
+	<code>&lt;link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" /&gt;</code> or just include in your main CSS styles. File size is minimal, just 48k, compared to 270k for the GDS Transport font used across the site.</p>
+
+	<p>Fallback to New Transport or sans is acceptable.</p>
+
+	<p>More on the way GDS Transport has been embedded as a webfont (which is the similar to this usage) by Chris Heathcote <a href="https://gds.blog.gov.uk/2012/07/17/webfonts-in-practice/">on the GDS Blog</a>.
+
+
+
+
+
+
+
+
+
+
+	<a name="tools">
+	<h2 class="heading-large" style="padding-top:2em">Tools</h2>
+	</a>
+
+	<p>Adobe Creative Suite is really big and expensive, and you probably only need 5% of the functionality. <strong>Sketch app</strong> has that 5% covered, and is fast and lightweight. <a href="http://bohemiancoding.com/sketch/">Try it out</a>.</p>
+
+	<p>Here is a file with many of the GOV.UK elements created using Sketch you may wish to use for wireframes and mockups: <a href="GOV_UK_Sketch_parts.sketch">GOV_UK_Sketch_parts.sketch</a></p>
+
+	<p>There are lots of different text editors around, but many people like <strong>Sublime Text</strong> to edit multiple files in one project. <a href="http://www.sublimetext.com">Try it out</a>.</p>
+
+	<p>If you are new to using a command line, FISH is a really nice improvement on the standard terminal that comes with your Mac. <a href="http://fishshell.com">Download it here</a> and (if it hasn't already) <a href="http://fishshell.com/docs/current/faq.html#faq-default">replace the default</a> instructions are here.</p>
+
+
+	
+
+
+	<a name="simplepages">
+	<h2 class="heading-large" style="padding-top:2em">Simple pages</h2>
+	</a>
+
+	<p><strong>Basic input page</strong>  :  <a href="/examples/elements/basic-1-field" rel="external">basic-1-field.html</a></p>
+
+	<p>The page features a black top bar, only containing the name of the service. We have found using this space for sub-navigation or other functions does not work, users do not see it.</p>
+
+	<p>Following the one-thing-per-page pattern, this page asks for a document reference number, using a stylised illustration of the document it comes from.</p>
+
+	<p>There is some javascript code to only allow numbers to be entered into the field, and a javascript helper called Parsely checks the number is there and that it contains 16 digits and prints a message if not.</p>
+	
+	<p>The page also features a small back button at the top. Research shows users do not like to use the browser back button within forms, they sometimes fail. Adding this one, it provides confidence that it will work and they can correct mistakes.</p>
+
+	<p>There is one button styled in a green box, the main action is to continue.</p>
+
+
+
+	<p><strong>Basic branching page</strong>  :  <a href="/examples/elements/basic-2-buttons" rel="external">basic-2-buttons.html</a></p>
+
+	<p>The page features a black top bar, small back button at the top and follows the one-thing-per-page pattern. Here we are making a basic choice between 2 options, only one can be selected.</p>
+
+	<p>There is some javascript code that does complicated things with the styling of the buttons, but this allows you to keep the HTML simple with one <code>label</code> and <code>input</code> per option.</p>
+
+	<p>Again only one button is styled in a green box, the main action is to continue.</p>
+
+
+
+	<p><strong>Basic playback page</strong>  :  <a href="/examples/elements/payment-card" rel="external">payment-card.html</a></p>
+
+	<p>The page features a black top bar, small back button at the top and plays back a chunk of the information already provided by the user before stepping into the next logical process, ie. payment.</p>
+
+	<p>We do some styling on this page to make it easier to read, namely putting data into a list, with two regularly spaced columns per line.</p>
+
+	<p>Where we have a VRN / Reg Mark standing along (not in a line of text) we can style it to look like a real numberplate. This makes it easier to recognise for users.</p>
+
+	<p>We also use the GOV.UK standard 'help notice' to clearly warn the user of important details.</p>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+	
 
 </main>
 

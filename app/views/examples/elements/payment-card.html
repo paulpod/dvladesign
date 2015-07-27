@@ -1,0 +1,112 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <!-- add this stylesheet for a numberplate font -->
+    <link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_evlprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+
+
+
+
+<main id="content" role="main" style="padding-bottom:0">
+
+
+
+  <div>
+  <a class="back-to-previous" href="javascript:history.back()">Back <span class="visuallyhidden"> to the previous question</span></a>
+  </div>
+
+  <br clear="all">
+
+
+
+
+  <form action="basic-flow" method="get" class="form">
+    <input type="hidden" name="nextlink" value="##">
+    
+
+
+    <h2 class="heading-medium" style="padding:0;margin:0 0 1em 0">Payment method</h2>
+
+
+
+    <!-- this is list, laid out for data items -->
+    <ul class="ul-data">
+
+      <li><span>Start date </span><strong>01 November 2014</strong></li>
+      <!-- the text in the span section is spaced a fixed width, and has a : added to the end -->
+
+      <li><span>Duration </span><strong>12 months</strong></li>
+
+      <li style="margin-bottom:8px"><span class="reg-mark-parent">Registration number </span>
+      <i class="reg-mark" style="font-size:120%">CU57&nbsp;ABC</i></li>
+      <!-- this class on an <i> tag styles the numberplate in yellow -->
+
+      <li><span>Vehicle make </span><strong>Toyota</strong></li>
+
+      <li><span>Total over 12 months</span><strong>£240.00</strong></li>
+
+      <li><span>Payment method </span><strong>One debit or credit card payment</strong></li>
+
+    </ul>
+    <!-- end of the list -->
+       
+
+
+
+    <!-- the help notice is the loudest warning we use on pages, don't over-use it! -->
+    <div class="help-notice">
+      <p style="padding-top:0.2em">Credit cards will have a £2.50 processing fee added. Debit cards are free to process.</p>
+    </div>
+
+
+
+
+    <!-- one green action button, other functions as secondary links -->
+    <div class="form-group" style="padding:1em 0">
+      <input type="submit" class="button" value="Continue">
+
+      <p style="padding:1em 0"><a href="start">Cancel application</a>
+
+    </div>
+
+
+
+  </form><!-- end of the form -->
+
+
+</main><!-- end content container -->
+
+
+
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}

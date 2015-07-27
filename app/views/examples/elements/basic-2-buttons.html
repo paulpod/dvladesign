@@ -1,0 +1,116 @@
+{{<govuk_template}}
+
+{{$head}}
+  {{>includes/elements_head}}
+
+    <script type="text/javascript" src="/public/javascripts/jquery-1.11.0.min.js"></script>
+
+    <script type="text/javascript" src="/public/javascripts/application.js"></script>
+
+    <!-- add this javascript to make the radio/checkbox buttons work correctly -->
+    <script type="text/javascript" src="/public/javascripts/selection-buttons.js"></script>
+
+    <link href="/public/stylesheets/application.css" media="screen" rel="stylesheet" type="text/css" />
+
+
+{{/head}}
+
+
+{{$propositionHeader}}
+  {{>includes/govuk_evlprop}}
+{{/propositionHeader}}
+
+{{$headerClass}}with-proposition{{/headerClass}}
+
+
+{{$content}}
+
+
+
+
+<!-- this is a container for the page contents -->
+<main id="content" role="main">
+
+
+  
+  <div>
+  <!-- the back link uses a simple javascript to go to previous page -->
+  <a class="back-to-previous" href="javascript:history.back()">
+  Back 
+  <!-- the rest of this label is hidden, only used for screenreaders -->
+  <span class="visuallyhidden"> to the previous question</span>
+  </a>
+  </div>
+
+
+
+  <br clear="all">
+
+  
+
+
+  <form action="basic-branch" method="get" class="form">
+  <!-- This form action runs a simple script that goes to one or another page,
+       the name of which is based on the hidden name below + the values from the input buttons in the form.
+  -->
+    <input type="hidden" name="nextlink" value="payment">
+
+
+    <h1 class="form-title heading-large" style="margin:0 0 1em 0;padding:0">
+      Choose a payment method
+    </h1>
+
+    
+
+    <!-- this is one whole radio button, the input is inside the label tags -->
+    <label for="radio-inline-1" class="block-label" style="padding-left:50px;margin-top:0;">
+
+      <input id="radio-inline-1" type="radio" name="branch" value="card">
+      <!-- in the input we set type (radio) variable and value for the link to next page -->
+      I want to pay by credit card
+
+    </label>
+
+
+
+    
+    <!-- this is a second radio button, the input is inside the label tags -->
+    <label for="radio-inline-2" class="block-label" style="padding-left:50px;margin-bottom:0">
+
+      <input id="radio-inline-2" type="radio" name="branch" value="dd">
+      <!-- again set the value, this time for a different page to link to next -->
+      I want to pay by direct debit
+   
+    </label>
+
+
+
+
+
+
+    <!-- one green action button per page -->
+    <div class="form-group" style="padding-top:2.2em">
+
+      <input type="submit" class="button" value="Continue">
+
+    </div>
+
+
+
+
+
+  </form><!-- end of the form -->
+
+
+</main><!-- end content container -->
+
+
+
+
+{{/content}}
+
+{{$bodyEnd}}
+  {{>includes/elements_scripts}}
+{{/bodyEnd}}
+
+{{/govuk_template}}
