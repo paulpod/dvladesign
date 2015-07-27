@@ -22,7 +22,7 @@
 	<h1 class="heading-xlarge">DVLA Design</h1>
 
 
-	
+
 	<p><strong>What's this?</strong> The DVLA where possible follows the guidance for GOV.UK services, and uses the current best practice and most appropriate elements as discussed on the Design Elements hackpad.</p>
 
 	<p>Where specialist needs have presented themselves, this document aims to provide consistent guidance for use on DVLA services.</p>
@@ -46,7 +46,7 @@
 	<h2 class="heading-large">Resources - use these first</h2>
 	</a>
 
-	<ul class="list-bullet" style="padding-bottom:2em">
+	<ul class="list-bullet">
 		<li>
 			<a href="https://designpatterns.hackpad.com">
 				GOV.UK Design patterns Hackpad
@@ -95,7 +95,7 @@
 
 
 	<a name="dvlaresources">
-	<h2 class="heading-large">Extra DVLA resources</h2>
+	<h2 class="heading-large" style="padding-top:2em">Extra DVLA resources</h2>
 	</a>
 
 	<a name="reg">
@@ -149,11 +149,11 @@
 
 	<p>And where it's needed in your HTML use:<br>
 
-	<code>&lt;link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" /&gt;</code> or just include in your main CSS styles. File size is minimal, just 48k, compared to 270k for the GDS Transport font used across the site.</p>
+	<code style="overflow:visible;white-space:nowrap">&lt;link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" /&gt;</code> or just include in your main CSS styles. File size is minimal, just 48k, compared to 270k for the GDS Transport font used across the site.</p>
 
 	<p>Fallback to New Transport or sans is acceptable.</p>
 
-	<p>More on the way GDS Transport has been embedded as a webfont (which is the similar to this usage) by Chris Heathcote <a href="https://gds.blog.gov.uk/2012/07/17/webfonts-in-practice/">on the GDS Blog</a>.
+	<p>More on the way GDS Transport has been embedded as a webfont (which is similar to this usage) by Chris Heathcote <a href="https://gds.blog.gov.uk/2012/07/17/webfonts-in-practice/">on the GDS Blog</a>.
 
 
 
@@ -176,6 +176,22 @@
 
 	<p>If you are new to using a command line, FISH is a really nice improvement on the standard terminal that comes with your Mac. <a href="http://fishshell.com">Download it here</a> and (if it hasn't already) <a href="http://fishshell.com/docs/current/faq.html#faq-default">replace the default</a> instructions are here.</p>
 
+	<p>To use the GOV.UK prototyping toolkit you need to get a few command line tools working.</p>
+
+	<p><strong><a href="http://brew.sh">Homebrew</a></strong> is a useful package manager that helps you install things. Put this into a terminal prompt to install:</p>
+
+	<p><code style="overflow:visible;white-space:nowrap">ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></p>
+
+	<p><strong>Git</strong> is used to manage your files, and upload to servers. You probably have it, find out how new yours is using <code style="overflow:visible;white-space:nowrap">git --version</code> and if neccessary <code style="overflow:visible;white-space:nowrap">brew upgrade git</code> to be newer.</p>
+
+	<p><strong>Node.js</strong> is used to build websites, you might have it - find out using <code style="overflow:visible;white-space:nowrap">node -v</code> and if you need to use <code style="overflow:visible;white-space:nowrap">brew install node</code> to get it.</p>
+
+	<p><strong>NPM</strong> should have come along with Node, but let's check with <code style="overflow:visible;white-space:nowrap">npm -v</code> and if you need to use <code style="overflow:visible;white-space:nowrap">brew install npm</code> to complete.</p>
+
+	<p><strong>Heroku</strong> is very useful as a simple web server to host your work online. They have an installer to download here - <a href="https://toolbelt.heroku.com" rel="external">https://toolbelt.heroku.com</a>. You'll need to set up a free account on Heroku and use the login details to complete the process.</p>
+
+	<p><strong>Github</strong> is also essential to get and share your work. Create a free account at <a href="http://github.com" rel="external">http://github.com</a> and get started by cloning this project, see below. 
+
 
 	
 
@@ -184,7 +200,15 @@
 	<h2 class="heading-large" style="padding-top:2em">Simple pages</h2>
 	</a>
 
-	<p><strong>Basic input page</strong>  :  <a href="/examples/elements/basic-1-field" rel="external">basic-1-field.html</a></p>
+	<p>Get this project off Github. <a href="https://github.com/paulpod/dvladesign">https://github.com/paulpod/dvladesign</a></p>
+
+	<p>Or in a terminal use <code>git clone https://github.com/paulpod/dvladesign</code></p>
+
+	<p>After cloning, move to the new directory "dvladesign" with <code  style="overflow:visible;white-space:nowrap">cd dvladesign</code> and run <code style="overflow:visible;white-space:nowrap">npm install</code> which will get all the additional parts fresh from the internet.</p>
+
+	<p>Use <code style="overflow:visible;white-space:nowrap">node start.js</code> to start your local private webserver - note the address at the end messages. Now visit <a href="http://localhost:3001">http://localhost:3001</a> in your browser and you should see this page, but running locally from your machine.</p>
+
+	<p style="margin-top:3em"><strong>Basic input page</strong>  :  <a href="/examples/elements/basic-1-field" rel="external">basic-1-field.html</a></p>
 
 	<p>The page features a black top bar, only containing the name of the service. We have found using this space for sub-navigation or other functions does not work, users do not see it.</p>
 
@@ -198,7 +222,7 @@
 
 
 
-	<p><strong>Basic branching page</strong>  :  <a href="/examples/elements/basic-2-buttons" rel="external">basic-2-buttons.html</a></p>
+	<p style="margin-top:3em"><strong>Basic branching page</strong>  :  <a href="/examples/elements/basic-2-buttons" rel="external">basic-2-buttons.html</a></p>
 
 	<p>The page features a black top bar, small back button at the top and follows the one-thing-per-page pattern. Here we are making a basic choice between 2 options, only one can be selected.</p>
 
@@ -208,7 +232,7 @@
 
 
 
-	<p><strong>Basic playback page</strong>  :  <a href="/examples/elements/payment-card" rel="external">payment-card.html</a></p>
+	<p style="margin-top:3em"><strong>Basic playback page</strong>  :  <a href="/examples/elements/payment-card" rel="external">payment-card.html</a></p>
 
 	<p>The page features a black top bar, small back button at the top and plays back a chunk of the information already provided by the user before stepping into the next logical process, ie. payment.</p>
 
