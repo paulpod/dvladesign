@@ -229,6 +229,26 @@
 
 	<p>There is one button styled in a green box, the main action is to continue.</p>
 
+	<div style="background-color:#f8f8f8;padding:0.33em">
+	<p style=""><strong>Code in routes.js</strong></p>
+	<code style="border:none;overflow:visible;white-space:nowrap;font-size:82%">
+	
+	    <span style="color:blue">/* Pass nextpage for Basic Flow control  */</span><br>
+		<br>
+	    app.get('/examples/elements/basic-flow', function (req, res) {<br>
+	    <span style="color:blue">/* line above starts a new JS function, receives the form action event from the webpage */</span><br>
+		<br>
+	    var next = req.query.nextlink;<br>
+	    <span style="color:blue">/* this line pulls out the name of the next page that was sent with the weblink */</span><br>
+		<br>
+	    res.render('examples/elements/' + next, {});<br>
+	    <span style="color:blue">/* this line renders a new page based on the HTML of the file sent as the next page */</span><br>
+	    <br>
+	    });<br>
+	    <span style="color:blue">/* ends the app.get javascript function */</span>
+	</code>
+	</div>
+
 
 
 	<p style="margin-top:3em"><strong>Basic branching page</strong>  :  <a href="/examples/elements/basic-2-buttons" rel="external">basic-2-buttons.html</a></p>
@@ -240,6 +260,28 @@
 	<p>Again only one button is styled in a green box, the main action is to continue.</p>
 
 
+	<div style="background-color:#f8f8f8;padding:0.33em">
+	<p style=""><strong>Code in routes.js</strong></p>
+	<code style="border:none;overflow:visible;white-space:nowrap;font-size:82%">
+
+	    <span style="color:blue">/* Chooser for Basic Branching control   */</span><br>
+		<br>
+	    app.get('/examples/elements/basic-branch', function (req, res) {<br>
+		<br>
+	    var next = req.query.nextlink;<br>
+	    <span style="color:blue">/* this line pulls out the filename of the next page, sent with the weblink */</span><br>
+		<br>
+	    var branch = req.query.branch;<br>
+	    <span style="color:blue">/* this line pulls out the name of the branch from the input buttons */</span><br>
+		<br>
+	    res.render('examples/elements/' + next + '-' + branch, {});<br>
+	    <span style="color:blue">/* this line renders a new page based on the HTML of the filename + branchname  */</span><br>
+	    });<br>
+	    <span style="color:blue">/* ends the app.get javascript function */</span>
+	</code>
+    </div>
+
+
 
 	<p style="margin-top:3em"><strong>Basic playback page</strong>  :  <a href="/examples/elements/payment-card" rel="external">payment-card.html</a></p>
 
@@ -247,7 +289,7 @@
 
 	<p>We do some styling on this page to make it easier to read, namely putting data into a list, with two regularly spaced columns per line.</p>
 
-	<p>Where we have a VRN / Reg Mark standing along (not in a line of text) we can style it to look like a real numberplate. This makes it easier to recognise for users.</p>
+	<p>Where we have a VRN / Reg Mark standing alone (not in a line of text) we can style it to look like a real numberplate. This makes it easier to recognise for users.</p>
 
 	<p>We also use the GOV.UK standard 'help notice' to clearly warn the user of important details.</p>
 
