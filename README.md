@@ -2,7 +2,12 @@
 
 # DVLA Design
 
-Quick start
+Quick start for designers, a collection of tools to design things and a simple set of steps to get up and running with a GOV UK Prototype kit, as well as some very simple example pages.
+
+- Basic flow / next page
+- Basic branch / next-1 next-2 page
+- Basic playback / information page
+- additional Basic page elements
 
 Based on the [GOV.UK front-end toolkit](https://github.com/alphagov/govuk_frontend_toolkit).
 
