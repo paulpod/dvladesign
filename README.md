@@ -24,7 +24,7 @@ Visit [DVLA Design](https://dvladesign.herokuapp.com)
 #### Clone this repo
 
 ```
-git clone git@github.com:paulpod/dvladesign.git
+git clone https://github.com/paulpod/dvladesign.git
 ```
 
 #### Install dependencies
