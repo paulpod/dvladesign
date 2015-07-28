@@ -19,7 +19,7 @@ You can start with a box-fresh Mac, instructions to install Homebrew, Git, Node,
 
 ## Quick start
 
-Visit [DVLA Design](https://dvladesign.herokuapp.com)
+Visit [DVLA Design](https://dvladesign.herokuapp.com) for the full walkthrough (contained in this project) from GOV.UK guides through tools to installing and your first pages and routes.
 
 #### Clone this repo
 
