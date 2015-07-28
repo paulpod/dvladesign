@@ -18,7 +18,7 @@
     "grunt-contrib-copy": "0.5.0",
     "grunt-contrib-watch": "0.5.3",
     "grunt-nodemon": "0.3.0",
-    "grunt-sass": "0.16.1",
+    "grunt-sass": "0.18.0",
     "grunt-text-replace": "0.3.12",
     "handlebars": "^3.0.0",
     "hogan.js": "3.0.2",
@@ -26,7 +26,7 @@
     "mailcheck": "^1.1.1",
     "minimist": "0.0.8",
     "moment": "2.10.2",
-    "node-sass": "1.2.3",
+    "node-sass": "2.1.1",
     "parsleyjs": "^2.0.7",
     "readdir": "0.0.6"
   }
