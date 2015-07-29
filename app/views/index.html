@@ -309,7 +309,27 @@
 
   <p>This page features a progressive disclosure function, which allows details to be minimised on a page. A click to open will show the contents. This is a good way to fufill the needs of a minority of users within the main flow of a service.</p>
 
-  <p style="margin-top:5em">This is intended to be a quick starter for designers at the DVLA, but if you find it useful elsewhere or spot a terrible mistake, get in touch via a pull request, twitter or email.</p>
+
+
+  <p style="margin-top:3em"><strong>Putting it together into a workflow</p>
+
+  <p>You'll get into a flow of making a change in Sublime Text, having a look in your browser, and repeat. When you hit a point where 'things are good' it's an idea to make a 'commit' which is like a little marker you can roll work back to later.</p>
+
+  <p>In the terminal either stop the running Node process with <strong>CTRL + C</strong> or (better idea) <strong>&#8984; + T</strong> for a new tab, and <code style="overflow:visible;white-space:nowrap">cd ~/dvladesign</code> (or wherever you put it).</p>
+
+  <p>Use <code>git add . -A</code> which collects all your changes to files, including deleted ones. Then use <code style="overflow:visible;white-space:nowrap">git commit -m "Write a meaningful description of your changes here"</code> to record your changes.</p>
+
+  <p>This is sometimes a good point to put your prototype online, or share it on github, or both. You can create a new Heroku public webserver using <code style="overflow:visible;white-space:nowrap">heroku create</code> once.</p>
+
+  <p>Enter <code style="overflow:visible;white-space:nowrap">git remote --v</code> and you can view your project's 'remotes' ... places other than your local copy.</p>
+
+  <p>Then use <code style="overflow:visible;white-space:nowrap">git push heroku master</code> as often as you want to upload and update your public server. It'll have a URL something like <a href="#">https://damp-sofa-2097.herokuapp.com</a> but you can change that.</p>
+
+
+
+
+
+  <p style="margin-top:5em">This is intended to be a quick starter for designers at the DVLA, all commands 'work for me' but may not be the best/correct way to use them. If you find it useful elsewhere or spot a terrible mistake, get in touch via a pull request, twitter or email.</p>
 
   <p>@paulpod</p>
 
