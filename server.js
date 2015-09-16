@@ -73,5 +73,5 @@ app.get(/^\/([^.]+)$/, function (req, res) {
 
 app.listen(port);
 console.log('');
-console.log('EVL - Listening on port ' + port);
+console.log('DVLA Design Toolkit - Listening on port ' + port);
 console.log('');

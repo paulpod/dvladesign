@@ -1,0 +1,358 @@
+{{<layout}}
+
+{{$pageTitle}}
+  DVLA Design Kit
+{{/pageTitle}}
+
+{{$propositionHeader}}
+  {{>includes/govuk_dvladesignprop}}
+{{/propositionHeader}}
+
+{{$content}}
+
+<main id="content" role="main">
+  <form action="examples/elements/start" method="get" class="get-started" style="margin-top:1.5em">
+  <!--<input type="hidden" name="nextlink" value="start">
+  <input type="hidden" name="nextbacklink" value="start">-->
+
+
+<div class="grid-row">
+  <div class="column-two-thirds">
+
+  <h1 class="heading-xlarge">DVLA Design</h1>
+
+
+
+  <p><strong>What's this?</strong> The DVLA where possible follows the guidance for GOV.UK services, and uses the current best practice and most appropriate elements as discussed on the Design Elements hackpad.</p>
+
+  <p>Where specialist needs have presented themselves, this document aims to provide consistent guidance for use on DVLA services.</p>
+
+
+  <ul class="list-number" style="font-size:0.85em">
+    <li><a href="#resources">GOV.UK and GDS resources</a></li>
+    <li><a href="#dvlaresources">DVLA resources</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li><a href="#simplepages">Simple pages</a></li>
+
+  </ul>
+
+
+
+
+
+
+
+  <h2 class="heading-large" id="resources">Resources - use these first</h2>
+
+  <ul class="list-bullet">
+    <li>
+      <a href="https://designpatterns.hackpad.com">
+        GOV.UK Design patterns Hackpad
+      </a>
+       - look here first for the most up-to-date discussion and solutions to common problems. Some useful subjects to begin with:
+    </li>
+
+    <ul class="list-number" style="font-size:0.85em;margin-left:1.5em">
+      <li><a href="https://designpatterns.hackpad.com/Ask-for-email-address-AfMMqnW9E9b">Asking for an email address from a user</a></li>
+      <li><a href="https://designpatterns.hackpad.com/Peoples-names-mgFWXkwyPEt">Asking for people's names</a></li>
+      <li><a href="https://designpatterns.hackpad.com/Addresses-CgrMSGRAhRc">Asking for a postal address</a></li>
+      <li><a href="https://designpatterns.hackpad.com/Dates-vpx6XlVjIbE">Dates, date pickers vs smart parsing</a></li>
+      <li><a href="https://designpatterns.hackpad.com/Transaction-start-pages-8fitVQYufJX">Start pages</a></li>
+      <li><a href="https://designpatterns.hackpad.com/Navigation-buttons-continue-next-previous-zoP1sKiW3y4">Buttons - Next/Continue as well as others</a></li>
+      <li><a href="https://designpatterns.hackpad.com/Back-buttons-and-links-hsdYethVO6s">Back buttons</a></li>
+      <li><a href="https://designpatterns.hackpad.com/Iconography-UoIkbsbqgll">Icons and images</a></li>
+      <li><a href="https://designpatterns.hackpad.com/Progressive-disclosure-mi03xhbZQpu">Progressive disclosure, used for help text and explainations</a></li>
+      <li><a href="https://designpatterns.hackpad.com/Create-a-password-4dSSBUhCYjj">Users creating passwords</a></li>
+    </ul>
+
+    <li>
+      <a href="https://github.com/alphagov/govuk_prototype_kit/tree/master/docs">
+        GOV.UK kit documentation
+      </a>
+    </li>
+    <li>
+      <a href="http://govuk-elements.herokuapp.com/snippets/">
+        Guide to GOV.UK elements + HTML snippets
+      </a>
+    </li>
+    <li>
+      <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/form-structure.html">
+        Form structure : How to structure web forms for GOV.UK services
+      </a>
+    </li>
+    <li>
+      <a href="https://www.gov.uk/service-manual">
+        Service design manual
+      </a>
+    </li>
+    <li>
+      <a href="https://www.gov.uk/design-principles">
+        Government Digital Service Design Principles
+      </a>
+    </li>
+  </ul>
+
+
+
+
+
+  <h2 class="heading-large" style="padding-top:2em" id="dvlaresources">Extra DVLA resources</h2>
+
+  <h3 class="heading-medium" id="reg">Vehicle registration marks</h3>
+
+  <p><strong>Usage:</strong> Where the mark is presented to the user, outside of longer copy, consider presenting the mark styled like a physical number plate.</p>
+
+  <p><strong>Benefits:</strong> User recognition is high, the distinctive style allows it to be presented without a label telling the user it is a vehicle registration mark.</p>
+
+  <p><strong>Implementation:</strong> The mark looks best when presented at medium to large headline sizes:</p>
+
+
+  <div id="example-marks">
+    <link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" />
+
+    <p style="margin:2.5em 0">
+    <span class="reg-mark" style="font-size:300%;margin-right:0.4em">
+    CU57&nbsp;ABD
+    </span>
+     300%
+     </p>
+
+
+    <p style="margin:3.5em 0 2.75em 0">
+    <span class="reg-mark" style="font-size:200%;margin-right:0.6em">
+    CU57&nbsp;ABC
+    </span>
+     200%
+    </p>
+
+    <p style="margin:1.5em 0 2em 0">
+     <span class="reg-mark" style="font-size:150%;margin-right:0.85em">
+    CU57&nbsp;ABC
+    </span>
+     150%
+
+
+     <span class="reg-mark" style="font-size:120%;margin-left:2em;margin-right:1.1em">
+    CU57&nbsp;ABC
+    </span>
+     120%
+    </p>
+  </div>
+
+  <p>A class <code>.reg-mark</code> is available for inclusion in markup. The border width and rounded corner are measured using em units, so they scale with the font size. Use of a non-breaking space <code>&amp;nbsp;</code> between character chunks is recommended.</p>
+
+  <p>The UK number plate font is available as a base64 encoded webfont and can be added to pages that need it using:</p>
+
+  <p><a href="/public/stylesheets/numberplate.css">Numberplate Font encoded as base64 in a CSS file</a></p>
+
+  <p>And where it's needed in your HTML use:<br>
+
+  <code style="overflow:visible;white-space:nowrap">&lt;link href="/public/stylesheets/numberplate.css" media="screen" rel="stylesheet" type="text/css" /&gt;</code> or just include in your main CSS styles. File size is minimal, just 48k, compared to 270k for the GDS Transport font used across the site.</p>
+
+  <p>Fallback to New Transport or sans is acceptable.</p>
+
+  <p>More on the way GDS Transport has been embedded as a webfont (which is similar to this usage) by Chris Heathcote <a href="https://gds.blog.gov.uk/2012/07/17/webfonts-in-practice/">on the GDS Blog</a>.
+
+
+
+
+
+
+
+
+
+
+  <h2 class="heading-large" style="padding-top:2em" id="tools">Tools</h2>
+
+  <p><strong>Powerpoint</strong> has been a good place to start before diving into code, or when you have no other tools available. It's good for making screengrabbed mockups and allows simple clicks and flows.</p>
+  <p>Here's a good starter GOV.UK styled template: <a href="/public/images/Prototype-Template.pptx">Prototype-Template.pptx</a></p>
+
+  <p>Adobe Creative Suite is really big and expensive, and you probably only need 5% of the functionality. <strong>Sketch app</strong> has that 5% covered, and is fast and lightweight. <a href="http://bohemiancoding.com/sketch/">Try it out</a>.</p>
+
+  <p>Here is a file with many of the GOV.UK elements created using Sketch you may wish to use for wireframes and mockups: <a href="/public/images/GOV_UK_Sketch_parts.sketch">GOV_UK_Sketch_parts.sketch</a></p>
+
+  <p>There are lots of different text editors around, but many people like <strong>Sublime Text</strong> to edit multiple files in one project. <a href="http://www.sublimetext.com">Try it out</a>.</p>
+
+  <p><strong>Fonts</strong> for GOV.UK sites <a href="https://gds.blog.gov.uk/2012/07/05/a-few-notes-on-typography/">are Transport in light and bold</a>, ask someone on your team or from GDS Design for the files if you need them, <a href="https://designnotes.blog.gov.uk/2015/03/11/can-i-use-the-gov-uk-fonts/">they can't be distributed widely</a>. A UK numberplate font for use in design apps can be downloaded: <a href="/public/images/UKNumberPlate-2-webfont.ttf">UKNumberPlate-2-webfont.ttf</a></p>
+
+
+
+  <h2 class="heading-large" style="padding-top:2em" id="tools">Prototyping</h2>
+
+  <p>To use the GOV.UK prototyping toolkit you need to get a few command line tools working.</p>
+
+  <p><strong><a href="http://brew.sh">Homebrew</a></strong> is a useful package manager that helps you install things. Put this into a terminal prompt to install:</p>
+
+  <p><code style="overflow:visible;white-space:nowrap">ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></p>
+
+  <p><i>Boxfresh Macs: You will likely get asked to install Xcode command line tools from Apple before continuing.</i></p>
+
+  <p><strong>Git</strong> is used to manage your files, and upload to servers. You probably have it: find out how new yours is using <code style="overflow:visible;white-space:nowrap">git --version</code> and if very old ie. version 1.8 you can use <code style="overflow:visible;white-space:nowrap">brew upgrade git</code> to be newer.</p>
+
+  <p><strong>Node.js</strong> is used to build websites, you might have it - find out using <code style="overflow:visible;white-space:nowrap">node -v</code> and if you need to use <code style="overflow:visible;white-space:nowrap">brew install node</code> to get it.</p>
+
+  <p><strong>NPM</strong> should have come along with Node, but let's check with <code style="overflow:visible;white-space:nowrap">npm -v</code> and if you need to use <code style="overflow:visible;white-space:nowrap">brew install npm</code> to complete.</p>
+
+  <p><strong>Heroku</strong> is very useful as a simple web server to host your work online. They have an installer to download here - <a href="https://toolbelt.heroku.com" rel="external">https://toolbelt.heroku.com</a>. You'll need to set up a free account on Heroku and use the login details to complete the process.</p>
+
+  <p><strong>Github</strong> is also essential to get and share  code. Create a free account at <a href="http://github.com" rel="external">http://github.com</a> and get started by cloning this project, see below.
+
+  <p>If you are new to using a command line, <strong>FISH</strong> is a really nice improvement on the standard terminal that comes with your Mac. <a href="http://fishshell.com">Download it here</a> and <a href="http://fishshell.com/docs/current/faq.html#faq-default">replace the default</a>, or just type <code style="overflow:visible;white-space:nowrap">chsh -s /usr/local/bin/fish</code> after installing to do it.</p>
+
+  <p><i>You may need to open System Preferences > Security &amp; Privacy and allow the installer to run.</i></p>
+
+  <p>Or in a terminal use <code>git clone https://github.com/paulpod/dvladesign.git</code></p>
+
+
+
+
+  <h2 class="heading-large" style="padding-top:2em" id="simplepages">Simple pages</h2>
+
+  <p>Get this project off Github. <a href="https://github.com/paulpod/dvladesign">https://github.com/paulpod/dvladesign</a></p>
+
+  <p>Or in a terminal use <code>git clone https://github.com/paulpod/dvladesign</code></p>
+
+  <p>After cloning, move to the new directory "dvladesign" with <code  style="overflow:visible;white-space:nowrap">cd dvladesign</code> and run <code style="overflow:visible;white-space:nowrap">npm install</code> which will get all the additional parts fresh from the internet.</p>
+
+  <p><strong>Node-SASS</strong> should get installed with that, but on our box-fresh macs we had to add it manually using <code style="overflow:visible;white-space:nowrap">npm install node-sass</code> to get things working.</p>
+
+  <p>Use <code style="overflow:visible;white-space:nowrap">node start.js</code> to start your local private webserver - note the address at the end messages. Now visit <a href="http://localhost:3001">http://localhost:3001</a> in your browser and you should see this page, but running locally from your machine.</p>
+
+  <p>Edit HTML pages using Sublime Text by opening the "dvladesign" directory in the app. You'll see a file list on the left hand side. Your pages are in <code style="overflow:visible;white-space:nowrap">app/views/examples/elements</code> and your CSS, images and stylesheets are in <code style="overflow:visible;white-space:nowrap">app/assets</code>.</p>
+
+  <p>Don't edit the ones in <code style="overflow:visible;white-space:nowrap">/public</code> as those are temporary, and are <span style="text-decoration:underline">deleted</span> each time you restart your webserver!</p>
+
+
+
+  <p style="margin-top:3em"><strong>Flow, Forms and Facts</strong>
+  </p>
+
+  <p>Many of the pages you will design and prototype will be one of these. Below are a few simple pages that combined can make an early prototype of most things.</p>
+
+  <p>GDS has recently provided <a href="https://www.gov.uk/service-manual/user-centred-design/resources/patterns/form-structure.html">improved guidance on form structure</a>, which is a good starting point to crack most tough problems.</p>
+
+
+
+  <p style="margin-top:3em"><strong>Basic input page</strong>  :  <a href="/examples/elements/basic-1-field" rel="external">basic-1-field.html</a></p>
+
+  <p>The page features a black top bar, only containing the name of the service. We have found using this space for sub-navigation or other functions does not work, users do not see it.</p>
+
+  <p>Following the one-thing-per-page pattern, this page asks for a document reference number, using a stylised illustration of the document it comes from.</p>
+
+  <p>There is some javascript code to only allow numbers to be entered into the field, and a javascript helper called Parsely checks the number is there and that it contains 16 digits and prints a message if not.</p>
+
+  <p>The page also features a small back button at the top. Research shows users do not like to use the browser back button within forms, they sometimes fail. Adding this one, it provides confidence that it will work and they can correct mistakes.</p>
+
+  <p>There is one button styled in a green box, the main action is to continue.</p>
+
+  <div style="background-color:#f8f8f8;padding:0.33em">
+  <p style=""><strong>Code in routes.js</strong></p>
+  <code style="border:none;overflow:visible;white-space:nowrap;font-size:82%">
+
+      <span style="color:blue">/* Pass nextpage for Basic Flow control  */</span><br>
+    <br>
+      app.get('/examples/elements/basic-flow', function (req, res) {<br>
+      <span style="color:blue">/* line above starts a new JS function, receives the form action event from the webpage */</span><br>
+    <br>
+      var next = req.query.nextlink;<br>
+      <span style="color:blue">/* this line pulls out the name of the next page that was sent with the weblink */</span><br>
+    <br>
+      res.render('examples/elements/' + next, {});<br>
+      <span style="color:blue">/* this line renders a new page based on the HTML of the file sent as the next page */</span><br>
+      <br>
+      });<br>
+      <span style="color:blue">/* ends the app.get javascript function */</span>
+  </code>
+  </div>
+
+
+
+  <p style="margin-top:3em"><strong>Basic branching page</strong>  :  <a href="/examples/elements/basic-2-buttons" rel="external">basic-2-buttons.html</a></p>
+
+  <p>The page features a black top bar, small back button at the top and follows the one-thing-per-page pattern. Here we are making a basic choice between 2 options, only one can be selected.</p>
+
+  <p>There is some javascript code that does complicated things with the styling of the buttons, but this allows you to keep the HTML simple with one <code>label</code> and <code>input</code> per option.</p>
+
+  <p>Again only one button is styled in a green box, the main action is to continue.</p>
+
+
+  <div style="background-color:#f8f8f8;padding:0.33em">
+  <p style=""><strong>Code in routes.js</strong></p>
+  <code style="border:none;overflow:visible;white-space:nowrap;font-size:82%">
+
+      <span style="color:blue">/* Chooser for Basic Branching control   */</span><br>
+    <br>
+      app.get('/examples/elements/basic-branch', function (req, res) {<br>
+    <br>
+      var next = req.query.nextlink;<br>
+      <span style="color:blue">/* this line pulls out the filename of the next page, sent with the weblink */</span><br>
+    <br>
+      var branch = req.query.branch;<br>
+      <span style="color:blue">/* this line pulls out the name of the branch from the input buttons */</span><br>
+    <br>
+      res.render('examples/elements/' + next + '-' + branch, {});<br>
+      <span style="color:blue">/* this line renders a new page based on the HTML of the filename + branchname  */</span><br>
+      });<br>
+      <span style="color:blue">/* ends the app.get javascript function */</span>
+  </code>
+    </div>
+
+
+
+  <p style="margin-top:3em"><strong>Basic playback page</strong>  :  <a href="/examples/elements/payment-card" rel="external">payment-card.html</a></p>
+
+  <p>The page features a black top bar, small back button at the top and plays back a chunk of the information already provided by the user before stepping into the next logical process, ie. payment.</p>
+
+  <p>We do some styling on this page to make it easier to read, namely putting data into a list, with two regularly spaced columns per line.</p>
+
+  <p>Where we have a VRN / Reg Mark standing alone (not in a line of text) we can style it to look like a real numberplate. This makes it easier to recognise for users.</p>
+
+  <p>We also use the GOV.UK standard 'help notice' to clearly warn the user of important details.</p>
+
+
+
+  <p style="margin-top:3em"><strong>Progressive disclosure</strong>  :  <a href="/examples/elements/basic-3-prog" rel="external">basic-3-prog.html</a></p>
+
+  <p>This page features a progressive disclosure function, which allows details to be minimised on a page. A click to open will show the contents. This is a good way to fufill the needs of a minority of users within the main flow of a service.</p>
+
+
+
+  <p style="margin-top:3em"><strong>Putting it together into a workflow</p>
+
+  <p>You'll get into a flow of making a change in Sublime Text, having a look in your browser, and repeat. When you hit a point where 'things are good' it's an idea to make a 'commit' which is like a little marker you can roll work back to later.</p>
+
+  <p>In the terminal either stop the running Node process with <strong>CTRL + C</strong> or (better idea) <strong>&#8984; + T</strong> for a new tab, and <code style="overflow:visible;white-space:nowrap">cd ~/dvladesign</code> (or wherever you put it).</p>
+
+  <p>Use <code>git add . -A</code> which collects all your changes to files, including deleted ones. Then use <code style="overflow:visible;white-space:nowrap">git commit -m "Write a meaningful description of your changes here"</code> to record your changes.</p>
+
+  <p>This is sometimes a good point to put your prototype online, or share it on github, or both. You can create a new Heroku public webserver using <code style="overflow:visible;white-space:nowrap">heroku create</code> once.</p>
+
+  <p>Enter <code style="overflow:visible;white-space:nowrap">git remote --v</code> and you can view your project's 'remotes' ... places other than your local copy.</p>
+
+  <p>Then use <code style="overflow:visible;white-space:nowrap">git push heroku master</code> as often as you want to upload and update your public server. It'll have a URL something like <a href="#">https://damp-sofa-2097.herokuapp.com</a> but you can change that.</p>
+
+
+
+
+
+  <p style="margin-top:5em">This is intended to be a quick starter for designers at the DVLA, all commands 'work for me' but may not be the best/correct way to use them. If you find it useful elsewhere or spot a terrible mistake, get in touch via a pull request, twitter or email.</p>
+
+  <p>@paulpod</p>
+
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+</main>
+
+{{/content}}
+
+{{/layout}}

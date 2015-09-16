@@ -59,31 +59,77 @@
 
 
     <h1 class="form-title heading-large" style="margin:0 0 1em 0;padding:0">
-      Choose a payment method
+      which special controls have been fitted to your car?
     </h1>
 
+    <p>Tick all that are appropriate</p>
+
     
 
-    <!-- this is one whole radio button, the input is inside the label tags -->
-    <label for="radio-inline-1" class="block-label" style="padding-left:50px;margin-top:0;">
+    <label for="check-inline-1" class="block-label" style="padding:0.9em 11em 0.6em 50px;margin:0.8em 0 0 0;">
 
-      <input id="radio-inline-1" type="radio" name="branch" value="card">
-      <!-- in the input we set type (radio) variable and value for the link to next page -->
-      I want to pay by credit card
+      <input id="check-inline-1" type="checkbox" name="mod" value="combi">
+      Combined braking and acceleration systems
+
+              <br clear="all">
+
+
+      <div style="width:100%"><details style="margin-top:-1.3em;text-align:right;margin-right:-11em">
+        <summary role="button" aria-controls="details-content-0" tabindex="0" aria-expanded="true">
+          <span class="summary">Show examples</span> &nbsp; &nbsp;
+        </summary>
+        
+            <div style="background-color:white;padding:1em 3.6em 0.2em 2.6em;margin:0 0 -0.55em -2.6em">
+            <ul class="list-bullet" style="text-align:left">
+              <li>Fold away accelerator and brake pedals</li>
+              <li>Parallel pedals</li>
+              <li>Pedals at (or almost at) the same level</li>
+              <li>Manual accelerator and brake with sliding</li>
+              <li>Raised floor</li>
+              <li>Partitioning on the side of the brake pedal</li>
+              <li>Partitioning in front of the accelerator and brake pedals</li>
+            </ul>
+            </div>
+
+    </details></div>
 
     </label>
 
 
 
-    
-    <!-- this is a second radio button, the input is inside the label tags -->
-    <label for="radio-inline-2" class="block-label" style="padding-left:50px;margin-bottom:0">
 
-      <input id="radio-inline-2" type="radio" name="branch" value="dd">
-      <!-- again set the value, this time for a different page to link to next -->
-      I want to pay by direct debit
-   
+    
+
+
+
+    
+    <label for="check-inline-2" class="block-label" style="padding-left:50px;margin-bottom:0">
+
+      <input id="check-inline-2" type="checkbox" name="mod" value="accel">
+      Accelerator systems
     </label>
+
+
+
+
+
+    <label for="check-inline-3" class="block-label" style="padding-left:50px;margin-bottom:0">
+
+      <input id="check-inline-3" type="checkbox" name="mod" value="rear">
+      Rear view mirror
+    </label>
+
+
+
+
+
+
+    <label for="check-inline-4" class="block-label" style="padding-left:50px;margin-bottom:0">
+
+      <input id="check-inline-4" type="checkbox" name="mod" value="brake">
+      Braking system
+    </label>
+
 
 
 

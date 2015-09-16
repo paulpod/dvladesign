@@ -19,9 +19,10 @@ module.exports = {
     /* line above starts a new JS function, receives the form action event from the webpage */
 
     var next = req.query.nextlink;
+    var v11 = req.query.v11;
     /* this line pulls out the name of the next page that was sent with the weblink */
 
-    res.render('examples/elements/' + next, {});
+    res.render('examples/elements/' + next, {'v11' : v11, 'v5c' : v5c});
     /* this line renders a new page based on the HTML of the file sent as the next page */
     
  
@@ -41,12 +42,13 @@ module.exports = {
     app.get('/examples/elements/basic-branch', function (req, res) {
 
     var next = req.query.nextlink;
+    var v11 = req.query.v11;
     /* this line pulls out the filename of the next page, sent with the weblink */
 
     var branch = req.query.branch;
     /* this line pulls out the name of the branch from the input buttons */
 
-    res.render('examples/elements/' + next + '-' + branch, {});
+    res.render('examples/elements/' + next + '-' + branch, {'v11' : v11});
     /* this line renders a new page based on the HTML of the filename + branchname  */
     
  
